@@ -3,163 +3,361 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🇰🇷 韓國旅遊行程 4/26–4/29</title>
+<title>大頭旅行社 — 釜山行</title>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #F7F6F2;
-    --surface: #FFFFFF;
-    --border: #E5E3DC;
-    --text: #1A1917;
-    --muted: #8A8780;
-    --accent: #2D6A4F;
-    --accent-light: #EAF3EE;
-    --accent-mid: #B7D9C7;
-    --warm: #C9793B;
-    --warm-light: #FBF0E8;
-    --blue: #2B5F8C;
-    --blue-light: #EAF1F8;
-    --radius: 4px;
-    --radius-lg: 8px;
+    --bg: #F0F9FB;
+    --paper: #E8F6F9;
+    --surface: #FAFEFF;
+    --border: #A8D8E4;
+    --border-dark: #6BB8CC;
+    --text: #163A44;
+    --muted: #5E9BAA;
+    --accent: #0E88A8;
+    --accent-light: #D6F0F7;
+    --warm: #E07840;
+    --warm-light: #FEF0E6;
+    --blue: #1A6FA8;
+    --blue-light: #DFF0FA;
+    --stamp-red: #E05050;
+    --ink: #163A44;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
+
   body {
-    font-family: 'Helvetica Neue', 'Noto Sans TC', Arial, sans-serif;
+    font-family: 'Noto Sans TC', sans-serif;
     background: var(--bg);
+    background-image:
+      radial-gradient(circle at 15% 60%, rgba(14,136,168,0.07) 0%, transparent 50%),
+      radial-gradient(circle at 85% 15%, rgba(107,184,204,0.08) 0%, transparent 45%);
     color: var(--text);
     font-size: 14px;
-    line-height: 1.6;
+    line-height: 1.7;
   }
-  .app { max-width: 600px; margin: 0 auto; padding-bottom: 3rem; }
 
-  /* Header */
+  .app { max-width: 600px; margin: 0 auto; padding-bottom: 7rem; }
+
+  /* ── Header ── */
   .header {
-    padding: 2.5rem 1.5rem 1.5rem;
-    border-bottom: 1px solid var(--border);
-    background: var(--surface);
+    padding: 2rem 1.5rem 1.25rem;
+    background: var(--paper);
+    border-bottom: 2px solid var(--border-dark);
+    position: relative;
+    overflow: hidden;
   }
-  .header-top { display: flex; align-items: center; gap: 12px; margin-bottom: 1rem; }
-  .flag { font-size: 24px; }
-  .header h1 { font-size: 18px; font-weight: 600; letter-spacing: -0.02em; }
-  .header-meta { font-size: 12px; color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase; }
+  .header::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(
+      0deg, transparent, transparent 27px,
+      rgba(14,136,168,0.08) 27px, rgba(14,136,168,0.08) 28px
+    );
+    pointer-events: none;
+  }
+  .header-top { display: flex; align-items: flex-start; gap: 14px; position: relative; }
+  .stamp {
+    width: 52px; height: 52px; border-radius: 50%;
+    border: 2.5px solid var(--stamp-red);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px; flex-shrink: 0;
+    color: var(--stamp-red);
+    transform: rotate(-6deg);
+    opacity: 0.85;
+  }
+  .header h1 {
+    font-family: 'Zen Maru Gothic', 'Noto Sans TC', sans-serif;
+    font-size: 20px; font-weight: 700;
+    color: var(--text);
+    letter-spacing: 0.02em;
+    line-height: 1.3;
+  }
+  .header-meta {
+    font-size: 11px; color: var(--muted);
+    margin-top: 3px; letter-spacing: 0.06em;
+  }
+  .header-deco {
+    position: absolute; right: 1.5rem; top: 1rem;
+    font-size: 11px; color: var(--muted);
+    writing-mode: vertical-rl;
+    letter-spacing: 0.12em;
+    opacity: 0.5;
+  }
 
-
-
-  /* Tabs */
+  /* ── Tabs ── */
   .tabs {
     display: flex;
-    border-bottom: 1px solid var(--border);
-    background: var(--surface);
+    background: var(--paper);
+    border-bottom: 2px solid var(--border-dark);
     position: sticky; top: 0; z-index: 10;
     overflow-x: auto;
+    gap: 0;
   }
+  .tabs::-webkit-scrollbar { display: none; }
   .tab {
     flex-shrink: 0;
-    padding: 14px 16px;
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.02em;
+    padding: 11px 13px;
+    font-family: 'Zen Maru Gothic', 'Noto Sans TC', sans-serif;
+    font-size: 11px; font-weight: 500;
     color: var(--muted);
     cursor: pointer;
-    border-bottom: 2px solid transparent;
+    border: none; background: none;
+    border-bottom: 3px solid transparent;
     transition: all 0.15s;
     white-space: nowrap;
-    background: none;
-    border-top: none; border-left: none; border-right: none;
+    line-height: 1.4;
+    text-align: center;
   }
-  .tab.active { color: var(--text); border-bottom-color: var(--text); }
+  .tab .tab-date { display: block; font-size: 12px; font-weight: 700; color: var(--text); }
+  .tab .tab-dow { display: block; font-size: 10px; color: var(--muted); }
+  .tab.active { border-bottom-color: var(--accent); }
+  .tab.active .tab-date { color: var(--accent); }
 
-  /* Content */
-  .day { display: none; padding: 1.5rem; }
+  /* ── Day content ── */
+  .day { display: none; padding: 1.25rem 1.25rem 1rem; }
   .day.active { display: block; }
 
-  .day-header { margin-bottom: 1.5rem; }
-  .day-header h2 { font-size: 20px; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 2px; }
-  .day-header p { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
-
-  /* Transport block */
-  .transport { margin-bottom: 1.25rem; }
-  .transport-item {
-    display: flex; gap: 12px; align-items: flex-start;
-    padding: 12px 14px;
-    background: var(--accent-light);
-    border-left: 3px solid var(--accent);
-    margin-bottom: 8px;
+  .day-header { margin-bottom: 1.25rem; }
+  .day-header-inner {
+    display: flex; align-items: flex-start; gap: 12px;
   }
-  .transport-item .t-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
-  .transport-item .t-body { font-size: 13px; color: var(--accent); line-height: 1.6; }
-  .transport-item .t-body strong { font-weight: 600; color: #1a3d2e; display: block; margin-bottom: 2px; }
-
-  /* Flight block */
-  .flight-block {
-    background: var(--blue-light);
-    border-left: 3px solid var(--blue);
-    padding: 12px 14px;
-    margin-bottom: 8px;
-    display: flex; gap: 12px; align-items: flex-start;
+  .day-date-badge {
+    flex-shrink: 0;
+    background: var(--accent);
+    color: #fff;
+    border-radius: 4px;
+    padding: 6px 10px;
+    text-align: center;
+    font-family: 'Zen Maru Gothic', sans-serif;
   }
-  .flight-block .t-icon { font-size: 16px; flex-shrink: 0; }
-  .flight-block .t-body { font-size: 13px; color: var(--blue); line-height: 1.6; }
-  .flight-block .t-body strong { font-weight: 600; color: #1a3552; display: block; margin-bottom: 2px; }
+  .day-date-badge .dnum { font-size: 18px; font-weight: 700; line-height: 1; }
+  .day-date-badge .ddow { font-size: 10px; font-weight: 500; margin-top: 2px; opacity: 0.85; }
+  .day-header h2 {
+    font-family: 'Zen Maru Gothic', 'Noto Sans TC', sans-serif;
+    font-size: 18px; font-weight: 700;
+    color: var(--text); line-height: 1.3; margin-bottom: 3px;
+  }
+  .day-header p { font-size: 11px; color: var(--muted); letter-spacing: 0.04em; }
 
-  /* Section label */
+  /* ── Section label ── */
   .section-label {
-    font-size: 10px; font-weight: 700;
-    letter-spacing: 0.1em; text-transform: uppercase;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.08em;
     color: var(--muted);
-    margin: 1.5rem 0 0.75rem;
-    padding-bottom: 6px;
-    border-bottom: 1px solid var(--border);
+    margin: 1.25rem 0 0.6rem;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .section-label::after {
+    content: ''; flex: 1; height: 1px;
+    background: repeating-linear-gradient(90deg, var(--border) 0, var(--border) 4px, transparent 4px, transparent 8px);
   }
 
-  /* Spot card */
+  /* ── Spot card ── */
   .spot {
     background: var(--surface);
-    border: 1px solid var(--border);
-    padding: 14px 16px;
+    border: 1.5px solid var(--border);
+    border-radius: 6px;
+    padding: 12px 14px;
     margin-bottom: 8px;
+    position: relative;
+  }
+  .spot::before {
+    content: '';
+    position: absolute; left: -1.5px; top: 8px; bottom: 8px;
+    width: 3px; background: var(--border-dark);
+    border-radius: 0 2px 2px 0;
+    opacity: 0.4;
   }
   .spot-name {
-    font-size: 14px; font-weight: 600;
-    letter-spacing: -0.01em;
-    margin-bottom: 6px;
+    font-family: 'Zen Maru Gothic', 'Noto Sans TC', sans-serif;
+    font-size: 14px; font-weight: 700;
+    margin-bottom: 5px; color: var(--text);
   }
   .tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 6px; }
   .tag {
-    font-size: 10px; font-weight: 600;
-    letter-spacing: 0.04em; text-transform: uppercase;
-    padding: 2px 7px;
-    border-radius: 999px;
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.03em;
+    padding: 2px 8px;
+    border-radius: 2px;
+    border: 1px solid;
   }
-  .tag-green { background: var(--accent-light); color: var(--accent); }
-  .tag-warm { background: var(--warm-light); color: var(--warm); }
-  .tag-blue { background: var(--blue-light); color: var(--blue); }
+  .tag-green { background: var(--accent-light); color: var(--accent); border-color: #b3d4bc; }
+  .tag-warm { background: var(--warm-light); color: var(--warm); border-color: #e8c4a0; }
+  .tag-blue { background: var(--blue-light); color: var(--blue); border-color: #b8d0e8; }
 
   .detail-label {
     font-size: 10px; font-weight: 700;
-    letter-spacing: 0.07em; text-transform: uppercase;
+    letter-spacing: 0.06em;
     color: var(--muted);
-    margin-top: 8px; margin-bottom: 2px;
+    margin-top: 7px; margin-bottom: 2px;
+    text-transform: uppercase;
   }
-  .detail-text { font-size: 13px; color: #444; line-height: 1.65; }
+  .detail-text { font-size: 13px; color: #1e4a56; line-height: 1.7; }
 
   .tip {
-    margin-top: 10px;
-    padding: 8px 10px;
-    background: var(--bg);
-    border-left: 2px solid var(--border);
-    font-size: 12px; color: var(--muted);
+    margin-top: 9px;
+    padding: 7px 10px;
+    background: #FFFBE6;
+    border: 1px dashed #C8B840;
+    border-radius: 3px;
+    font-size: 12px; color: #6A5800;
     line-height: 1.6;
   }
 
+  /* ── Transport ── */
+  .transport-item {
+    display: flex; gap: 10px; align-items: flex-start;
+    padding: 10px 12px;
+    background: var(--accent-light);
+    border: 1.5px solid #b3d4bc;
+    border-radius: 6px;
+    margin-bottom: 8px;
+  }
+  .transport-item .t-icon { font-size: 16px; flex-shrink: 0; }
+  .transport-item .t-body { font-size: 13px; color: #2d5c3c; line-height: 1.6; }
+  .transport-item .t-body strong { font-weight: 700; display: block; margin-bottom: 2px; color: #1e3d28; }
+
+  /* ── Flight ── */
+  .flight-block {
+    display: flex; gap: 10px; align-items: flex-start;
+    padding: 10px 12px;
+    background: var(--blue-light);
+    border: 1.5px solid #b8d0e8;
+    border-radius: 6px;
+    margin-bottom: 8px;
+  }
+  .flight-block .t-icon { font-size: 16px; flex-shrink: 0; }
+  .flight-block .t-body { font-size: 13px; color: #2a4e75; line-height: 1.6; }
+  .flight-block .t-body strong { font-weight: 700; display: block; margin-bottom: 2px; color: #1a3552; }
+
+  /* ── Map button ── */
   .map-btn {
     display: inline-flex; align-items: center; gap: 3px;
-    font-size: 10px; font-weight: 600; letter-spacing: 0.03em;
-    color: var(--muted); text-decoration: none;
+    font-size: 10px; font-weight: 700;
+    color: var(--blue); text-decoration: none;
     margin-left: 6px; vertical-align: middle;
-    padding: 2px 6px; border: 1px solid var(--border);
-    border-radius: 999px; transition: all 0.15s;
+    padding: 2px 7px;
+    border: 1px solid #b8d0e8;
+    border-radius: 3px;
+    background: var(--blue-light);
+    transition: opacity 0.15s;
   }
-  .map-btn:hover { color: var(--accent); border-color: var(--accent); }
+  .map-btn:hover { opacity: 0.7; }
+
+  /* ── Intro collapsible ── */
+  .intro-toggle {
+    display: flex; align-items: center; gap: 5px;
+    font-size: 11px; font-weight: 700; color: var(--muted);
+    cursor: pointer; margin-top: 7px;
+    background: none; border: none; padding: 0;
+    letter-spacing: 0.04em;
+  }
+  .intro-toggle .arrow { transition: transform 0.2s; display: inline-block; font-style: normal; font-size: 9px; }
+  .intro-toggle.open .arrow { transform: rotate(90deg); }
+  .intro-body {
+    display: none; font-size: 12.5px; color: #1e4a56;
+    line-height: 1.8; margin-top: 7px;
+    padding: 9px 11px;
+    background: var(--bg);
+    border-left: 2px solid var(--border-dark);
+    border-radius: 0 4px 4px 0;
+  }
+  .intro-body.open { display: block; }
+
+  /* ── Food sections ── */
+  .food-section-label {
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--warm);
+    margin: 1.25rem 0 0.6rem;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .food-section-label::after {
+    content: ''; flex: 1; height: 1px;
+    background: repeating-linear-gradient(90deg, #e8c4a0 0, #e8c4a0 4px, transparent 4px, transparent 8px);
+  }
+  .food-spot {
+    background: var(--warm-light);
+    border: 1.5px solid #e8c4a0;
+    border-radius: 6px;
+    padding: 10px 13px;
+    margin-bottom: 7px;
+  }
+  .food-spot .spot-name { font-size: 13px; }
+  .food-spot .food-desc { font-size: 12px; color: #7a3e10; line-height: 1.6; margin-top: 2px; }
+  .cafe-spot {
+    background: #EAF7FB;
+    border: 1.5px solid #A8D8E4;
+    border-radius: 6px;
+    padding: 10px 13px;
+    margin-bottom: 7px;
+  }
+  .cafe-spot .spot-name { font-size: 13px; }
+  .cafe-spot .food-desc { font-size: 12px; color: #1e5a6e; line-height: 1.6; margin-top: 2px; }
+
+  /* ── FAB ── */
+  .fab-wrap {
+    position: fixed;
+    bottom: 28px;
+    right: 50%;
+    transform: translateX(50%);
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+  }
+  .fab {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 12px 28px;
+    background: var(--paper);
+    color: var(--text);
+    border: 2px solid var(--border-dark);
+    border-radius: 999px;
+    font-family: 'Zen Maru Gothic', 'Noto Sans TC', sans-serif;
+    font-size: 14px; font-weight: 700;
+    cursor: pointer;
+    box-shadow: 3px 3px 0 var(--border-dark);
+    transition: box-shadow 0.1s, transform 0.1s;
+    letter-spacing: 0.04em;
+  }
+  .fab:active {
+    box-shadow: 1px 1px 0 var(--border-dark);
+    transform: translate(2px, 2px);
+  }
+  .fab .fab-icon { font-size: 16px; }
+
+  /* ── Expense modal ── */
+  .expense-overlay {
+    display: none;
+    position: fixed; inset: 0;
+    background: rgba(44,36,22,0.45);
+    z-index: 200; align-items: flex-end; justify-content: center;
+  }
+  .expense-overlay.open { display: flex; }
+  .expense-sheet {
+    background: var(--paper);
+    width: 100%; max-width: 600px;
+    max-height: 90vh; overflow-y: auto;
+    padding: 1.5rem;
+    border-radius: 12px 12px 0 0;
+    border-top: 3px solid var(--border-dark);
+    background-image: repeating-linear-gradient(
+      0deg, transparent, transparent 27px,
+      rgba(14,136,168,0.07) 27px, rgba(14,136,168,0.07) 28px
+    );
+  }
+  .sheet-header {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 1.25rem;
+  }
+  .sheet-header h2 {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 18px; font-weight: 700;
+  }
+  .sheet-close {
+    font-size: 20px; color: var(--muted); background: none;
+    border: none; cursor: pointer; padding: 4px;
+    font-family: 'Zen Maru Gothic', sans-serif;
+  }
 </style>
 </head>
 <body>
@@ -167,27 +365,33 @@
 
   <div class="header">
     <div class="header-top">
-      <span class="flag">🇰🇷</span>
+      <div class="stamp">🇰🇷</div>
       <div>
-        <h1>韓國旅遊行程</h1>
-        <div class="header-meta">4 / 26 – 4 / 29 &nbsp;·&nbsp; 大邱 &amp; 釜山</div>
+        <h1>大頭旅行社・釜山行</h1>
+        <div class="header-meta">4/26 – 5/2 · 大邱 釜山 慶州</div>
       </div>
     </div>
+    <div class="header-deco">2 0 2 6 · K O R E A</div>
   </div>
 
   <!-- Tabs -->
   <div class="tabs">
-    <button class="tab active" onclick="showDay(0)">4/26 出發·大邱</button>
-    <button class="tab" onclick="showDay(1)">4/27 海岸列車</button>
-    <button class="tab" onclick="showDay(2)">4/28 松島纜車</button>
-    <button class="tab" onclick="showDay(3)">4/29 慶州</button>
+    <button class="tab active" onclick="showDay(0)"><span class="tab-date">4/26</span><span class="tab-dow">六</span></button>
+    <button class="tab" onclick="showDay(1)"><span class="tab-date">4/27</span><span class="tab-dow">日</span></button>
+    <button class="tab" onclick="showDay(2)"><span class="tab-date">4/28</span><span class="tab-dow">一</span></button>
+    <button class="tab" onclick="showDay(3)"><span class="tab-date">4/29</span><span class="tab-dow">二</span></button>
+    <button class="tab" onclick="showDay(4)"><span class="tab-date">4/30</span><span class="tab-dow">三</span></button>
+    <button class="tab" onclick="showDay(5)"><span class="tab-date">5/1</span><span class="tab-dow">四</span></button>
+    <button class="tab" onclick="showDay(6)"><span class="tab-date">5/2</span><span class="tab-dow">五</span></button>
   </div>
 
   <!-- Day 1 -->
   <div class="day active" id="day0">
     <div class="day-header">
-      <h2>出發 → 大邱一日遊</h2>
-      <p>桃園機場 → 金海國際機場 → 大邱 → 釜山</p>
+      <div class="day-header-inner">
+        <div class="day-date-badge"><div class="dnum">4/26</div><div class="ddow">週六</div></div>
+        <div><h2>出發 → 大邱一日遊</h2><p>桃園機場 → 金海國際機場 → 大邱 → 釜山</p></div>
+      </div>
     </div>
 
     <div class="flight-block">
@@ -286,13 +490,46 @@
       <div class="detail-label">營業時間</div>
       <div class="detail-text">11:00 – 22:00（每月第 1、3 個週日公休）</div>
     </div>
+
+    <div class="food-section-label">🍽 附近建議吃吃・西面區</div>
+
+    <div class="food-spot">
+      <div class="spot-name">味贊王鹽烤肉 <a class="map-btn" href="https://map.naver.com/v5/search/맛찬들 왕소금구이 서면" target="_blank">📍 地圖</a></div>
+      <div class="food-desc">3.5 公分厚切豬肉，專業代烤鎖住肉汁，西面排隊名店</div>
+    </div>
+
+    <div class="food-spot">
+      <div class="spot-name">密陽血腸豬肉湯飯 <a class="map-btn" href="https://map.naver.com/v5/search/밀양순대돼지국밥 서면" target="_blank">📍 地圖</a></div>
+      <div class="food-desc">釜山靈魂美食，湯頭濃郁，24 小時營業，宵夜首選</div>
+    </div>
+
+    <div class="food-spot">
+      <div class="spot-name">春夏秋冬小麥麵 <a class="map-btn" href="https://map.naver.com/v5/search/춘하추동밀면" target="_blank">📍 地圖</a></div>
+      <div class="food-desc">釜山特色冷麵（밀면），麵條有嚼勁，湯頭帶肉香，在地人日常美食</div>
+    </div>
+
+    <div class="food-section-label">☕ 附近建議喝喝・西面區</div>
+
+    <div class="cafe-spot">
+      <div class="spot-name">O Sundays <a class="map-btn" href="https://map.naver.com/v5/search/오선데이즈 서면" target="_blank">📍 地圖</a></div>
+      <div class="food-desc">西面熱門貝果店，抹醬口味豐富，充滿美式復古風</div>
+    </div>
+
+    <div class="food-section-label">🍖 大邱・長胡同烤腸</div>
+
+    <div class="food-spot">
+      <div class="spot-name">安吉郎곱창거리（大邱長胡同烤腸）<a class="map-btn" href="https://map.naver.com/v5/search/안지랑 곱창거리 대구" target="_blank">📍 地圖</a></div>
+      <div class="food-desc">大邱名物炭烤大腸，香氣十足，已包含在今日景點行程中</div>
+    </div>
   </div>
 
   <!-- Day 2 -->
   <div class="day" id="day1">
     <div class="day-header">
-      <h2>海岸列車 + 膠囊列車</h2>
-      <p>松亭 → 青沙浦 → 尾浦</p>
+      <div class="day-header-inner">
+        <div class="day-date-badge"><div class="dnum">4/27</div><div class="ddow">週日</div></div>
+        <div><h2>海岸列車 + 膠囊列車</h2><p>松亭 → 青沙浦 → 尾浦</p></div>
+      </div>
     </div>
 
     <div class="transport-item">
@@ -350,13 +587,54 @@
       <div class="detail-label">方式三（多人推薦）</div>
       <div class="detail-text">搭計程車，目的地輸入「미포역」</div>
     </div>
+
+    <div class="food-section-label">🍽 附近建議吃吃・海雲台／青沙浦區</div>
+
+    <div class="food-spot">
+      <div class="spot-name">海雲台母牛肋排家 <a class="map-btn" href="https://map.naver.com/v5/search/해운대소문난암소갈비집" target="_blank">📍 地圖</a></div>
+      <div class="food-desc">超人氣排隊名店，韓牛肋排鮮嫩多汁，建議提早到候位</div>
+    </div>
+
+    <div class="food-spot">
+      <div class="spot-name">海雲台 31cm 海鮮刀削麵 <a class="map-btn" href="https://map.naver.com/v5/search/해운대 31cm 해물칼국수" target="_blank">📍 地圖</a></div>
+      <div class="food-desc">碗公比臉大，裝滿鮮甜海鮮與 Q 彈麵條，份量驚人</div>
+    </div>
+
+    <div class="food-spot">
+      <div class="spot-name">螞蟻家 <a class="map-btn" href="https://map.naver.com/v5/search/개미집 해운대" target="_blank">📍 地圖</a></div>
+      <div class="food-desc">招牌「章魚烤腸蝦子鍋」，香辣下飯，料多實在</div>
+    </div>
+
+    <div class="food-section-label">☕ 附近建議喝喝・海雲台／青沙浦區</div>
+
+    <div class="cafe-spot">
+      <div class="spot-name">Momos Coffee <a class="map-btn" href="https://map.naver.com/v5/search/모모스커피" target="_blank">📍 地圖</a></div>
+      <div class="food-desc">世界冠軍烘豆師加持，2025 年再度入選世界百大咖啡館</div>
+    </div>
+
+    <div class="cafe-spot">
+      <div class="spot-name">H.US Coffee <a class="map-btn" href="https://map.naver.com/v5/search/에이치어스 카페 청사포" target="_blank">📍 地圖</a></div>
+      <div class="food-desc">青沙浦站旁，大片落地窗直擊湛藍大海，景觀絕佳</div>
+    </div>
+
+    <div class="cafe-spot">
+      <div class="spot-name">Busan X the SKY 星巴克 <a class="map-btn" href="https://map.naver.com/v5/search/부산 엑스더스카이 스타벅스" target="_blank">📍 地圖</a></div>
+      <div class="food-desc">全世界最高星巴克（99 樓），俯瞰釜山全景</div>
+    </div>
+
+    <div class="cafe-spot">
+      <div class="spot-name">The Bay 101 <a class="map-btn" href="https://map.naver.com/v5/search/더베이101" target="_blank">📍 地圖</a></div>
+      <div class="food-desc">夜晚喝咖啡賞對岸摩天大樓夢幻倒影，釜山夜景最佳選擇之一</div>
+    </div>
   </div>
 
   <!-- Day 3 -->
   <div class="day" id="day2">
     <div class="day-header">
-      <h2>松島纜車</h2>
-      <p>釜山松島海上纜車 + 周邊景點</p>
+      <div class="day-header-inner">
+        <div class="day-date-badge"><div class="dnum">4/28</div><div class="ddow">週一</div></div>
+        <div><h2>松島纜車</h2><p>釜山松島海上纜車 + 周邊景點</p></div>
+      </div>
     </div>
 
     <div class="transport-item">
@@ -395,37 +673,291 @@
       <div class="detail-text">位於纜車起點松島灣站旁，全長 365 公尺</div>
       <div class="tip">韓國最長海上步道！與青沙浦天空步道、五六島天空步道合稱「釜山三大天空步道」</div>
     </div>
+
+    <div class="food-section-label">🍽 附近建議吃吃・南浦／札嘎其區</div>
+
+    <div class="food-spot">
+      <div class="spot-name">札嘎其市場 100 號攤位 <a class="map-btn" href="https://map.naver.com/v5/search/자갈치시장" target="_blank">📍 地圖</a></div>
+      <div class="food-desc">現選現煮的生猛海鮮與代客料理，釜山海鮮體驗不可錯過</div>
+    </div>
+
+    <div class="food-spot">
+      <div class="spot-name">瓦房鱈魚湯 <a class="map-btn" href="https://map.naver.com/v5/search/기와집 대구탕 부산" target="_blank">📍 地圖</a></div>
+      <div class="food-desc">韓星也愛的醒酒聖品，湯頭極致清爽鮮美，南浦洞名店</div>
+    </div>
+
+    <div class="food-section-label">☕ 附近建議喝喝・影島區</div>
+
+    <div class="cafe-spot">
+      <div class="spot-name">Render <a class="map-btn" href="https://map.naver.com/v5/search/렌더 카페 영도" target="_blank">📍 地圖</a></div>
+      <div class="food-desc">影島區高質感老屋改造咖啡廳，氛圍靜謐，具有設計感</div>
+    </div>
+
+    <div class="cafe-spot">
+      <div class="spot-name">Aether <a class="map-btn" href="https://map.naver.com/v5/search/에테르 카페 부산" target="_blank">📍 地圖</a></div>
+      <div class="food-desc">白淺灘文化村名店，裝潢純白極簡，是網美拍照首選</div>
+    </div>
   </div>
 
-  <!-- Day 4 -->
+  <!-- Day 4: 4/29 慶州 -->
   <div class="day" id="day3">
     <div class="day-header">
-      <h2>KLOOK 慶州一日遊</h2>
-      <p>跟團一日遊行程</p>
+      <div class="day-header-inner">
+        <div class="day-date-badge"><div class="dnum">4/29</div><div class="ddow">週二</div></div>
+        <div><h2>KLOOK 慶州一日遊</h2><p>跟團一日遊行程</p></div>
+      </div>
     </div>
 
     <div class="transport-item">
       <span class="t-icon">📍</span>
       <div class="t-body">
-        <strong>集合地點</strong>
-        地鐵西面站 12 號出口（地鐵站出口，非購物中心出口）
+        <strong>集合 / 回程</strong>
+        集合 10:10　西面站 12 號出口（地鐵站出口，非購物中心出口）<br>
+        回程 21:40　西面站
       </div>
     </div>
 
-    <div class="section-label">行程資訊</div>
+    <div class="section-label">景點</div>
 
     <div class="spot">
-      <div class="spot-name">集合 &amp; 回程</div>
-      <div class="detail-label">集合時間</div>
-      <div class="detail-text">10:10 西面站 12 號出口</div>
-      <div class="detail-label">回程時間</div>
-      <div class="detail-text">21:40 西面站</div>
-      <div class="tip">⚠️ 注意：集合在地鐵站出口，不是購物中心出口！建議提前 10 分鐘抵達</div>
+      <div class="spot-name">佛國寺 <a class="map-btn" href="https://map.naver.com/v5/search/불국사" target="_blank">📍 地圖</a></div>
+      <button class="intro-toggle" onclick="toggleIntro(this)"><i class="arrow">▶</i> 簡介</button>
+      <div class="intro-body">韓國最具代表性的佛教寺廟，建於新羅時代（西元 528 年），以多寶塔、釋迦塔等精緻石造建築聞名，被列為世界文化遺產。寺院依山而建，景色優美，春季時杜鵑花盛開格外壯觀。</div>
     </div>
 
     <div class="spot">
-      <div class="spot-name">慶州古都</div>
-      <div class="detail-text">新羅王朝千年古都，世界文化遺產，擁有豐富歷史遺跡、古墓群與佛教文化景點</div>
+      <div class="spot-name">石窟庵 <a class="map-btn" href="https://map.naver.com/v5/search/석굴암" target="_blank">📍 地圖</a></div>
+      <button class="intro-toggle" onclick="toggleIntro(this)"><i class="arrow">▶</i> 簡介</button>
+      <div class="intro-body">位於佛國寺山頂上的人工石窟，內有一尊巨大的圓形主佛像，雕刻技藝精湛，是新羅佛教藝術的巔峰之作，與佛國寺同列世界文化遺產。從山頂可遠眺慶州市區與東海。</div>
+    </div>
+
+    <div class="spot">
+      <div class="spot-name">大陵苑天馬塚 <a class="map-btn" href="https://map.naver.com/v5/search/대릉원" target="_blank">📍 地圖</a></div>
+      <button class="intro-toggle" onclick="toggleIntro(this)"><i class="arrow">▶</i> 簡介</button>
+      <div class="intro-body">新羅王族的大型古墓群，23 座草丘式古墳散布其中，其中天馬塚可入內參觀，可見新羅時代的陪葬品複製品。園區如綠色草原，傍晚光線尤其迷人，是漫步拍照的好地方。</div>
+    </div>
+
+    <div class="spot">
+      <div class="spot-name">瞻星臺 <a class="map-btn" href="https://map.naver.com/v5/search/첨성대" target="_blank">📍 地圖</a></div>
+      <button class="intro-toggle" onclick="toggleIntro(this)"><i class="arrow">▶</i> 簡介</button>
+      <div class="intro-body">建於西元 7 世紀的天文觀測台，是東亞現存最古老的天文台之一。石砌圓柱造型獨特，夜晚打燈後非常美麗，是慶州的代表性地標。</div>
+    </div>
+
+    <div class="spot">
+      <div class="spot-name">東宮與月池 <a class="map-btn" href="https://map.naver.com/v5/search/동궁과 월지" target="_blank">📍 地圖</a></div>
+      <button class="intro-toggle" onclick="toggleIntro(this)"><i class="arrow">▶</i> 簡介</button>
+      <div class="intro-body">新羅時代的王室別宮，以人工湖「月池」聞名，湖面倒映著宮殿建築，入夜後燈光璀璨，是慶州最不可錯過的夜景景點。建議傍晚前往，白天夜晚各有風情。</div>
+    </div>
+
+    <div class="spot">
+      <div class="spot-name">月精橋 <a class="map-btn" href="https://map.naver.com/v5/search/월정교" target="_blank">📍 地圖</a></div>
+      <button class="intro-toggle" onclick="toggleIntro(this)"><i class="arrow">▶</i> 簡介</button>
+      <div class="intro-body">依照新羅時代遺址復原的木造橋樑，橫跨蚊川河，橋上有傳統韓式屋頂，夜晚燈光倒映水面如夢似幻，是近年慶州最熱門的打卡景點之一。</div>
+    </div>
+  </div>
+
+  <!-- Day 5: 4/30 釜山 -->
+  <div class="day" id="day4">
+    <div class="day-header">
+      <div class="day-header-inner">
+        <div class="day-date-badge"><div class="dnum">4/30</div><div class="ddow">週三</div></div>
+        <div><h2>釜山一日遊</h2><p>海東龍宮寺 · 斜坡滑車 · Outlet</p></div>
+      </div>
+    </div>
+
+    <div class="section-label">景點</div>
+
+    <div class="spot">
+      <div class="spot-name">海東龍宮寺 <a class="map-btn" href="https://map.naver.com/v5/search/해동용궁사" target="_blank">📍 地圖</a></div>
+      <button class="intro-toggle" onclick="toggleIntro(this)"><i class="arrow">▶</i> 簡介</button>
+      <div class="intro-body">建於懸崖上、面海而立的佛教寺廟，是韓國少數臨海的寺廟之一。沿著海岸石階而下，浪花拍打岩石，景色壯觀。廟內有十二生肖石像，據說摸到自己生肖會帶來好運。每逢初一、十五香客眾多。</div>
+      <div class="detail-label">交通</div>
+      <div class="detail-text">地鐵 2 號線至機張站，轉搭 181 號公車至龍宮寺站下車，步行約 5 分鐘</div>
+    </div>
+
+    <div class="spot">
+      <div class="spot-name">釜山斜坡滑車 Luge <a class="map-btn" href="https://map.naver.com/v5/search/부산 루지" target="_blank">📍 地圖</a></div>
+      <button class="intro-toggle" onclick="toggleIntro(this)"><i class="arrow">▶</i> 簡介</button>
+      <div class="intro-body">類似山坡滑車的戶外活動，乘坐特製滑車沿山坡軌道滑行而下，沿途可欣賞釜山海景與城市風光。速度可自行控制，老少皆宜，刺激又好玩，是釜山近年超人氣的體驗活動。</div>
+      <div class="detail-label">注意</div>
+      <div class="detail-text">建議提前在 Klook 或 Kkday 購票較優惠，現場購票可能需要排隊</div>
+    </div>
+
+    <div class="spot">
+      <div class="spot-name">樂天東釜山 Outlet <a class="map-btn" href="https://map.naver.com/v5/search/롯데 동부산 아울렛" target="_blank">📍 地圖</a></div>
+      <button class="intro-toggle" onclick="toggleIntro(this)"><i class="arrow">▶</i> 簡介</button>
+      <div class="intro-body">位於機張海邊的大型露天 Outlet，建築本身就是景點，面向大海設計感十足。匯集眾多國際品牌，折扣力道大，是釜山購物的熱門選擇。樓頂可眺望海景，附近還有咖啡廳與餐廳。</div>
+      <div class="detail-label">交通</div>
+      <div class="detail-text">地鐵 2 號線至機張站，搭接駁巴士或步行約 15 分鐘可抵達</div>
+    </div>
+
+    <div class="food-section-label">☕ 附近建議喝喝・機張區</div>
+
+    <div class="cafe-spot">
+      <div class="spot-name">Coralani <a class="map-btn" href="https://map.naver.com/v5/search/코랄라니 기장" target="_blank">📍 地圖</a></div>
+      <div class="food-desc">機張絕美海景咖啡廳，階梯式戶外座位可俯瞰 180 度無敵海景</div>
+    </div>
+  </div>
+
+  <!-- Day 6: 5/1 甘川洞 -->
+  <div class="day" id="day5">
+    <div class="day-header">
+      <div class="day-header-inner">
+        <div class="day-date-badge"><div class="dnum">5/1</div><div class="ddow">週四</div></div>
+        <div><h2>繽紛文化村</h2><p>甘川洞文化村</p></div>
+      </div>
+    </div>
+
+    <div class="section-label">景點</div>
+
+    <div class="spot">
+      <div class="spot-name">甘川洞文化村 <a class="map-btn" href="https://map.naver.com/v5/search/감천문화마을" target="_blank">📍 地圖</a></div>
+      <button class="intro-toggle" onclick="toggleIntro(this)"><i class="arrow">▶</i> 簡介</button>
+      <div class="intro-body">被譽為「韓國的馬丘比丘」，依山而建的彩色房屋錯落有致，街道間藏有各式藝術裝置與壁畫，其中以「小王子與玫瑰」的彩繪最為知名。建議早上前往避開人潮，迷宮般的小巷非常適合拍照漫步。</div>
+      <div class="detail-label">交通</div>
+      <div class="detail-text">地鐵 1 號線至土城站 6 號出口，轉搭 2 號或 2-2 號公車至甘川文化村站下車</div>
+      <div class="detail-label">開放時間</div>
+      <div class="detail-text">09:00 – 18:00</div>
+    </div>
+
+    <div class="food-section-label">☕ 附近建議喝喝・甘川洞</div>
+
+    <div class="cafe-spot">
+      <div class="spot-name">Blue Step <a class="map-btn" href="https://map.naver.com/v5/search/블루스텝 감천문화마을" target="_blank">📍 地圖</a></div>
+      <div class="food-desc">甘川洞文化村內的粉色系咖啡廳，可飽覽整片彩色屋景致</div>
+    </div>
+  </div>
+
+  <!-- Day 7: 5/2 海雲台 + 回程 -->
+  <div class="day" id="day6">
+    <div class="day-header">
+      <div class="day-header-inner">
+        <div class="day-date-badge" style="background:var(--stamp-red);"><div class="dnum">5/2</div><div class="ddow">週五</div></div>
+        <div><h2>海雲台 → 回台北</h2><p>海雲台海灘 · 金海機場 → 桃園機場</p></div>
+      </div>
+    </div>
+
+    <div class="section-label">景點</div>
+
+    <div class="spot">
+      <div class="spot-name">海雲台海灘 <a class="map-btn" href="https://map.naver.com/v5/search/해운대해수욕장" target="_blank">📍 地圖</a></div>
+      <button class="intro-toggle" onclick="toggleIntro(this)"><i class="arrow">▶</i> 簡介</button>
+      <div class="intro-body">韓國最著名的海水浴場，細白沙灘綿延 1.8 公里，背後是現代化的高樓與飯店群。即使非夏季，海邊散步、吃海鮮也別有風味。附近的海雲台市場有各式韓國小吃，週邊咖啡廳景觀絕佳。</div>
+      <div class="detail-label">交通</div>
+      <div class="detail-text">地鐵 2 號線至海雲台站 3、5 號出口，步行約 5 分鐘</div>
+    </div>
+
+    <div class="food-section-label">🍽 附近建議吃吃・海雲台區</div>
+
+    <div class="food-spot">
+      <div class="spot-name">海雲台母牛肋排家 <a class="map-btn" href="https://map.naver.com/v5/search/해운대소문난암소갈비집" target="_blank">📍 地圖</a></div>
+      <div class="food-desc">超人氣韓牛肋排名店，鮮嫩多汁，出發前的最後一頓大餐</div>
+    </div>
+
+    <div class="food-spot">
+      <div class="spot-name">螞蟻家 <a class="map-btn" href="https://map.naver.com/v5/search/개미집 해운대" target="_blank">📍 地圖</a></div>
+      <div class="food-desc">招牌章魚烤腸蝦子鍋，香辣下飯，適合回程前大快朵頤</div>
+    </div>
+
+    <div class="food-section-label">☕ 附近建議喝喝・海雲台區</div>
+
+    <div class="cafe-spot">
+      <div class="spot-name">SPA LAND 咖啡廳 <a class="map-btn" href="https://map.naver.com/v5/search/스파랜드 신세계 센텀시티" target="_blank">📍 地圖</a></div>
+      <div class="food-desc">邊泡汗蒸幕邊喝甜米露（Sikhye），體驗最道地的韓式休憩，近센텀시티</div>
+    </div>
+
+    <div class="cafe-spot">
+      <div class="spot-name">The Bay 101 <a class="map-btn" href="https://map.naver.com/v5/search/더베이101" target="_blank">📍 地圖</a></div>
+      <div class="food-desc">白天海景、夜晚燈火，喝咖啡賞釜山最美夜景</div>
+    </div>
+
+    <div class="section-label">回程航班</div>
+
+    <div class="flight-block">
+      <span class="t-icon">✈️</span>
+      <div class="t-body">
+        <strong>回程航班</strong>
+        金海國際機場（PUS）出發　22:10<br>
+        桃園機場（TPE）抵達　00:15 +1（隔日）
+      </div>
+    </div>
+
+    <div class="transport-item">
+      <span class="t-icon">🚇</span>
+      <div class="t-body">
+        <strong>前往金海機場</strong>
+        地鐵 2 號線至沙上站，轉乘釜山金海輕軌（紫線）至機場站下車<br>
+        建議航班前 2.5 小時出發，預留充裕時間
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating expense button -->
+  <div class="fab-wrap">
+    <button class="fab" onclick="openExpense()">
+      <span class="fab-icon">💰</span> 記個帳
+    </button>
+  </div>
+
+  <!-- Expense modal -->
+  <div class="expense-overlay" id="expense-overlay" onclick="closeIfOutside(event)">
+    <div class="expense-sheet">
+      <div class="sheet-header">
+        <h2>💰 分帳記錄</h2>
+        <button class="sheet-close" onclick="closeExpense()">✕</button>
+      </div>
+
+      <!-- Name setting -->
+      <div class="spot" style="margin-bottom:12px;">
+        <div class="spot-name" style="margin-bottom:8px;">成員名稱</div>
+        <div style="display:flex; gap:8px;">
+          <input type="text" id="name0" placeholder="A" maxlength="6" style="flex:1; padding:8px; border:1px solid var(--border); font-size:13px; background:var(--bg); text-align:center;">
+          <input type="text" id="name1" placeholder="B" maxlength="6" style="flex:1; padding:8px; border:1px solid var(--border); font-size:13px; background:var(--bg); text-align:center;">
+          <input type="text" id="name2" placeholder="C" maxlength="6" style="flex:1; padding:8px; border:1px solid var(--border); font-size:13px; background:var(--bg); text-align:center;">
+        </div>
+      </div>
+
+      <!-- Rate setting -->
+      <div class="spot" style="margin-bottom:12px;">
+        <div class="spot-name" style="margin-bottom:8px;">匯率設定</div>
+        <div style="display:flex; align-items:center; gap:8px;">
+          <span style="font-size:13px;color:var(--muted);">1 TWD =</span>
+          <input type="number" id="rate" value="42" min="1" style="width:80px; padding:6px 8px; border:1px solid var(--border); font-size:13px; background:var(--bg);">
+          <span style="font-size:13px;color:var(--muted);">KRW</span>
+        </div>
+      </div>
+
+      <!-- Add expense form -->
+      <div class="spot" style="margin-bottom:12px;">
+        <div class="spot-name" style="margin-bottom:10px;">新增費用</div>
+        <div style="display:grid; gap:8px;">
+          <input type="text" id="exp-desc" placeholder="項目名稱（例：膠囊列車）" style="padding:10px; border:1px solid var(--border); font-size:14px; background:var(--bg); width:100%;">
+          <div style="display:flex; gap:8px;">
+            <input type="number" id="exp-amount" placeholder="金額" style="flex:1; padding:10px; border:1px solid var(--border); font-size:14px; background:var(--bg);">
+            <select id="exp-currency" style="padding:10px; border:1px solid var(--border); font-size:13px; background:var(--bg);">
+              <option value="KRW">韓元 ₩</option>
+              <option value="TWD">台幣 $</option>
+            </select>
+          </div>
+          <div style="display:flex; gap:8px; align-items:center;">
+            <span style="font-size:13px; color:var(--muted); flex-shrink:0;">誰付的：</span>
+            <select id="exp-payer" style="flex:1; padding:10px; border:1px solid var(--border); font-size:13px; background:var(--bg);">
+              <option value="0">A</option>
+              <option value="1">B</option>
+              <option value="2">C</option>
+            </select>
+            <button onclick="addExpense()" style="padding:10px 20px; background:var(--accent); color:#fff; border:none; font-size:14px; font-weight:600; cursor:pointer;">新增</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Expense list -->
+      <div class="section-label">費用明細</div>
+      <div id="exp-list"></div>
+
+      <!-- Summary -->
+      <div class="section-label">結算</div>
+      <div id="exp-summary"></div>
     </div>
   </div>
 
@@ -437,6 +969,159 @@ function showDay(i) {
   document.querySelectorAll('.day').forEach((d,j) => d.classList.toggle('active', i===j));
 }
 
+function openExpense() {
+  document.getElementById('expense-overlay').classList.add('open');
+  render();
+}
+
+function closeExpense() {
+  document.getElementById('expense-overlay').classList.remove('open');
+}
+
+function closeIfOutside(e) {
+  if (e.target === document.getElementById('expense-overlay')) closeExpense();
+}
+
+function toggleIntro(btn) {
+  btn.classList.toggle('open');
+  const body = btn.nextElementSibling;
+  body.classList.toggle('open');
+}
+
+let expenses = JSON.parse(localStorage.getItem('kr_expenses') || '[]');
+
+function getName(i) {
+  const val = document.getElementById('name'+i)?.value.trim();
+  return val || ['A','B','C'][i];
+}
+
+function getRate() {
+  return parseFloat(document.getElementById('rate').value) || 42;
+}
+
+function toKRW(amount, currency) {
+  return currency === 'TWD' ? amount * getRate() : amount;
+}
+
+function toTWD(krw) {
+  return krw / getRate();
+}
+
+function fmt(krw) {
+  return '₩' + Math.round(krw).toLocaleString() + '　(' + Math.round(toTWD(krw)).toLocaleString() + ' 元)';
+}
+
+function addExpense() {
+  const desc = document.getElementById('exp-desc').value.trim();
+  const amount = parseFloat(document.getElementById('exp-amount').value);
+  const currency = document.getElementById('exp-currency').value;
+  const payer = parseInt(document.getElementById('exp-payer').value);
+  if (!desc || !amount) return;
+  expenses.push({ desc, amount, currency, payer });
+  localStorage.setItem('kr_expenses', JSON.stringify(expenses));
+  document.getElementById('exp-desc').value = '';
+  document.getElementById('exp-amount').value = '';
+  render();
+}
+
+function deleteExpense(i) {
+  expenses.splice(i, 1);
+  localStorage.setItem('kr_expenses', JSON.stringify(expenses));
+  render();
+}
+
+function render() {
+  const payerSel = document.getElementById('exp-payer');
+  if (payerSel) {
+    const cur = payerSel.value;
+    payerSel.innerHTML = [0,1,2].map(i => `<option value="${i}" ${cur==i?'selected':''}>${getName(i)}</option>`).join('');
+  }
+  const list = document.getElementById('exp-list');
+  if (expenses.length === 0) {
+    list.innerHTML = '<div style="font-size:13px;color:var(--muted);padding:12px 0;">尚未新增任何費用</div>';
+  } else {
+    list.innerHTML = expenses.map((e,i) => `
+      <div class="spot" style="margin-bottom:8px; display:flex; justify-content:space-between; align-items:flex-start; gap:8px;">
+        <div style="flex:1;">
+          <div style="font-size:13px; font-weight:600;">${e.desc}</div>
+          <div style="font-size:12px; color:var(--muted); margin-top:2px;">
+            ${e.currency === 'KRW' ? '₩'+Math.round(e.amount).toLocaleString() : '$'+e.amount.toLocaleString()+' 台幣'}
+            　由 <strong>${getName(e.payer)}</strong> 付
+          </div>
+        </div>
+        <button onclick="deleteExpense(${i})" style="font-size:11px; color:var(--muted); background:none; border:1px solid var(--border); padding:3px 8px; cursor:pointer; flex-shrink:0;">刪除</button>
+      </div>
+    `).join('');
+  }
+
+  // Settlement
+  const paid = [0, 0, 0];
+  let total = 0;
+  expenses.forEach(e => {
+    const krw = toKRW(e.amount, e.currency);
+    paid[e.payer] += krw;
+    total += krw;
+  });
+  const share = total / 3;
+  const balance = paid.map(p => p - share);
+
+  const summary = document.getElementById('exp-summary');
+  let html = `
+    <div class="spot" style="margin-bottom:8px;">
+      <div style="font-size:12px; color:var(--muted); margin-bottom:8px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase;">總費用</div>
+      <div style="font-size:16px; font-weight:600;">${fmt(total)}</div>
+      <div style="font-size:12px; color:var(--muted); margin-top:4px;">每人應付 ${fmt(share)}</div>
+    </div>
+    <div class="spot" style="margin-bottom:8px;">
+      <div style="font-size:12px; color:var(--muted); margin-bottom:10px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase;">各人狀況</div>
+      ${[0,1,2].map(i => `
+        <div style="display:flex; justify-content:space-between; align-items:center; padding:6px 0; border-bottom:1px solid var(--border); font-size:13px;">
+          <span style="font-weight:600;">${getName(i)}</span>
+          <span style="color:${balance[i]>= 0 ? 'var(--accent)' : 'var(--warm)'}; font-weight:500;">
+            ${balance[i] >= 0 ? '可收回 ' : '需補 '}${fmt(Math.abs(balance[i]))}
+          </span>
+        </div>
+      `).join('')}
+    </div>`;
+
+  // Who pays whom
+  const b = balance.map((v,i) => ({ i, v }));
+  const creditors = b.filter(x => x.v > 0.5).sort((a,b) => b.v - a.v);
+  const debtors = b.filter(x => x.v < -0.5).sort((a,b) => a.v - b.v);
+  const txns = [];
+  const cr = creditors.map(x => ({...x}));
+  const de = debtors.map(x => ({...x}));
+  let ci = 0, di = 0;
+  while (ci < cr.length && di < de.length) {
+    const amt = Math.min(cr[ci].v, -de[di].v);
+    if (amt > 0.5) txns.push({ from: de[di].i, to: cr[ci].i, amt });
+    cr[ci].v -= amt;
+    de[di].v += amt;
+    if (cr[ci].v < 0.5) ci++;
+    if (-de[di].v < 0.5) di++;
+  }
+
+  if (txns.length > 0) {
+    html += `<div class="spot" style="margin-bottom:8px;">
+      <div style="font-size:12px; color:var(--muted); margin-bottom:10px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase;">誰要付給誰</div>
+      ${txns.map(t => `
+        <div style="font-size:13px; padding:6px 0; border-bottom:1px solid var(--border); display:flex; justify-content:space-between;">
+          <span><strong>${getName(t.from)}</strong> 付給 <strong>${getName(t.to)}</strong></span>
+          <span style="color:var(--warm); font-weight:500;">${fmt(t.amt)}</span>
+        </div>
+      `).join('')}
+    </div>`;
+  }
+
+  summary.innerHTML = html;
+}
+
+// Re-render on name/rate change
+document.addEventListener('input', e => {
+  if (['name0','name1','name2','rate'].includes(e.target.id)) render();
+});
+
+render();
 </script>
 </body>
 </html>
