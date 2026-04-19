@@ -7,21 +7,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #F0F9FB;
-    --paper: #E8F6F9;
-    --surface: #FAFEFF;
-    --border: #A8D8E4;
-    --border-dark: #6BB8CC;
-    --text: #163A44;
-    --muted: #5E9BAA;
-    --accent: #0E88A8;
-    --accent-light: #D6F0F7;
-    --warm: #E07840;
-    --warm-light: #FEF0E6;
-    --blue: #1A6FA8;
-    --blue-light: #DFF0FA;
-    --stamp-red: #E05050;
-    --ink: #163A44;
+    --bg: #EEF9FF;
+    --paper: #F5FDFF;
+    --surface: #FBFEFF;
+    --border: #7ECFE8;
+    --border-dark: #2BAFD0;
+    --text: #0A2733;
+    --muted: #4A8FA3;
+    --accent: #00A0C2;
+    --accent-light: #C8EEF8;
+    --warm: #F07830;
+    --warm-light: #FEF0E4;
+    --blue: #0070B0;
+    --blue-light: #D4EEFA;
+    --stamp-red: #E84820;
+    --ink: #0A2733;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -29,8 +29,8 @@
     font-family: 'Noto Sans TC', sans-serif;
     background: var(--bg);
     background-image:
-      radial-gradient(circle at 15% 60%, rgba(14,136,168,0.07) 0%, transparent 50%),
-      radial-gradient(circle at 85% 15%, rgba(107,184,204,0.08) 0%, transparent 45%);
+      radial-gradient(ellipse at 10% 0%, rgba(0,160,194,0.12) 0%, transparent 55%),
+      radial-gradient(ellipse at 90% 100%, rgba(0,112,176,0.10) 0%, transparent 50%);
     color: var(--text);
     font-size: 14px;
     line-height: 1.7;
@@ -51,7 +51,7 @@
     position: absolute; top: 0; left: 0; right: 0; bottom: 0;
     background: repeating-linear-gradient(
       0deg, transparent, transparent 27px,
-      rgba(14,136,168,0.08) 27px, rgba(14,136,168,0.08) 28px
+      rgba(0,160,194,0.10) 27px, rgba(0,160,194,0.10) 28px
     );
     pointer-events: none;
   }
@@ -911,9 +911,9 @@
       <div class="spot" style="margin-bottom:12px;">
         <div class="spot-name" style="margin-bottom:8px;">成員名稱</div>
         <div style="display:flex; gap:8px;">
-          <input type="text" id="name0" placeholder="A" maxlength="6" style="flex:1; padding:8px; border:1px solid var(--border); font-size:13px; background:var(--bg); text-align:center;">
-          <input type="text" id="name1" placeholder="B" maxlength="6" style="flex:1; padding:8px; border:1px solid var(--border); font-size:13px; background:var(--bg); text-align:center;">
-          <input type="text" id="name2" placeholder="C" maxlength="6" style="flex:1; padding:8px; border:1px solid var(--border); font-size:13px; background:var(--bg); text-align:center;">
+          <input type="text" id="name0" placeholder="大頭之友" maxlength="6" style="flex:1; padding:8px; border:1px solid var(--border); font-size:13px; background:var(--bg); text-align:center;">
+          <input type="text" id="name1" placeholder="大頭本人" maxlength="6" style="flex:1; padding:8px; border:1px solid var(--border); font-size:13px; background:var(--bg); text-align:center;">
+          <input type="text" id="name2" placeholder="陳小俠" maxlength="6" style="flex:1; padding:8px; border:1px solid var(--border); font-size:13px; background:var(--bg); text-align:center;">
         </div>
       </div>
 
@@ -992,7 +992,7 @@ let expenses = JSON.parse(localStorage.getItem('kr_expenses') || '[]');
 
 function getName(i) {
   const val = document.getElementById('name'+i)?.value.trim();
-  return val || ['A','B','C'][i];
+  return val || ['大頭之友','大頭本人','陳小俠'][i];
 }
 
 function getRate() {
