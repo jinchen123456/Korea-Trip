@@ -908,55 +908,55 @@
       </div>
 
       <!-- Name setting -->
-      <div class="spot" style="margin-bottom:12px;">
-        <div class="spot-name" style="margin-bottom:8px;">成員名稱</div>
-        <div style="display:flex; gap:8px;">
-          <input type="text" id="name0" placeholder="大頭之友" maxlength="6" style="flex:1; padding:8px; border:1px solid var(--border); font-size:13px; background:var(--bg); text-align:center;">
-          <input type="text" id="name1" placeholder="大頭本人" maxlength="6" style="flex:1; padding:8px; border:1px solid var(--border); font-size:13px; background:var(--bg); text-align:center;">
-          <input type="text" id="name2" placeholder="陳小俠" maxlength="6" style="flex:1; padding:8px; border:1px solid var(--border); font-size:13px; background:var(--bg); text-align:center;">
+      <div style="background:var(--surface); border:1.5px solid var(--border); border-radius:6px; padding:12px 14px; margin-bottom:12px;">
+        <div style="font-family:'Zen Maru Gothic','Noto Sans TC',sans-serif; font-size:14px; font-weight:700; margin-bottom:8px; color:var(--text);">成員名稱</div>
+        <div style="display:flex; gap:6px;">
+          <input type="text" id="name0" placeholder="大頭之友" maxlength="6" style="flex:1; min-width:0; padding:8px 4px; border:1px solid var(--border); font-size:12px; background:var(--bg); text-align:center; border-radius:4px;">
+          <input type="text" id="name1" placeholder="大頭本人" maxlength="6" style="flex:1; min-width:0; padding:8px 4px; border:1px solid var(--border); font-size:12px; background:var(--bg); text-align:center; border-radius:4px;">
+          <input type="text" id="name2" placeholder="陳小俠" maxlength="6" style="flex:1; min-width:0; padding:8px 4px; border:1px solid var(--border); font-size:12px; background:var(--bg); text-align:center; border-radius:4px;">
         </div>
       </div>
 
       <!-- Rate setting -->
-      <div class="spot" style="margin-bottom:12px;">
-        <div class="spot-name" style="margin-bottom:8px;">匯率設定</div>
+      <div style="background:var(--surface); border:1.5px solid var(--border); border-radius:6px; padding:12px 14px; margin-bottom:12px;">
+        <div style="font-family:'Zen Maru Gothic','Noto Sans TC',sans-serif; font-size:14px; font-weight:700; margin-bottom:8px; color:var(--text);">匯率設定</div>
         <div style="display:flex; align-items:center; gap:8px;">
-          <span style="font-size:13px;color:var(--muted);">1 TWD =</span>
-          <input type="number" id="rate" value="42" min="1" style="width:80px; padding:6px 8px; border:1px solid var(--border); font-size:13px; background:var(--bg);">
-          <span style="font-size:13px;color:var(--muted);">KRW</span>
+          <span style="font-size:13px; color:var(--muted); flex-shrink:0;">1 TWD =</span>
+          <input type="number" id="rate" value="42" min="1" style="width:72px; padding:6px 8px; border:1px solid var(--border); font-size:13px; background:var(--bg); border-radius:4px;">
+          <span style="font-size:13px; color:var(--muted);">KRW</span>
         </div>
       </div>
 
       <!-- Add expense form -->
-      <div class="spot" style="margin-bottom:12px;">
-        <div class="spot-name" style="margin-bottom:10px;">新增費用</div>
-        <div style="display:grid; gap:8px;">
-          <input type="text" id="exp-desc" placeholder="項目名稱（例：膠囊列車）" style="padding:10px; border:1px solid var(--border); font-size:14px; background:var(--bg); width:100%;">
+      <div style="background:var(--surface); border:1.5px solid var(--border); border-radius:6px; padding:12px 14px; margin-bottom:12px;">
+        <div style="font-family:'Zen Maru Gothic','Noto Sans TC',sans-serif; font-size:14px; font-weight:700; margin-bottom:10px; color:var(--text);">新增費用</div>
+        <div style="display:flex; flex-direction:column; gap:8px;">
+          <input type="text" id="exp-desc" placeholder="項目名稱（例：膠囊列車）" style="padding:10px; border:1px solid var(--border); font-size:13px; background:var(--bg); width:100%; border-radius:4px;">
           <div style="display:flex; gap:8px;">
-            <input type="number" id="exp-amount" placeholder="金額" style="flex:1; padding:10px; border:1px solid var(--border); font-size:14px; background:var(--bg);">
-            <select id="exp-currency" style="padding:10px; border:1px solid var(--border); font-size:13px; background:var(--bg);">
+            <input type="number" id="exp-amount" placeholder="金額" style="flex:1; min-width:0; padding:10px; border:1px solid var(--border); font-size:13px; background:var(--bg); border-radius:4px;">
+            <select id="exp-currency" style="width:90px; flex-shrink:0; padding:10px 6px; border:1px solid var(--border); font-size:12px; background:var(--bg); border-radius:4px;">
               <option value="KRW">韓元 ₩</option>
               <option value="TWD">台幣 $</option>
             </select>
           </div>
           <div style="display:flex; gap:8px; align-items:center;">
-            <span style="font-size:13px; color:var(--muted); flex-shrink:0;">誰付的：</span>
-            <select id="exp-payer" style="flex:1; padding:10px; border:1px solid var(--border); font-size:13px; background:var(--bg);">
-              <option value="0">A</option>
-              <option value="1">B</option>
-              <option value="2">C</option>
+            <span style="font-size:13px; color:var(--muted); flex-shrink:0;">付款人</span>
+            <select id="exp-payer" style="flex:1; min-width:0; padding:10px; border:1px solid var(--border); font-size:13px; background:var(--bg); border-radius:4px;">
+              <option value="0">大頭之友</option>
+              <option value="1">大頭本人</option>
+              <option value="2">陳小俠</option>
             </select>
-            <button onclick="addExpense()" style="padding:10px 20px; background:var(--accent); color:#fff; border:none; font-size:14px; font-weight:600; cursor:pointer;">新增</button>
+            <button onclick="addExpense()" style="flex-shrink:0; padding:10px 18px; background:var(--accent); color:#fff; border:none; font-size:13px; font-weight:700; cursor:pointer; border-radius:4px; font-family:'Zen Maru Gothic',sans-serif;">新增</button>
           </div>
         </div>
       </div>
 
       <!-- Expense list -->
-      <div class="section-label">費用明細</div>
+      <div style="font-size:11px; font-weight:700; letter-spacing:0.08em; color:var(--muted); margin:1.25rem 0 0.6rem; display:flex; align-items:center; gap:8px;">費用明細<span style="flex:1; height:1px; background:repeating-linear-gradient(90deg,var(--border) 0,var(--border) 4px,transparent 4px,transparent 8px);"></span></div>
       <div id="exp-list"></div>
 
       <!-- Summary -->
-      <div class="section-label">結算</div>
+      <div style="font-size:11px; font-weight:700; letter-spacing:0.08em; color:var(--muted); margin:1.25rem 0 0.6rem; display:flex; align-items:center; gap:8px;">結算<span style="flex:1; height:1px; background:repeating-linear-gradient(90deg,var(--border) 0,var(--border) 4px,transparent 4px,transparent 8px);"></span></div>
       <div id="exp-summary"></div>
     </div>
   </div>
@@ -1037,19 +1037,20 @@ function render() {
     payerSel.innerHTML = [0,1,2].map(i => `<option value="${i}" ${cur==i?'selected':''}>${getName(i)}</option>`).join('');
   }
   const list = document.getElementById('exp-list');
+  const cardStyle = 'background:var(--surface); border:1.5px solid var(--border); border-radius:6px; padding:10px 13px; margin-bottom:7px;';
   if (expenses.length === 0) {
     list.innerHTML = '<div style="font-size:13px;color:var(--muted);padding:12px 0;">尚未新增任何費用</div>';
   } else {
     list.innerHTML = expenses.map((e,i) => `
-      <div class="spot" style="margin-bottom:8px; display:flex; justify-content:space-between; align-items:flex-start; gap:8px;">
-        <div style="flex:1;">
-          <div style="font-size:13px; font-weight:600;">${e.desc}</div>
+      <div style="${cardStyle} display:flex; justify-content:space-between; align-items:flex-start; gap:8px;">
+        <div style="flex:1; min-width:0;">
+          <div style="font-size:13px; font-weight:700; color:var(--text);">${e.desc}</div>
           <div style="font-size:12px; color:var(--muted); margin-top:2px;">
             ${e.currency === 'KRW' ? '₩'+Math.round(e.amount).toLocaleString() : '$'+e.amount.toLocaleString()+' 台幣'}
             　由 <strong>${getName(e.payer)}</strong> 付
           </div>
         </div>
-        <button onclick="deleteExpense(${i})" style="font-size:11px; color:var(--muted); background:none; border:1px solid var(--border); padding:3px 8px; cursor:pointer; flex-shrink:0;">刪除</button>
+        <button onclick="deleteExpense(${i})" style="font-size:11px; color:var(--muted); background:none; border:1px solid var(--border); border-radius:4px; padding:3px 8px; cursor:pointer; flex-shrink:0;">刪除</button>
       </div>
     `).join('');
   }
@@ -1067,18 +1068,18 @@ function render() {
 
   const summary = document.getElementById('exp-summary');
   let html = `
-    <div class="spot" style="margin-bottom:8px;">
-      <div style="font-size:12px; color:var(--muted); margin-bottom:8px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase;">總費用</div>
-      <div style="font-size:16px; font-weight:600;">${fmt(total)}</div>
+    <div style="${cardStyle} margin-bottom:8px;">
+      <div style="font-size:11px; color:var(--muted); margin-bottom:6px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase;">總費用</div>
+      <div style="font-size:16px; font-weight:700; color:var(--text);">${fmt(total)}</div>
       <div style="font-size:12px; color:var(--muted); margin-top:4px;">每人應付 ${fmt(share)}</div>
     </div>
-    <div class="spot" style="margin-bottom:8px;">
-      <div style="font-size:12px; color:var(--muted); margin-bottom:10px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase;">各人狀況</div>
+    <div style="${cardStyle} margin-bottom:8px;">
+      <div style="font-size:11px; color:var(--muted); margin-bottom:10px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase;">各人狀況</div>
       ${[0,1,2].map(i => `
-        <div style="display:flex; justify-content:space-between; align-items:center; padding:6px 0; border-bottom:1px solid var(--border); font-size:13px;">
-          <span style="font-weight:600;">${getName(i)}</span>
-          <span style="color:${balance[i]>= 0 ? 'var(--accent)' : 'var(--warm)'}; font-weight:500;">
-            ${balance[i] >= 0 ? '可收回 ' : '需補 '}${fmt(Math.abs(balance[i]))}
+        <div style="display:flex; justify-content:space-between; align-items:center; padding:7px 0; border-bottom:1px solid var(--border); font-size:13px;">
+          <span style="font-weight:700; color:var(--text);">${getName(i)}</span>
+          <span style="color:${balance[i] >= 0 ? 'var(--accent)' : 'var(--warm)'}; font-weight:600; font-size:12px;">
+            ${balance[i] >= 0 ? '✦ 可收回 ' : '▲ 需補 '}${fmt(Math.abs(balance[i]))}
           </span>
         </div>
       `).join('')}
@@ -1102,12 +1103,12 @@ function render() {
   }
 
   if (txns.length > 0) {
-    html += `<div class="spot" style="margin-bottom:8px;">
-      <div style="font-size:12px; color:var(--muted); margin-bottom:10px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase;">誰要付給誰</div>
+    html += `<div style="${cardStyle} margin-bottom:8px;">
+      <div style="font-size:11px; color:var(--muted); margin-bottom:10px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase;">誰要付給誰</div>
       ${txns.map(t => `
-        <div style="font-size:13px; padding:6px 0; border-bottom:1px solid var(--border); display:flex; justify-content:space-between;">
-          <span><strong>${getName(t.from)}</strong> 付給 <strong>${getName(t.to)}</strong></span>
-          <span style="color:var(--warm); font-weight:500;">${fmt(t.amt)}</span>
+        <div style="font-size:13px; padding:7px 0; border-bottom:1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+          <span><strong>${getName(t.from)}</strong> → <strong>${getName(t.to)}</strong></span>
+          <span style="color:var(--warm); font-weight:700;">${fmt(t.amt)}</span>
         </div>
       `).join('')}
     </div>`;
