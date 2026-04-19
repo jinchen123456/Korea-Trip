@@ -5,147 +5,299 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>🇰🇷 韓國旅遊行程 4/26–4/29</title>
 <style>
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: -apple-system, BlinkMacSystemFont, 'Noto Sans TC', sans-serif; background: #f5f5f2; color: #1a1a1a; }
-.app { max-width: 640px; margin: 0 auto; padding-bottom: 2rem; }
-.header { text-align: center; padding: 2rem 1rem 1.25rem; background: #fff; border-bottom: 1px solid #e8e8e4; }
-.header h1 { font-size: 22px; font-weight: 600; }
-.header p { font-size: 14px; color: #888; margin-top: 4px; }
-.day-tabs { display: flex; gap: 8px; padding: 1rem; background: #fff; border-bottom: 1px solid #e8e8e4; overflow-x: auto; position: sticky; top: 0; z-index: 10; }
-.day-tab { flex-shrink: 0; padding: 8px 16px; border-radius: 999px; border: 1.5px solid #ddd; font-size: 13px; font-weight: 500; cursor: pointer; background: #fff; color: #666; transition: all 0.15s; }
-.day-tab.active { background: #1D9E75; color: #fff; border-color: #1D9E75; }
-.day-content { display: none; padding: 1rem; }
-.day-content.active { display: block; }
-.day-title { font-size: 20px; font-weight: 600; margin-bottom: 2px; }
-.day-subtitle { font-size: 13px; color: #888; margin-bottom: 1rem; }
-.transport-card { background: #E1F5EE; border: 1px solid #9FE1CB; border-radius: 10px; padding: 12px 14px; margin-bottom: 10px; display: flex; gap: 10px; }
-.transport-icon { font-size: 18px; flex-shrink: 0; }
-.transport-text { font-size: 13px; color: #085041; line-height: 1.65; }
-.transport-text strong { font-weight: 600; color: #04342C; display: block; margin-bottom: 2px; }
-.section-label { font-size: 11px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: #aaa; margin: 1.25rem 0 0.6rem; }
-.spot-card { background: #fff; border: 1px solid #e8e8e4; border-radius: 12px; padding: 14px 16px; margin-bottom: 10px; }
-.spot-name { font-size: 15px; font-weight: 600; color: #1a1a1a; margin-bottom: 6px; }
-.spot-detail { font-size: 13px; color: #555; line-height: 1.7; }
-.label { font-size: 11px; font-weight: 600; color: #aaa; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-top: 8px; margin-bottom: 2px; }
-.tag { display: inline-block; font-size: 11px; font-weight: 600; padding: 3px 8px; border-radius: 999px; margin-right: 4px; margin-bottom: 4px; }
-.tag-teal { background: #E1F5EE; color: #0F6E56; }
-.tag-amber { background: #FAEEDA; color: #854F0B; }
-.tag-blue { background: #E6F1FB; color: #185FA5; }
-.tag-coral { background: #FAECE7; color: #993C1D; }
-.tip-box { background: #f8f8f5; border-left: 3px solid #1D9E75; border-radius: 0 8px 8px 0; padding: 8px 12px; margin-top: 8px; font-size: 13px; color: #555; line-height: 1.6; }
+  :root {
+    --bg: #F7F6F2;
+    --surface: #FFFFFF;
+    --border: #E5E3DC;
+    --text: #1A1917;
+    --muted: #8A8780;
+    --accent: #2D6A4F;
+    --accent-light: #EAF3EE;
+    --accent-mid: #B7D9C7;
+    --warm: #C9793B;
+    --warm-light: #FBF0E8;
+    --blue: #2B5F8C;
+    --blue-light: #EAF1F8;
+    --radius: 4px;
+    --radius-lg: 8px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Helvetica Neue', 'Noto Sans TC', Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .app { max-width: 600px; margin: 0 auto; padding-bottom: 3rem; }
+
+  /* Header */
+  .header {
+    padding: 2.5rem 1.5rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+  }
+  .header-top { display: flex; align-items: center; gap: 12px; margin-bottom: 1rem; }
+  .flag { font-size: 24px; }
+  .header h1 { font-size: 18px; font-weight: 600; letter-spacing: -0.02em; }
+  .header-meta { font-size: 12px; color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase; }
+
+
+
+  /* Tabs */
+  .tabs {
+    display: flex;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+    position: sticky; top: 0; z-index: 10;
+    overflow-x: auto;
+  }
+  .tab {
+    flex-shrink: 0;
+    padding: 14px 16px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: var(--muted);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.15s;
+    white-space: nowrap;
+    background: none;
+    border-top: none; border-left: none; border-right: none;
+  }
+  .tab.active { color: var(--text); border-bottom-color: var(--text); }
+
+  /* Content */
+  .day { display: none; padding: 1.5rem; }
+  .day.active { display: block; }
+
+  .day-header { margin-bottom: 1.5rem; }
+  .day-header h2 { font-size: 20px; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 2px; }
+  .day-header p { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
+
+  /* Transport block */
+  .transport { margin-bottom: 1.25rem; }
+  .transport-item {
+    display: flex; gap: 12px; align-items: flex-start;
+    padding: 12px 14px;
+    background: var(--accent-light);
+    border-left: 3px solid var(--accent);
+    margin-bottom: 8px;
+  }
+  .transport-item .t-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+  .transport-item .t-body { font-size: 13px; color: var(--accent); line-height: 1.6; }
+  .transport-item .t-body strong { font-weight: 600; color: #1a3d2e; display: block; margin-bottom: 2px; }
+
+  /* Flight block */
+  .flight-block {
+    background: var(--blue-light);
+    border-left: 3px solid var(--blue);
+    padding: 12px 14px;
+    margin-bottom: 8px;
+    display: flex; gap: 12px; align-items: flex-start;
+  }
+  .flight-block .t-icon { font-size: 16px; flex-shrink: 0; }
+  .flight-block .t-body { font-size: 13px; color: var(--blue); line-height: 1.6; }
+  .flight-block .t-body strong { font-weight: 600; color: #1a3552; display: block; margin-bottom: 2px; }
+
+  /* Section label */
+  .section-label {
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--muted);
+    margin: 1.5rem 0 0.75rem;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* Spot card */
+  .spot {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 14px 16px;
+    margin-bottom: 8px;
+  }
+  .spot-name {
+    font-size: 14px; font-weight: 600;
+    letter-spacing: -0.01em;
+    margin-bottom: 6px;
+  }
+  .tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 6px; }
+  .tag {
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 0.04em; text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 999px;
+  }
+  .tag-green { background: var(--accent-light); color: var(--accent); }
+  .tag-warm { background: var(--warm-light); color: var(--warm); }
+  .tag-blue { background: var(--blue-light); color: var(--blue); }
+
+  .detail-label {
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.07em; text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 8px; margin-bottom: 2px;
+  }
+  .detail-text { font-size: 13px; color: #444; line-height: 1.65; }
+
+  .tip {
+    margin-top: 10px;
+    padding: 8px 10px;
+    background: var(--bg);
+    border-left: 2px solid var(--border);
+    font-size: 12px; color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .map-btn {
+    display: inline-flex; align-items: center; gap: 3px;
+    font-size: 10px; font-weight: 600; letter-spacing: 0.03em;
+    color: var(--muted); text-decoration: none;
+    margin-left: 6px; vertical-align: middle;
+    padding: 2px 6px; border: 1px solid var(--border);
+    border-radius: 999px; transition: all 0.15s;
+  }
+  .map-btn:hover { color: var(--accent); border-color: var(--accent); }
 </style>
 </head>
 <body>
 <div class="app">
+
   <div class="header">
-    <h1>🇰🇷 韓國旅遊行程</h1>
-    <p>4/26 – 4/29 · 大邱 &amp; 釜山</p>
+    <div class="header-top">
+      <span class="flag">🇰🇷</span>
+      <div>
+        <h1>韓國旅遊行程</h1>
+        <div class="header-meta">4 / 26 – 4 / 29 &nbsp;·&nbsp; 大邱 &amp; 釜山</div>
+      </div>
+    </div>
   </div>
 
-  <div class="day-tabs">
-    <div class="day-tab active" onclick="showDay(0)">4/26 大邱</div>
-    <div class="day-tab" onclick="showDay(1)">4/27 海岸列車</div>
-    <div class="day-tab" onclick="showDay(2)">4/28 松島纜車</div>
-    <div class="day-tab" onclick="showDay(3)">4/29 慶州</div>
+  <!-- Tabs -->
+  <div class="tabs">
+    <button class="tab active" onclick="showDay(0)">4/26 出發·大邱</button>
+    <button class="tab" onclick="showDay(1)">4/27 海岸列車</button>
+    <button class="tab" onclick="showDay(2)">4/28 松島纜車</button>
+    <button class="tab" onclick="showDay(3)">4/29 慶州</button>
   </div>
 
   <!-- Day 1 -->
-  <div class="day-content active" id="day0">
-    <div class="day-title">大邱一日遊</div>
-    <div class="day-subtitle">大邱 → 釜山 SRT 高鐵</div>
+  <div class="day active" id="day0">
+    <div class="day-header">
+      <h2>出發 → 大邱一日遊</h2>
+      <p>桃園機場 → 金海國際機場 → 大邱 → 釜山</p>
+    </div>
 
-    <div class="transport-card">
-      <div class="transport-icon">🚇</div>
-      <div class="transport-text">
-        <strong>地鐵交通</strong>
-        西面站（219）→ 1號線往多大浦海水浴場方向 → 釜山站（113）
+    <div class="flight-block">
+      <span class="t-icon">✈️</span>
+      <div class="t-body">
+        <strong>航班資訊</strong>
+        桃園機場（TPE）出發　02:25<br>
+        金海國際機場（PUS）抵達　06:05
       </div>
     </div>
-    <div class="transport-card">
-      <div class="transport-icon">🚄</div>
-      <div class="transport-text">
-        <strong>SRT 高鐵</strong>
+
+    <div class="section-label">機場 → 飯店交通（東橫Inn 西面店）</div>
+
+    <div class="spot">
+      <div class="spot-name">輕軌 + 地鐵前往東橫Inn <a class="map-btn" href="https://map.naver.com/v5/search/토요코인 부산 서면" target="_blank">📍 地圖</a></div>
+      <div class="tags"><span class="tag tag-green">最省錢</span><span class="tag tag-green">約 40 分鐘</span></div>
+      <div class="detail-label">路線</div>
+      <div class="detail-text">
+        金海機場站 → 搭<strong>釜山金海輕軌（紫線）</strong>→ 沙上站（Sasang）→ 轉乘<strong>地鐵 2 號線</strong>往萇山方向 → 西面站下車
+      </div>
+      <div class="detail-label">出站方式</div>
+      <div class="detail-text">西面站 10 號出口步行 8–10 分鐘（行李多可走 12 號出口有電梯）</div>
+      <div class="detail-label">注意事項</div>
+      <div class="detail-text">建議提前準備 T-money 卡（韓國悠遊卡），機場入境後左側 CU 便利商店可購買與加值；輕軌站在出境大廳直走方向，跟著指標走</div>
+      <div class="tip">⚠️ 輕軌搭往「西釜山流通地區」方向，到沙上站後跟著綠色②號地鐵指標換乘</div>
+    </div>
+
+    <div class="section-label">SRT 高鐵</div>
+
+    <div class="transport-item">
+      <span class="t-icon">🚄</span>
+      <div class="t-body">
+        <strong>SRT 高鐵 — 前往大邱</strong>
         去程 SRT 322：釜山 → 東大邱　09:32 – 10:11<br>
         回程 SRT 351：東大邱 → 釜山　18:23 – 19:09
       </div>
     </div>
 
-    <div class="section-label">近代文化胡同路線</div>
+    <div class="transport-item">
+      <span class="t-icon">🚇</span>
+      <div class="t-body">
+        <strong>釜山地鐵前往釜山站</strong>
+        西面站（219）→ 1號線往多大浦海水浴場方向 → 釜山站（113）
+      </div>
+    </div>
 
-    <div class="spot-card">
-      <div class="spot-name">近代文化胡同</div>
-      <div class="spot-detail">
-        <span class="tag tag-teal">步行路線</span><span class="tag tag-amber">1.64 公里</span>
-        <span class="label">建議遊覽時間</span>
-        2 小時｜從中央路地鐵站 1 號出口出發
-        <span class="label">小提示</span>
-        可到旅遊資訊中心索取地圖，沿長胡同與鐘路方向前進
-      </div>
+    <div class="section-label">大邱景點</div>
+
+    <div class="spot">
+      <div class="spot-name">近代文化胡同 <a class="map-btn" href="https://map.naver.com/v5/search/근대문화골목" target="_blank">📍 地圖</a></div>
+      <div class="tags"><span class="tag tag-green">步行路線</span><span class="tag tag-green">1.64 km</span></div>
+      <div class="detail-label">建議遊覽時間</div>
+      <div class="detail-text">2 小時｜從中央路地鐵站 1 號出口出發，可至旅遊資訊中心索取地圖</div>
     </div>
-    <div class="spot-card">
-      <div class="spot-name">星巴克大邱鐘路古宅店</div>
-      <div class="spot-detail">融合韓屋風情的特色星巴克，熱門打卡景點</div>
+
+    <div class="spot">
+      <div class="spot-name">星巴克大邱鐘路古宅店 <a class="map-btn" href="https://map.naver.com/v5/search/스타벅스 대구 종로 고택점" target="_blank">📍 地圖</a></div>
+      <div class="detail-text">融合韓屋風情的特色星巴克，熱門打卡景點</div>
     </div>
-    <div class="spot-card">
-      <div class="spot-name">峨洋鐵橋</div>
-      <div class="spot-detail">
-        <span class="label">交通</span>
-        搭大邱地鐵至峨洋橋站 1 號出口，步行約 5 分鐘
-      </div>
+
+    <div class="spot">
+      <div class="spot-name">峨洋鐵橋 <a class="map-btn" href="https://map.naver.com/v5/search/아양철교" target="_blank">📍 地圖</a></div>
+      <div class="detail-label">交通</div>
+      <div class="detail-text">搭大邱地鐵至峨洋橋站 1 號出口，步行約 5 分鐘</div>
     </div>
-    <div class="spot-card">
-      <div class="spot-name">壽城池</div>
-      <div class="spot-detail">
-        <span class="label">交通</span>
-        搭大邱地鐵至壽城池站 1 號出口
-        <span class="label">水舞秀時間（5/8/9/10 月）</span>
-        13:00 / 16:00 / 20:00 / 21:00
-        <div class="tip-box">🎆 全韓國最大的音樂水舞秀！</div>
-      </div>
+
+    <div class="spot">
+      <div class="spot-name">壽城池 <a class="map-btn" href="https://map.naver.com/v5/search/수성못" target="_blank">📍 地圖</a></div>
+      <div class="detail-label">交通</div>
+      <div class="detail-text">搭大邱地鐵至壽城池站 1 號出口</div>
+      <div class="detail-label">水舞秀時間（5/8/9/10 月）</div>
+      <div class="detail-text">13:00 / 16:00 / 20:00 / 21:00</div>
+      <div class="tip">全韓國最大的音樂水舞秀</div>
     </div>
-    <div class="spot-card">
-      <div class="spot-name">金光石路</div>
-      <div class="spot-detail">文化散步小路</div>
+
+    <div class="spot">
+      <div class="spot-name">桂山天主教教堂 <a class="map-btn" href="https://map.naver.com/v5/search/계산성당" target="_blank">📍 地圖</a></div>
+      <div class="detail-label">交通</div>
+      <div class="detail-text">半月堂站 18 號出口，步行約 15 分鐘</div>
+      <div class="detail-label">開放時間</div>
+      <div class="detail-text">06:30 – 21:00（週一公休）</div>
+      <div class="tip">⚠️ 彌撒期間請勿拍照</div>
     </div>
-    <div class="spot-card">
-      <div class="spot-name">桂山天主教教堂</div>
-      <div class="spot-detail">
-        <span class="label">地址</span>
-        大邱廣域市中區西城路 10
-        <span class="label">交通</span>
-        半月堂站 18 號出口，步行約 15 分鐘
-        <span class="label">開放時間</span>
-        06:30 – 21:00（週一公休）
-        <div class="tip-box">⚠️ 彌撒期間請勿拍照，尊重宗教場所</div>
-      </div>
+
+    <div class="spot">
+      <div class="spot-name">啟明大學城西校區 <a class="map-btn" href="https://map.naver.com/v5/search/계명대학교 성서캠퍼스" target="_blank">📍 地圖</a></div>
+      <div class="detail-label">交通</div>
+      <div class="detail-text">啟明大學站 1 號出口，步行約 5 分鐘至大學正門</div>
     </div>
-    <div class="spot-card">
-      <div class="spot-name">啟明大學城西校區</div>
-      <div class="spot-detail">
-        <span class="label">交通</span>
-        搭至啟明大學站 1 號出口，步行約 5 分鐘至大學正門
-      </div>
-    </div>
-    <div class="spot-card">
-      <div class="spot-name">安吉郎烤腸一條街</div>
-      <div class="spot-detail">
-        <span class="tag tag-coral">必吃</span>
-        <span class="label">交通</span>
-        安吉郎站 3 號出口，步行約 8 分鐘
-        <span class="label">營業時間</span>
-        11:00 – 22:00（每月第 1、3 個週日公休）
-      </div>
+
+    <div class="spot">
+      <div class="spot-name">安吉郎烤腸一條街 <a class="map-btn" href="https://map.naver.com/v5/search/안지랑 곱창골목" target="_blank">📍 地圖</a></div>
+      <div class="tags"><span class="tag tag-warm">必吃</span></div>
+      <div class="detail-label">交通</div>
+      <div class="detail-text">安吉郎站 3 號出口，步行約 8 分鐘</div>
+      <div class="detail-label">營業時間</div>
+      <div class="detail-text">11:00 – 22:00（每月第 1、3 個週日公休）</div>
     </div>
   </div>
 
   <!-- Day 2 -->
-  <div class="day-content" id="day1">
-    <div class="day-title">海岸列車 + 膠囊列車</div>
-    <div class="day-subtitle">松亭 → 青沙浦 → 尾浦</div>
+  <div class="day" id="day1">
+    <div class="day-header">
+      <h2>海岸列車 + 膠囊列車</h2>
+      <p>松亭 → 青沙浦 → 尾浦</p>
+    </div>
 
-    <div class="transport-card">
-      <div class="transport-icon">🚇</div>
-      <div class="transport-text">
+    <div class="transport-item">
+      <span class="t-icon">🚇</span>
+      <div class="t-body">
         <strong>前往松亭站</strong>
         地鐵 2 號線至 BEXCO 站 或 1 號線至教大站，轉乘東海線往太和江方向，至「松亭站（K121）」下車
       </div>
@@ -153,74 +305,71 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Noto Sans TC', sans-seri
 
     <div class="section-label">景點與活動</div>
 
-    <div class="spot-card">
+    <div class="spot">
       <div class="spot-name">海岸列車（藍線公園）</div>
-      <div class="spot-detail">
-        <span class="tag tag-teal">Visit Busan Pass 免費</span>
-        <span class="label">松亭站到售票處</span>
-        出站後步行 10–15 分鐘至松亭海水浴場方向
-        <span class="label">注意事項</span>
-        持 Visit Busan Pass 須先至尾浦站、青沙浦站或松亭站換乘車券，當日可沿線自由上下車一次
-      </div>
+      <div class="tags"><span class="tag tag-green">Visit Busan Pass 免費</span></div>
+      <div class="detail-label">松亭站到售票處</div>
+      <div class="detail-text">出站後步行 10–15 分鐘至松亭海水浴場方向</div>
+      <div class="detail-label">注意事項</div>
+      <div class="detail-text">持 Visit Busan Pass 須先至尾浦站、青沙浦站或松亭站換乘車券，當日可沿線自由上下車一次</div>
     </div>
-    <div class="spot-card">
-      <div class="spot-name">青沙浦</div>
-      <div class="spot-detail">
-        知名打卡景點
-        <div class="tip-box">⚠️ 在斑馬線拍照需注意車輛安全，綠燈時快速拍攝（2–3 秒）後立即離開</div>
-      </div>
+
+    <div class="spot">
+      <div class="spot-name">青沙浦 <a class="map-btn" href="https://map.naver.com/v5/search/청사포" target="_blank">📍 地圖</a></div>
+      <div class="detail-text">知名打卡景點</div>
+      <div class="tip">⚠️ 在斑馬線拍照需注意車輛安全，綠燈時快速拍攝（2–3 秒）後立即離開</div>
     </div>
-    <div class="spot-card">
-      <div class="spot-name">옥이보리밥（燕麥飯）</div>
-      <div class="spot-detail">
-        <span class="tag tag-coral">推薦餐廳</span>
-        健康韓式大麥蔬菜拌飯，附豐盛小菜；海鮮煎餅份量大，兩人份量充足
-        <span class="label">地址</span>
-        62 Cheongsapo-ro 67beon-gil, Haeundae-gu
-        <span class="label">營業時間</span>
-        11:00 – 15:00（週日公休）
-      </div>
+
+    <div class="spot">
+      <div class="spot-name">옥이보리밥（燕麥飯）<a class="map-btn" href="https://map.naver.com/v5/search/옥이보리밥" target="_blank">📍 地圖</a></div>
+      <div class="tags"><span class="tag tag-warm">推薦餐廳</span></div>
+      <div class="detail-label">地址</div>
+      <div class="detail-text">62 Cheongsapo-ro 67beon-gil, Haeundae-gu</div>
+      <div class="detail-label">營業時間</div>
+      <div class="detail-text">11:00 – 15:00（週日公休）</div>
+      <div class="tip">健康韓式大麥蔬菜拌飯，附豐盛小菜；海鮮煎餅份量大，兩人份量充足</div>
     </div>
-    <div class="spot-card">
+
+    <div class="spot">
       <div class="spot-name">膠囊列車</div>
-      <div class="spot-detail">
-        <span class="tag tag-blue">需提前購票</span>
-        <span class="label">時段</span>
-        14:30 – 15:00，青沙浦站 → 尾浦站
-        <span class="label">購票說明</span>
-        Kkday / Klook / 官網購票不需換票，月台出示 QR Code 即可；購票時間為入場排隊時間
-        <span class="label">月台位置</span>
-        膠囊列車在 2F，海岸列車在 1F，注意別走錯！
-      </div>
+      <div class="tags"><span class="tag tag-blue">需提前購票</span></div>
+      <div class="detail-label">時段</div>
+      <div class="detail-text">14:30 – 15:00，青沙浦站 → 尾浦站</div>
+      <div class="detail-label">購票說明</div>
+      <div class="detail-text">Kkday / Klook / 官網購票不需換票，月台出示 QR Code 即可；購票時間為入場排隊時間</div>
+      <div class="detail-label">月台位置</div>
+      <div class="detail-text">膠囊列車在 2F，海岸列車在 1F，注意別走錯</div>
     </div>
-    <div class="spot-card">
+
+    <div class="spot">
       <div class="spot-name">尾浦站交通</div>
-      <div class="spot-detail">
-        <span class="label">方式一</span>
-        海雲台站搭 39、141、100、200 號公車，至「미포.문탠로드입구」下車，步行 8 分鐘
-        <span class="label">方式二</span>
-        從海水浴場步行約 17 分鐘
-        <span class="label">方式三（多人推薦）</span>
-        搭計程車，目的地輸入「미포역」
-      </div>
+      <div class="detail-label">方式一</div>
+      <div class="detail-text">海雲台站搭 39、141、100、200 號公車，至「미포.문탠로드입구」下車，步行 8 分鐘</div>
+      <div class="detail-label">方式二</div>
+      <div class="detail-text">從海水浴場步行約 17 分鐘</div>
+      <div class="detail-label">方式三（多人推薦）</div>
+      <div class="detail-text">搭計程車，目的地輸入「미포역」</div>
     </div>
   </div>
 
   <!-- Day 3 -->
-  <div class="day-content" id="day2">
-    <div class="day-title">松島纜車</div>
-    <div class="day-subtitle">釜山松島海上纜車 + 周邊景點</div>
+  <div class="day" id="day2">
+    <div class="day-header">
+      <h2>松島纜車</h2>
+      <p>釜山松島海上纜車 + 周邊景點</p>
+    </div>
 
-    <div class="transport-card">
-      <div class="transport-icon">🚌</div>
-      <div class="transport-text">
+    <div class="transport-item">
+      <span class="t-icon">🚌</span>
+      <div class="t-body">
         <strong>從札嘎其站（推薦）</strong>
         2 號出口外「忠武洞交叉路站」轉乘 6、26、30、71、96、96-1 公車，至「岩南洞居民中心站」下車，步行約 10 分鐘
       </div>
     </div>
-    <div class="transport-card">
-      <div class="transport-icon">🚌</div>
-      <div class="transport-text">
+
+    <div class="transport-item">
+      <span class="t-icon">🚌</span>
+      <div class="t-body">
         <strong>從南浦站</strong>
         8 號出口外「影島大橋．南浦站」轉乘 6、30、71 公車，至「岩南洞居民中心站」下車，步行約 10 分鐘
       </div>
@@ -228,38 +377,36 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Noto Sans TC', sans-seri
 
     <div class="section-label">景點</div>
 
-    <div class="spot-card">
-      <div class="spot-name">松島海上纜車</div>
-      <div class="spot-detail">
-        <span class="tag tag-teal">釜山通行證免費</span>
-        持釜山通行證可免費兌換水晶車廂往返票，至現場售票處兌換
-      </div>
+    <div class="spot">
+      <div class="spot-name">松島海上纜車 <a class="map-btn" href="https://map.naver.com/v5/search/송도해상케이블카" target="_blank">📍 地圖</a></div>
+      <div class="tags"><span class="tag tag-green">釜山通行證免費</span></div>
+      <div class="detail-text">持釜山通行證可免費兌換水晶車廂往返票，至現場售票處兌換</div>
     </div>
-    <div class="spot-card">
-      <div class="spot-name">松島龍宮雲橋</div>
-      <div class="spot-detail">
-        <span class="tag tag-amber">門票 1,000 韓元</span><span class="tag tag-teal">釜山PASS免費</span>
-        從纜車 Sky Park 站旁斜坡沿「願望之龍」步行約 5 分鐘抵達吊橋入口
-        <div class="tip-box">持 BIG3/BIG5 數量限制型通行證者，建議將額度保留給其他高價景點</div>
-      </div>
+
+    <div class="spot">
+      <div class="spot-name">松島龍宮雲橋 <a class="map-btn" href="https://map.naver.com/v5/search/송도용궁구름다리" target="_blank">📍 地圖</a></div>
+      <div class="tags"><span class="tag tag-warm">門票 1,000 韓元</span><span class="tag tag-green">釜山PASS免費</span></div>
+      <div class="detail-text">從纜車 Sky Park 站旁斜坡沿「願望之龍」步行約 5 分鐘抵達吊橋入口</div>
+      <div class="tip">持 BIG3/BIG5 數量限制型通行證者，建議將額度保留給其他高價景點</div>
     </div>
-    <div class="spot-card">
-      <div class="spot-name">松島天空步道</div>
-      <div class="spot-detail">
-        位於纜車起點松島灣站旁，全長 365 公尺
-        <div class="tip-box">韓國最長海上步道！與青沙浦天空步道、五六島天空步道合稱「釜山三大天空步道」</div>
-      </div>
+
+    <div class="spot">
+      <div class="spot-name">松島天空步道 <a class="map-btn" href="https://map.naver.com/v5/search/송도스카이워크" target="_blank">📍 地圖</a></div>
+      <div class="detail-text">位於纜車起點松島灣站旁，全長 365 公尺</div>
+      <div class="tip">韓國最長海上步道！與青沙浦天空步道、五六島天空步道合稱「釜山三大天空步道」</div>
     </div>
   </div>
 
   <!-- Day 4 -->
-  <div class="day-content" id="day3">
-    <div class="day-title">KLOOK 慶州一日遊</div>
-    <div class="day-subtitle">跟團一日遊行程</div>
+  <div class="day" id="day3">
+    <div class="day-header">
+      <h2>KLOOK 慶州一日遊</h2>
+      <p>跟團一日遊行程</p>
+    </div>
 
-    <div class="transport-card">
-      <div class="transport-icon">📍</div>
-      <div class="transport-text">
+    <div class="transport-item">
+      <span class="t-icon">📍</span>
+      <div class="t-body">
         <strong>集合地點</strong>
         地鐵西面站 12 號出口（地鐵站出口，非購物中心出口）
       </div>
@@ -267,30 +414,29 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Noto Sans TC', sans-seri
 
     <div class="section-label">行程資訊</div>
 
-    <div class="spot-card">
-      <div class="spot-name">集合 &amp; 回程時間</div>
-      <div class="spot-detail">
-        <span class="label">集合時間</span>
-        10:10 西面站 12 號出口
-        <span class="label">回程時間</span>
-        21:40 西面站
-        <div class="tip-box">⚠️ 注意：集合在地鐵站出口，不是購物中心出口！建議提前 10 分鐘抵達</div>
-      </div>
+    <div class="spot">
+      <div class="spot-name">集合 &amp; 回程</div>
+      <div class="detail-label">集合時間</div>
+      <div class="detail-text">10:10 西面站 12 號出口</div>
+      <div class="detail-label">回程時間</div>
+      <div class="detail-text">21:40 西面站</div>
+      <div class="tip">⚠️ 注意：集合在地鐵站出口，不是購物中心出口！建議提前 10 分鐘抵達</div>
     </div>
-    <div class="spot-card">
+
+    <div class="spot">
       <div class="spot-name">慶州古都</div>
-      <div class="spot-detail">
-        新羅王朝千年古都，世界文化遺產，擁有豐富歷史遺跡、古墓群與佛教文化景點
-      </div>
+      <div class="detail-text">新羅王朝千年古都，世界文化遺產，擁有豐富歷史遺跡、古墓群與佛教文化景點</div>
     </div>
   </div>
+
 </div>
 
 <script>
-function showDay(index) {
-  document.querySelectorAll('.day-tab').forEach((t, i) => t.classList.toggle('active', i === index));
-  document.querySelectorAll('.day-content').forEach((c, i) => c.classList.toggle('active', i === index));
+function showDay(i) {
+  document.querySelectorAll('.tab').forEach((t,j) => t.classList.toggle('active', i===j));
+  document.querySelectorAll('.day').forEach((d,j) => d.classList.toggle('active', i===j));
 }
+
 </script>
 </body>
 </html>
