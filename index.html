@@ -4,359 +4,272 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>大頭旅行社 — 釜山行</title>
-<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Noto+Sans+TC:wght@700;900&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #EEF9FF;
-    --paper: #F5FDFF;
-    --surface: #FBFEFF;
-    --border: #7ECFE8;
-    --border-dark: #2BAFD0;
-    --text: #0A2733;
-    --muted: #4A8FA3;
-    --accent: #00A0C2;
-    --accent-light: #C8EEF8;
-    --warm: #F07830;
-    --warm-light: #FEF0E4;
-    --blue: #0070B0;
-    --blue-light: #D4EEFA;
-    --stamp-red: #E84820;
-    --ink: #0A2733;
+    --bg: #FFFFFF;
+    --surface: #FFFFFF;
+    --block: #E0E0E0;
+    --glass: rgba(255,255,255,0.65);
+    --glass-strong: rgba(255,255,255,0.88);
+    --glass-border: rgba(60,47,47,0.08);
+    --glass-border-mid: rgba(60,47,47,0.14);
+    --text: #3C2F2F;
+    --text-2: #7A6060;
+    --text-3: #B8A8A8;
+    --primary: #6A5A7A;
+    --primary-dim: rgba(106,90,122,0.10);
+    --primary-border: rgba(106,90,122,0.22);
+    --gold: #B8860B;
+    --gold-dim: rgba(212,175,55,0.10);
+    --gold-border: rgba(212,175,55,0.25);
+    --green-glass: rgba(212,175,55,0.08);
+    --green-border: rgba(212,175,55,0.22);
+    --green-text: #8B6F00;
+    --blue-glass: rgba(106,90,122,0.07);
+    --blue-border: rgba(106,90,122,0.18);
+    --blue-text: #B8371F;
+    --warm-glass: rgba(245,240,230,0.8);
+    --warm-border: rgba(212,175,55,0.2);
+    --warm-text: #8B6F00;
+    --r: 14px;
+    --r-sm: 8px;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
-    font-family: 'Noto Sans TC', sans-serif;
+    font-family: 'Montserrat', 'PingFang TC', 'Noto Sans TC', sans-serif;
     background: var(--bg);
     background-image:
-      radial-gradient(ellipse at 10% 0%, rgba(0,160,194,0.12) 0%, transparent 55%),
-      radial-gradient(ellipse at 90% 100%, rgba(0,112,176,0.10) 0%, transparent 50%);
+      radial-gradient(ellipse 70% 40% at 100% 0%, rgba(106,90,122,0.06) 0%, transparent 55%),
+      radial-gradient(ellipse 50% 35% at 0% 100%, rgba(212,175,55,0.07) 0%, transparent 50%);
+    min-height: 100vh;
     color: var(--text);
-    font-size: 14px;
+    font-size: 14px; letter-spacing: 0.05em;
     line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
   }
 
   .app { max-width: 600px; margin: 0 auto; padding-bottom: 7rem; }
 
-  /* ── Header ── */
   .header {
-    padding: 2rem 1.5rem 1.25rem;
-    background: var(--paper);
-    border-bottom: 2px solid var(--border-dark);
-    position: relative;
-    overflow: hidden;
+    padding: 2.5rem 1.5rem 1.5rem;
+    background: var(--glass-strong);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--glass-border-mid);
+    position: relative; overflow: hidden;
   }
-  .header::before {
-    content: '';
-    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-    background: repeating-linear-gradient(
-      0deg, transparent, transparent 27px,
-      rgba(0,160,194,0.10) 27px, rgba(0,160,194,0.10) 28px
-    );
-    pointer-events: none;
+  .header::after {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(106,90,122,0.3), rgba(212,175,55,0.3), transparent);
   }
-  .header-top { display: flex; align-items: flex-start; gap: 14px; position: relative; }
-  .stamp {
-    width: 52px; height: 52px; border-radius: 50%;
-    border: 2.5px solid var(--stamp-red);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 22px; flex-shrink: 0;
-    color: var(--stamp-red);
-    transform: rotate(-6deg);
-    opacity: 0.85;
+  .header-top { display: flex; align-items: center; gap: 14px; }
+  .header-icon {
+    width: 48px; height: 48px; border-radius: 14px; flex-shrink: 0;
+    background: linear-gradient(135deg, #6A5A7A 0%, #4E3D5E 100%);
+    display: flex; align-items: center; justify-content: center; font-size: 22px;
+    box-shadow: 0 2px 16px rgba(106,90,122,0.3), inset 0 1px 0 rgba(255,255,255,0.25);
   }
-  .header h1 {
-    font-family: 'Zen Maru Gothic', 'Noto Sans TC', sans-serif;
-    font-size: 20px; font-weight: 700;
-    color: var(--text);
-    letter-spacing: 0.02em;
-    line-height: 1.3;
-  }
-  .header-meta {
-    font-size: 11px; color: var(--muted);
-    margin-top: 3px; letter-spacing: 0.06em;
-  }
-  .header-deco {
-    position: absolute; right: 1.5rem; top: 1rem;
-    font-size: 11px; color: var(--muted);
-    writing-mode: vertical-rl;
-    letter-spacing: 0.12em;
-    opacity: 0.5;
-  }
+  .header h1 { font-size: 19px; font-weight: 900; letter-spacing: 0.08em; color: var(--text); line-height: 1.25; }
+  .header-meta { font-size: 11px; color: var(--text-3); margin-top: 2px; letter-spacing: 0.03em; font-weight: 400; }
 
-  /* ── Tabs ── */
   .tabs {
     display: flex;
-    background: var(--paper);
-    border-bottom: 2px solid var(--border-dark);
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--glass-border-mid);
     position: sticky; top: 0; z-index: 10;
-    overflow-x: auto;
-    gap: 0;
+    overflow-x: auto; gap: 0;
   }
   .tabs::-webkit-scrollbar { display: none; }
   .tab {
-    flex-shrink: 0;
-    padding: 11px 13px;
-    font-family: 'Zen Maru Gothic', 'Noto Sans TC', sans-serif;
-    font-size: 11px; font-weight: 500;
-    color: var(--muted);
-    cursor: pointer;
-    border: none; background: none;
-    border-bottom: 3px solid transparent;
-    transition: all 0.15s;
-    white-space: nowrap;
-    line-height: 1.4;
-    text-align: center;
+    flex-shrink: 0; flex: 1;
+    padding: 10px 8px;
+    font-family: 'Montserrat', 'PingFang TC', 'Noto Sans TC', sans-serif;
+    font-size: 11px; font-weight: 700; color: var(--text-3);
+    cursor: pointer; border: none; background: none;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s; white-space: nowrap; text-align: center;
+    line-height: 1.3; min-width: 0; letter-spacing: 0.06em;
   }
-  .tab .tab-date { display: block; font-size: 12px; font-weight: 700; color: var(--text); }
-  .tab .tab-dow { display: block; font-size: 10px; color: var(--muted); }
-  .tab.active { border-bottom-color: var(--accent); }
-  .tab.active .tab-date { color: var(--accent); }
+  .tab .tab-date { display: block; font-size: 12px; font-weight: 900; color: var(--text-2); letter-spacing: 0.06em; }
+  .tab .tab-dow { display: block; font-size: 10px; color: var(--text-3); margin-top: 1px; letter-spacing: 0.08em; font-weight: 700; }
+  .tab.active { border-bottom-color: var(--primary); }
+  .tab.active .tab-date { color: var(--primary); }
+  .tab.active .tab-dow { color: var(--primary); opacity: 0.7; }
 
-  /* ── Day content ── */
-  .day { display: none; padding: 1.25rem 1.25rem 1rem; }
+  .day { display: none; padding: 1.25rem 1rem; }
   .day.active { display: block; }
 
   .day-header { margin-bottom: 1.25rem; }
-  .day-header-inner {
-    display: flex; align-items: flex-start; gap: 12px;
-  }
+  .day-header-inner { display: flex; align-items: center; gap: 12px; }
   .day-date-badge {
     flex-shrink: 0;
-    background: var(--accent);
-    color: #fff;
-    border-radius: 4px;
-    padding: 6px 10px;
-    text-align: center;
-    font-family: 'Zen Maru Gothic', sans-serif;
+    background: linear-gradient(135deg, #6A5A7A 0%, #4E3D5E 100%);
+    color: #fff; border-radius: var(--r-sm);
+    padding: 8px 11px; text-align: center;
+    box-shadow: 0 2px 12px rgba(106,90,122,0.25), inset 0 1px 0 rgba(255,255,255,0.2);
   }
-  .day-date-badge .dnum { font-size: 18px; font-weight: 700; line-height: 1; }
-  .day-date-badge .ddow { font-size: 10px; font-weight: 500; margin-top: 2px; opacity: 0.85; }
-  .day-header h2 {
-    font-family: 'Zen Maru Gothic', 'Noto Sans TC', sans-serif;
-    font-size: 18px; font-weight: 700;
-    color: var(--text); line-height: 1.3; margin-bottom: 3px;
-  }
-  .day-header p { font-size: 11px; color: var(--muted); letter-spacing: 0.04em; }
+  .day-date-badge .dnum { font-size: 16px; font-weight: 900; line-height: 1; letter-spacing: 0.05em; }
+  .day-date-badge .ddow { font-size: 10px; font-weight: 700; margin-top: 2px; opacity: 0.85; letter-spacing: 0.1em; }
+  .day-header h2 { font-size: 18px; font-weight: 900; color: var(--text); line-height: 1.25; letter-spacing: 0.06em; margin-bottom: 3px; }
+  .day-header p { font-size: 11px; color: var(--text-3); font-weight: 700; letter-spacing: 0.08em; }
 
-  /* ── Section label ── */
   .section-label {
-    font-size: 11px; font-weight: 700;
-    letter-spacing: 0.08em;
-    color: var(--muted);
-    margin: 1.25rem 0 0.6rem;
+    font-size: 10px; font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--text-3); margin: 1.25rem 0 0.6rem;
     display: flex; align-items: center; gap: 8px;
   }
   .section-label::after {
     content: ''; flex: 1; height: 1px;
-    background: repeating-linear-gradient(90deg, var(--border) 0, var(--border) 4px, transparent 4px, transparent 8px);
+    background: linear-gradient(90deg, var(--glass-border-mid), transparent);
   }
 
-  /* ── Spot card ── */
   .spot {
-    background: var(--surface);
-    border: 1.5px solid var(--border);
-    border-radius: 6px;
-    padding: 12px 14px;
-    margin-bottom: 8px;
-    position: relative;
+    background: #FFFFFF;
+    border: 1px solid var(--glass-border-mid);
+    border-radius: var(--r);
+    padding: 14px 16px; margin-bottom: 8px;
+    box-shadow: 0 1px 3px rgba(60,47,47,0.04), 0 4px 16px rgba(60,47,47,0.04);
+    position: relative; overflow: hidden;
   }
   .spot::before {
-    content: '';
-    position: absolute; left: -1.5px; top: 8px; bottom: 8px;
-    width: 3px; background: var(--border-dark);
-    border-radius: 0 2px 2px 0;
-    opacity: 0.4;
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,1), transparent);
   }
-  .spot-name {
-    font-family: 'Zen Maru Gothic', 'Noto Sans TC', sans-serif;
-    font-size: 14px; font-weight: 700;
-    margin-bottom: 5px; color: var(--text);
-  }
-  .tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 6px; }
-  .tag {
-    font-size: 10px; font-weight: 700;
-    letter-spacing: 0.03em;
-    padding: 2px 8px;
-    border-radius: 2px;
-    border: 1px solid;
-  }
-  .tag-green { background: var(--accent-light); color: var(--accent); border-color: #b3d4bc; }
-  .tag-warm { background: var(--warm-light); color: var(--warm); border-color: #e8c4a0; }
-  .tag-blue { background: var(--blue-light); color: var(--blue); border-color: #b8d0e8; }
+  .spot-name { font-size: 14px; font-weight: 900; letter-spacing: 0.05em; margin-bottom: 6px; color: var(--text); }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 7px; }
+  .tag { font-size: 10px; font-weight: 500; padding: 2px 9px; border-radius: 999px; letter-spacing: 0.02em; border: 1px solid; }
+  .tag-green { background: var(--gold-dim); color: #7A5C00; border-color: var(--gold-border); }
+  .tag-warm { background: var(--primary-dim); color: #4E3D5E; border-color: var(--primary-border); }
+  .tag-blue { background: rgba(245,240,230,0.8); color: var(--text-2); border-color: var(--glass-border-mid); }
 
   .detail-label {
-    font-size: 10px; font-weight: 700;
-    letter-spacing: 0.06em;
-    color: var(--muted);
-    margin-top: 7px; margin-bottom: 2px;
-    text-transform: uppercase;
+    font-size: 10px; font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--gold); margin-top: 9px; margin-bottom: 2px;
   }
-  .detail-text { font-size: 13px; color: #1e4a56; line-height: 1.7; }
+  .detail-text { font-size: 13px; color: var(--text-2); line-height: 1.7; font-weight: 400; }
 
   .tip {
-    margin-top: 9px;
-    padding: 7px 10px;
-    background: #FFFBE6;
-    border: 1px dashed #C8B840;
-    border-radius: 3px;
-    font-size: 12px; color: #6A5800;
-    line-height: 1.6;
+    margin-top: 10px; padding: 9px 12px;
+    background: var(--block); border: 1px solid var(--gold-border);
+    border-radius: var(--r-sm);
+    font-size: 12px; color: var(--text-2); line-height: 1.65; font-weight: 400;
   }
 
-  /* ── Transport ── */
   .transport-item {
     display: flex; gap: 10px; align-items: flex-start;
-    padding: 10px 12px;
-    background: var(--accent-light);
-    border: 1.5px solid #b3d4bc;
-    border-radius: 6px;
-    margin-bottom: 8px;
+    padding: 12px 14px; background: var(--gold-dim);
+    border: 1px solid var(--gold-border);
+    border-radius: var(--r); margin-bottom: 8px;
+    box-shadow: 0 1px 6px rgba(60,47,47,0.04);
   }
   .transport-item .t-icon { font-size: 16px; flex-shrink: 0; }
-  .transport-item .t-body { font-size: 13px; color: #2d5c3c; line-height: 1.6; }
-  .transport-item .t-body strong { font-weight: 700; display: block; margin-bottom: 2px; color: #1e3d28; }
+  .transport-item .t-body { font-size: 13px; color: #6B4E00; line-height: 1.6; }
+  .transport-item .t-body strong { font-weight: 600; display: block; margin-bottom: 2px; color: #4A3500; }
 
-  /* ── Flight ── */
   .flight-block {
     display: flex; gap: 10px; align-items: flex-start;
-    padding: 10px 12px;
-    background: var(--blue-light);
-    border: 1.5px solid #b8d0e8;
-    border-radius: 6px;
-    margin-bottom: 8px;
+    padding: 12px 14px; background: var(--primary-dim);
+    border: 1px solid var(--primary-border);
+    border-radius: var(--r); margin-bottom: 8px;
+    box-shadow: 0 1px 6px rgba(60,47,47,0.04);
   }
   .flight-block .t-icon { font-size: 16px; flex-shrink: 0; }
-  .flight-block .t-body { font-size: 13px; color: #2a4e75; line-height: 1.6; }
-  .flight-block .t-body strong { font-weight: 700; display: block; margin-bottom: 2px; color: #1a3552; }
+  .flight-block .t-body { font-size: 13px; color: #4E3D5E; line-height: 1.6; }
+  .flight-block .t-body strong { font-weight: 600; display: block; margin-bottom: 2px; color: #3A2D48; }
 
-  /* ── Map button ── */
   .map-btn {
     display: inline-flex; align-items: center; gap: 3px;
-    font-size: 10px; font-weight: 700;
-    color: var(--blue); text-decoration: none;
-    margin-left: 6px; vertical-align: middle;
-    padding: 2px 7px;
-    border: 1px solid #b8d0e8;
-    border-radius: 3px;
-    background: var(--blue-light);
-    transition: opacity 0.15s;
+    font-size: 10px; font-weight: 500; color: var(--primary); text-decoration: none;
+    margin-left: 6px; vertical-align: middle; padding: 2px 8px;
+    border: 1px solid var(--primary-border); border-radius: 999px;
+    background: var(--primary-dim); transition: opacity 0.15s;
   }
   .map-btn:hover { opacity: 0.7; }
 
-  /* ── Intro collapsible ── */
   .intro-toggle {
     display: flex; align-items: center; gap: 5px;
-    font-size: 11px; font-weight: 700; color: var(--muted);
+    font-size: 11px; font-weight: 500; color: var(--text-3);
     cursor: pointer; margin-top: 7px;
-    background: none; border: none; padding: 0;
-    letter-spacing: 0.04em;
+    background: none; border: none; padding: 0; letter-spacing: 0.03em;
   }
-  .intro-toggle .arrow { transition: transform 0.2s; display: inline-block; font-style: normal; font-size: 9px; }
+  .intro-toggle .arrow { transition: transform 0.2s; display: inline-block; font-style: normal; font-size: 9px; color: var(--gold); }
   .intro-toggle.open .arrow { transform: rotate(90deg); }
   .intro-body {
-    display: none; font-size: 12.5px; color: #1e4a56;
-    line-height: 1.8; margin-top: 7px;
-    padding: 9px 11px;
-    background: var(--bg);
-    border-left: 2px solid var(--border-dark);
-    border-radius: 0 4px 4px 0;
+    display: none; font-size: 13px; color: var(--text-2);
+    line-height: 1.8; margin-top: 8px; padding: 10px 12px;
+    background: var(--block);
+    border-left: 2px solid var(--gold-border);
+    border-radius: 0 var(--r-sm) var(--r-sm) 0; font-weight: 400;
   }
   .intro-body.open { display: block; }
 
-  /* ── Food sections ── */
   .food-section-label {
-    font-size: 11px; font-weight: 700;
-    letter-spacing: 0.06em;
-    color: var(--warm);
-    margin: 1.25rem 0 0.6rem;
+    font-size: 10px; font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--primary); margin: 1.25rem 0 0.6rem;
     display: flex; align-items: center; gap: 8px;
   }
   .food-section-label::after {
     content: ''; flex: 1; height: 1px;
-    background: repeating-linear-gradient(90deg, #e8c4a0 0, #e8c4a0 4px, transparent 4px, transparent 8px);
+    background: linear-gradient(90deg, var(--primary-border), transparent);
   }
   .food-spot {
-    background: var(--warm-light);
-    border: 1.5px solid #e8c4a0;
-    border-radius: 6px;
-    padding: 10px 13px;
-    margin-bottom: 7px;
+    background: var(--primary-dim);
+    border: 1px solid var(--primary-border); border-radius: var(--r);
+    padding: 11px 14px; margin-bottom: 7px;
+    box-shadow: 0 1px 4px rgba(60,47,47,0.04);
   }
-  .food-spot .spot-name { font-size: 13px; }
-  .food-spot .food-desc { font-size: 12px; color: #7a3e10; line-height: 1.6; margin-top: 2px; }
+  .food-spot .spot-name { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
+  .food-spot .food-desc { font-size: 12px; color: var(--text-2); line-height: 1.6; font-weight: 400; }
   .cafe-spot {
-    background: #EAF7FB;
-    border: 1.5px solid #A8D8E4;
-    border-radius: 6px;
-    padding: 10px 13px;
-    margin-bottom: 7px;
+    background: var(--gold-dim);
+    border: 1px solid var(--gold-border); border-radius: var(--r);
+    padding: 11px 14px; margin-bottom: 7px;
+    box-shadow: 0 1px 4px rgba(60,47,47,0.04);
   }
-  .cafe-spot .spot-name { font-size: 13px; }
-  .cafe-spot .food-desc { font-size: 12px; color: #1e5a6e; line-height: 1.6; margin-top: 2px; }
+  .cafe-spot .spot-name { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
+  .cafe-spot .food-desc { font-size: 12px; color: var(--text-2); line-height: 1.6; font-weight: 400; }
 
-  /* ── FAB ── */
   .fab-wrap {
-    position: fixed;
-    bottom: 28px;
-    right: 50%;
-    transform: translateX(50%);
-    z-index: 100;
-    display: flex;
-    justify-content: center;
+    position: fixed; bottom: 28px; right: 50%; transform: translateX(50%); z-index: 100;
   }
   .fab {
     display: inline-flex; align-items: center; gap: 8px;
-    padding: 12px 28px;
-    background: var(--paper);
-    color: var(--text);
-    border: 2px solid var(--border-dark);
-    border-radius: 999px;
-    font-family: 'Zen Maru Gothic', 'Noto Sans TC', sans-serif;
-    font-size: 14px; font-weight: 700;
-    cursor: pointer;
-    box-shadow: 3px 3px 0 var(--border-dark);
-    transition: box-shadow 0.1s, transform 0.1s;
-    letter-spacing: 0.04em;
+    padding: 13px 28px;
+    background: linear-gradient(135deg, #6A5A7A 0%, #4E3D5E 100%);
+    color: #fff; border: none; border-radius: 999px;
+    font-family: 'Montserrat', 'PingFang TC', 'Noto Sans TC', sans-serif;
+    font-size: 14px; font-weight: 700; cursor: pointer;
+    box-shadow: 0 4px 20px rgba(106,90,122,0.35), inset 0 1px 0 rgba(255,255,255,0.2);
+    transition: transform 0.15s, box-shadow 0.15s; letter-spacing: 0.08em;
   }
-  .fab:active {
-    box-shadow: 1px 1px 0 var(--border-dark);
-    transform: translate(2px, 2px);
-  }
+  .fab:active { transform: scale(0.97); box-shadow: 0 2px 10px rgba(106,90,122,0.25); }
   .fab .fab-icon { font-size: 16px; }
 
-  /* ── Expense modal ── */
   .expense-overlay {
-    display: none;
-    position: fixed; inset: 0;
-    background: rgba(44,36,22,0.45);
+    display: none; position: fixed; inset: 0;
+    background: rgba(60,47,47,0.3); backdrop-filter: blur(4px);
     z-index: 200; align-items: flex-end; justify-content: center;
   }
   .expense-overlay.open { display: flex; }
   .expense-sheet {
-    background: var(--paper);
-    width: 100%; max-width: 600px;
-    max-height: 90vh; overflow-y: auto;
-    padding: 1.5rem;
-    border-radius: 12px 12px 0 0;
-    border-top: 3px solid var(--border-dark);
-    background-image: repeating-linear-gradient(
-      0deg, transparent, transparent 27px,
-      rgba(14,136,168,0.07) 27px, rgba(14,136,168,0.07) 28px
-    );
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px);
+    width: 100%; max-width: 600px; max-height: 90vh; overflow-y: auto;
+    padding: 1.5rem; border-radius: 20px 20px 0 0;
+    border-top: 2px solid var(--primary);
+    box-shadow: 0 -4px 40px rgba(60,47,47,0.12);
   }
-  .sheet-header {
-    display: flex; justify-content: space-between; align-items: center;
-    margin-bottom: 1.25rem;
-  }
-  .sheet-header h2 {
-    font-family: 'Zen Maru Gothic', sans-serif;
-    font-size: 18px; font-weight: 700;
-  }
+  .sheet-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; }
+  .sheet-header h2 { font-size: 17px; font-weight: 900; letter-spacing: 0.06em; color: var(--text); }
   .sheet-close {
-    font-size: 20px; color: var(--muted); background: none;
-    border: none; cursor: pointer; padding: 4px;
-    font-family: 'Zen Maru Gothic', sans-serif;
+    width: 28px; height: 28px; border-radius: 999px;
+    background: var(--block); color: var(--text-2);
+    border: none; cursor: pointer; font-size: 14px; letter-spacing: 0.05em;
+    display: flex; align-items: center; justify-content: center;
   }
 </style>
 </head>
@@ -365,14 +278,14 @@
 
   <div class="header">
     <div class="header-top">
-      <div class="stamp">🇰🇷</div>
+      <div class="header-icon">🇰🇷</div>
       <div>
         <h1>大頭旅行社・釜山行</h1>
         <div class="header-meta">4/26 – 5/2 · 大邱 釜山 慶州</div>
       </div>
     </div>
-    <div class="header-deco">2 0 2 6 · K O R E A</div>
   </div>
+
 
   <!-- Tabs -->
   <div class="tabs">
@@ -940,45 +853,45 @@
       </div>
 
       <!-- Name setting -->
-      <div style="background:var(--surface); border:1.5px solid var(--border); border-radius:6px; padding:12px 14px; margin-bottom:12px;">
+      <div style="background:#FFFFFF; border:1px solid var(--glass-border-mid); border-radius:12px; padding:12px 14px; margin-bottom:12px;">
         <div style="font-family:'Zen Maru Gothic','Noto Sans TC',sans-serif; font-size:14px; font-weight:700; margin-bottom:8px; color:var(--text);">成員名稱</div>
         <div style="display:flex; gap:6px;">
-          <input type="text" id="name0" placeholder="大頭之友" maxlength="6" style="flex:1; min-width:0; padding:8px 4px; border:1px solid var(--border); font-size:12px; background:var(--bg); text-align:center; border-radius:4px;">
-          <input type="text" id="name1" placeholder="大頭本人" maxlength="6" style="flex:1; min-width:0; padding:8px 4px; border:1px solid var(--border); font-size:12px; background:var(--bg); text-align:center; border-radius:4px;">
-          <input type="text" id="name2" placeholder="陳小俠" maxlength="6" style="flex:1; min-width:0; padding:8px 4px; border:1px solid var(--border); font-size:12px; background:var(--bg); text-align:center; border-radius:4px;">
+          <input type="text" id="name0" placeholder="大頭之友" maxlength="6" style="flex:1; min-width:0; padding:8px 4px; border:1px solid var(--border); font-size:12px; background:var(--block); color:var(--text); text-align:center; border-radius:8px;">
+          <input type="text" id="name1" placeholder="大頭本人" maxlength="6" style="flex:1; min-width:0; padding:8px 4px; border:1px solid var(--border); font-size:12px; background:var(--block); color:var(--text); text-align:center; border-radius:8px;">
+          <input type="text" id="name2" placeholder="陳小俠" maxlength="6" style="flex:1; min-width:0; padding:8px 4px; border:1px solid var(--border); font-size:12px; background:var(--block); color:var(--text); text-align:center; border-radius:8px;">
         </div>
       </div>
 
       <!-- Rate setting -->
-      <div style="background:var(--surface); border:1.5px solid var(--border); border-radius:6px; padding:12px 14px; margin-bottom:12px;">
+      <div style="background:#FFFFFF; border:1px solid var(--glass-border-mid); border-radius:12px; padding:12px 14px; margin-bottom:12px;">
         <div style="font-family:'Zen Maru Gothic','Noto Sans TC',sans-serif; font-size:14px; font-weight:700; margin-bottom:8px; color:var(--text);">匯率設定</div>
         <div style="display:flex; align-items:center; gap:8px;">
           <span style="font-size:13px; color:var(--muted); flex-shrink:0;">1 TWD =</span>
-          <input type="number" id="rate" value="42" min="1" style="width:72px; padding:6px 8px; border:1px solid var(--border); font-size:13px; background:var(--bg); border-radius:4px;">
+          <input type="number" id="rate" value="42" min="1" style="width:72px; padding:6px 8px; border:1px solid var(--glass-border); font-size:13px; background:var(--block); color:var(--text); border-radius:4px;">
           <span style="font-size:13px; color:var(--muted);">KRW</span>
         </div>
       </div>
 
       <!-- Add expense form -->
-      <div style="background:var(--surface); border:1.5px solid var(--border); border-radius:6px; padding:12px 14px; margin-bottom:12px;">
+      <div style="background:#FFFFFF; border:1px solid var(--glass-border-mid); border-radius:12px; padding:12px 14px; margin-bottom:12px;">
         <div style="font-family:'Zen Maru Gothic','Noto Sans TC',sans-serif; font-size:14px; font-weight:700; margin-bottom:10px; color:var(--text);">新增費用</div>
         <div style="display:flex; flex-direction:column; gap:8px;">
-          <input type="text" id="exp-desc" placeholder="項目名稱（例：膠囊列車）" style="padding:10px; border:1px solid var(--border); font-size:13px; background:var(--bg); width:100%; border-radius:4px;">
+          <input type="text" id="exp-desc" placeholder="項目名稱（例：膠囊列車）" style="padding:10px; border:1px solid var(--glass-border); font-size:13px; background:var(--block); color:var(--text); width:100%; border-radius:4px;">
           <div style="display:flex; gap:8px;">
-            <input type="number" id="exp-amount" placeholder="金額" style="flex:1; min-width:0; padding:10px; border:1px solid var(--border); font-size:13px; background:var(--bg); border-radius:4px;">
-            <select id="exp-currency" style="width:90px; flex-shrink:0; padding:10px 6px; border:1px solid var(--border); font-size:12px; background:var(--bg); border-radius:4px;">
+            <input type="number" id="exp-amount" placeholder="金額" style="flex:1; min-width:0; padding:10px; border:1px solid var(--glass-border); font-size:13px; background:var(--block); color:var(--text); border-radius:4px;">
+            <select id="exp-currency" style="width:90px; flex-shrink:0; padding:10px 6px; border:1px solid var(--glass-border); font-size:12px; background:var(--block); color:var(--text); border-radius:4px;">
               <option value="KRW">韓元 ₩</option>
               <option value="TWD">台幣 $</option>
             </select>
           </div>
           <div style="display:flex; gap:8px; align-items:center;">
             <span style="font-size:13px; color:var(--muted); flex-shrink:0;">付款人</span>
-            <select id="exp-payer" style="flex:1; min-width:0; padding:10px; border:1px solid var(--border); font-size:13px; background:var(--bg); border-radius:4px;">
+            <select id="exp-payer" style="flex:1; min-width:0; padding:10px; border:1px solid var(--glass-border); font-size:13px; background:var(--block); color:var(--text); border-radius:4px;">
               <option value="0">大頭之友</option>
               <option value="1">大頭本人</option>
               <option value="2">陳小俠</option>
             </select>
-            <button onclick="addExpense()" style="flex-shrink:0; padding:10px 18px; background:var(--accent); color:#fff; border:none; font-size:13px; font-weight:700; cursor:pointer; border-radius:4px; font-family:'Zen Maru Gothic',sans-serif;">新增</button>
+            <button onclick="addExpense()" style="flex-shrink:0; padding:10px 18px; background:var(--primary); color:#FFFFFF; border:none; font-size:13px; font-weight:600; cursor:pointer; border-radius:8px; font-family:'Zen Maru Gothic',sans-serif;">新增</button>
           </div>
         </div>
       </div>
@@ -1069,7 +982,7 @@ function render() {
     payerSel.innerHTML = [0,1,2].map(i => `<option value="${i}" ${cur==i?'selected':''}>${getName(i)}</option>`).join('');
   }
   const list = document.getElementById('exp-list');
-  const cardStyle = 'background:var(--surface); border:1.5px solid var(--border); border-radius:6px; padding:10px 13px; margin-bottom:7px;';
+  const cardStyle = 'background:#FFFFFF; border:1px solid var(--glass-border-mid); border-radius:12px; padding:10px 13px; margin-bottom:7px;';
   if (expenses.length === 0) {
     list.innerHTML = '<div style="font-size:13px;color:var(--muted);padding:12px 0;">尚未新增任何費用</div>';
   } else {
