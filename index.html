@@ -322,15 +322,86 @@
     <div class="spot">
       <div class="spot-name">輕軌 + 地鐵前往東橫Inn <a class="map-btn" href="https://map.naver.com/v5/search/토요코인 부산 서면" target="_blank">📍 地圖</a></div>
       <div class="tags"><span class="tag tag-green">最省錢</span><span class="tag tag-green">約 40 分鐘</span></div>
-      <div class="detail-label">路線</div>
-      <div class="detail-text">
-        金海機場站 → 搭<strong>釜山金海輕軌（紫線）</strong>→ 沙上站（Sasang）→ 轉乘<strong>地鐵 2 號線</strong>往萇山方向 → 西面站下車
+
+      <!-- Visual route -->
+      <div style="margin-top:12px; padding:14px; background:var(--block); border-radius:var(--r-sm);">
+
+        <!-- Step 1 -->
+        <div style="display:flex; align-items:flex-start; gap:10px;">
+          <div style="display:flex; flex-direction:column; align-items:center; flex-shrink:0;">
+            <div style="width:32px; height:32px; border-radius:50%; background:#7B4FBE; color:#fff; display:flex; align-items:center; justify-content:center; font-size:14px;">✈️</div>
+            <div style="width:2px; flex:1; min-height:28px; background:linear-gradient(180deg,#7B4FBE,#7B4FBE); margin:4px 0;"></div>
+          </div>
+          <div style="padding-top:4px;">
+            <div style="font-size:13px; font-weight:700; color:var(--text);">金海國際機場</div>
+            <div style="font-size:11px; color:var(--text-3); margin-top:1px;">出境大廳直走，跟著輕軌指標走</div>
+          </div>
+        </div>
+
+        <!-- Transfer badge 1 -->
+        <div style="display:flex; align-items:center; gap:10px; margin:0;">
+          <div style="width:32px; display:flex; justify-content:center; flex-shrink:0;">
+            <div style="background:#7B4FBE; color:#fff; border-radius:999px; font-size:10px; font-weight:700; padding:2px 8px; letter-spacing:0.04em;">輕軌 紫線</div>
+          </div>
+          <div style="font-size:11px; color:#7B4FBE; font-weight:600;">往「西釜山流通地區」方向</div>
+        </div>
+
+        <!-- Step 2 -->
+        <div style="display:flex; align-items:flex-start; gap:10px;">
+          <div style="display:flex; flex-direction:column; align-items:center; flex-shrink:0;">
+            <div style="width:2px; min-height:8px; background:#7B4FBE; margin-bottom:4px;"></div>
+            <div style="width:32px; height:32px; border-radius:50%; background:#7B4FBE; color:#fff; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:700;">🔄</div>
+            <div style="width:2px; flex:1; min-height:28px; background:linear-gradient(180deg,#7B4FBE,#2A9D4E); margin:4px 0;"></div>
+          </div>
+          <div style="padding-top:12px;">
+            <div style="font-size:13px; font-weight:700; color:var(--text);">沙上站 환승</div>
+            <div style="font-size:11px; color:var(--text-3); margin-top:1px;">跟著綠色 ② 號地鐵指標換乘</div>
+          </div>
+        </div>
+
+        <!-- Transfer badge 2 -->
+        <div style="display:flex; align-items:center; gap:10px; margin:0;">
+          <div style="width:32px; display:flex; justify-content:center; flex-shrink:0;">
+            <div style="background:#2A9D4E; color:#fff; border-radius:999px; font-size:10px; font-weight:700; padding:2px 8px; letter-spacing:0.04em;">地鐵 2號線</div>
+          </div>
+          <div style="font-size:11px; color:#2A9D4E; font-weight:600;">往「萇山（장산）」方向</div>
+        </div>
+
+        <!-- Step 3 -->
+        <div style="display:flex; align-items:flex-start; gap:10px;">
+          <div style="display:flex; flex-direction:column; align-items:center; flex-shrink:0;">
+            <div style="width:2px; min-height:8px; background:#2A9D4E; margin-bottom:4px;"></div>
+            <div style="width:32px; height:32px; border-radius:50%; background:#2A9D4E; color:#fff; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:700;">🚶</div>
+            <div style="width:2px; flex:1; min-height:28px; background:linear-gradient(180deg,#2A9D4E,var(--primary)); margin:4px 0;"></div>
+          </div>
+          <div style="padding-top:4px;">
+            <div style="font-size:13px; font-weight:700; color:var(--text);">西面站 하차</div>
+            <div style="font-size:11px; color:var(--text-3); margin-top:1px;">輕裝 → 8 號出口｜行李多 → 10 號出口（電梯）</div>
+          </div>
+        </div>
+
+        <!-- Transfer badge 3 -->
+        <div style="display:flex; align-items:center; gap:10px; margin:0;">
+          <div style="width:32px; display:flex; justify-content:center; flex-shrink:0;">
+            <div style="background:var(--primary); color:#fff; border-radius:999px; font-size:10px; font-weight:700; padding:2px 8px; letter-spacing:0.04em;">步行 7 分</div>
+          </div>
+          <div style="font-size:11px; color:var(--primary); font-weight:600;">星巴克為路標，往東橫Inn 方向直走</div>
+        </div>
+
+        <!-- Final -->
+        <div style="display:flex; align-items:flex-start; gap:10px;">
+          <div style="display:flex; flex-direction:column; align-items:center; flex-shrink:0;">
+            <div style="width:2px; min-height:8px; background:var(--primary); margin-bottom:4px;"></div>
+            <div style="width:32px; height:32px; border-radius:50%; background:var(--primary); color:#fff; display:flex; align-items:center; justify-content:center; font-size:16px;">🏨</div>
+          </div>
+          <div style="padding-top:4px;">
+            <div style="font-size:13px; font-weight:700; color:var(--text);">東橫Inn 西面店 到達！</div>
+          </div>
+        </div>
+
       </div>
-      <div class="detail-label">出站方式</div>
-      <div class="detail-text">輕裝 → <strong>8 號出口</strong>出站，正前方星巴克，直走約 7 分鐘<br>行李多 → <strong>10 號出口</strong>（有電梯）出站，看到星巴克右轉，直走約 7 分鐘</div>
-      <div class="detail-label">注意事項</div>
-      <div class="detail-text">建議提前準備 T-money 卡（韓國悠遊卡），機場入境後左側 CU 便利商店可購買與加值；輕軌站在出境大廳直走方向，跟著指標走</div>
-      <div class="tip">⚠️ 輕軌搭往「西釜山流通地區」方向，到沙上站後跟著綠色②號地鐵指標換乘</div>
+
+      <div class="tip" style="margin-top:10px;">💡 T-money 卡在機場入境後左側 CU 便利商店購買，輕軌和地鐵都可以刷</div>
     </div>
 
     <div class="section-label">SRT 高鐵</div>
@@ -899,51 +970,46 @@
 
     <div class="section-label">✏️ 自由記事</div>
 
-    <div style="background:#FFFFFF; border:1px solid var(--glass-border-mid); border-radius:var(--r); overflow:hidden; margin-bottom:8px; box-shadow:0 1px 3px rgba(60,47,47,0.04);">
-
-      <!-- Toolbar -->
-      <div style="display:flex; align-items:center; gap:4px; padding:8px 12px; border-bottom:1px solid var(--glass-border-mid); background:var(--block); flex-wrap:wrap;">
-        <button onclick="noteCmd('bold')" title="粗體" style="width:30px;height:30px;border:none;background:none;cursor:pointer;border-radius:6px;font-size:14px;font-weight:700;color:var(--text);">B</button>
-        <button onclick="noteCmd('italic')" title="斜體" style="width:30px;height:30px;border:none;background:none;cursor:pointer;border-radius:6px;font-size:14px;font-style:italic;color:var(--text);">I</button>
-        <button onclick="noteCmd('underline')" title="底線" style="width:30px;height:30px;border:none;background:none;cursor:pointer;border-radius:6px;font-size:14px;text-decoration:underline;color:var(--text);">U</button>
-        <div style="width:1px;height:20px;background:var(--glass-border-mid);margin:0 4px;"></div>
-        <button onclick="noteCmd('insertUnorderedList')" title="項目清單" style="width:30px;height:30px;border:none;background:none;cursor:pointer;border-radius:6px;font-size:16px;color:var(--text);">≡</button>
-        <button onclick="insertCheckbox()" title="待辦清單" style="width:30px;height:30px;border:none;background:none;cursor:pointer;border-radius:6px;font-size:14px;color:var(--text);">☑</button>
-        <div style="width:1px;height:20px;background:var(--glass-border-mid);margin:0 4px;"></div>
-        <button onclick="document.getElementById('note-img-input').click()" title="插入照片" style="width:30px;height:30px;border:none;background:none;cursor:pointer;border-radius:6px;font-size:16px;color:var(--primary);">🖼</button>
-        <input type="file" id="note-img-input" accept="image/*" multiple style="display:none" onchange="insertImages(this)">
-        <div style="flex:1;"></div>
-        <button onclick="clearNote()" title="清除全部" style="font-size:11px;padding:4px 8px;border:1px solid var(--glass-border-mid);background:none;border-radius:6px;color:var(--text-3);cursor:pointer;font-family:inherit;">清除</button>
-      </div>
-
-      <!-- Editor -->
-      <div
-        id="note-editor"
-        contenteditable="true"
-        spellcheck="false"
-        data-placeholder="隨手記下任何事情…&#10;&#10;可以打字、加粗、列清單，也可以插入照片 📷"
-        style="min-height:240px; padding:16px; font-family:'Montserrat','PingFang TC','Noto Sans TC',sans-serif; font-size:13px; color:var(--text); line-height:1.9; letter-spacing:0.04em; outline:none; word-break:break-word;"
-      ></div>
+    <!-- Note list view -->
+    <div id="note-list-view">
+      <div id="note-cards" style="display:flex; flex-direction:column; gap:8px;"></div>
+      <button onclick="addNote()" style="width:100%; margin-top:8px; padding:13px; background:none; border:1.5px dashed var(--glass-border-mid); border-radius:var(--r); font-family:'Montserrat','PingFang TC','Noto Sans TC',sans-serif; font-size:13px; font-weight:700; color:var(--text-3); cursor:pointer; letter-spacing:0.06em;">＋ 新增筆記</button>
     </div>
 
-    <div style="font-size:11px; color:var(--text-3); letter-spacing:0.06em; font-weight:700; text-align:right; margin-bottom:4px;">筆記自動儲存於本機</div>
+    <!-- Single note edit view -->
+    <div id="note-edit-view" style="display:none;">
+      <div style="display:flex; align-items:center; gap:8px; margin-bottom:10px;">
+        <button onclick="closeNoteEditor()" style="padding:6px 12px; background:none; border:1px solid var(--glass-border-mid); border-radius:999px; font-size:12px; font-weight:700; color:var(--text-2); cursor:pointer; font-family:inherit; letter-spacing:0.04em;">← 返回</button>
+        <input id="note-title-input" type="text" placeholder="筆記標題…" style="flex:1; min-width:0; padding:7px 12px; border:1px solid var(--glass-border-mid); border-radius:999px; font-size:13px; font-weight:700; color:var(--text); background:#fff; font-family:inherit; letter-spacing:0.04em; outline:none;">
+      </div>
+
+      <div style="background:#FFFFFF; border:1px solid var(--glass-border-mid); border-radius:var(--r); overflow:hidden; margin-bottom:8px; box-shadow:0 1px 3px rgba(60,47,47,0.04);">
+        <!-- Toolbar -->
+        <div style="display:flex; align-items:center; gap:4px; padding:8px 12px; border-bottom:1px solid var(--glass-border-mid); background:var(--block); flex-wrap:wrap;">
+          <button onclick="noteCmd('bold')" title="粗體" style="width:30px;height:30px;border:none;background:none;cursor:pointer;border-radius:6px;font-size:14px;font-weight:700;color:var(--text);">B</button>
+          <button onclick="noteCmd('italic')" title="斜體" style="width:30px;height:30px;border:none;background:none;cursor:pointer;border-radius:6px;font-size:14px;font-style:italic;color:var(--text);">I</button>
+          <button onclick="noteCmd('underline')" title="底線" style="width:30px;height:30px;border:none;background:none;cursor:pointer;border-radius:6px;font-size:14px;text-decoration:underline;color:var(--text);">U</button>
+          <div style="width:1px;height:20px;background:var(--glass-border-mid);margin:0 4px;"></div>
+          <button onclick="noteCmd('insertUnorderedList')" title="項目清單" style="width:30px;height:30px;border:none;background:none;cursor:pointer;border-radius:6px;font-size:16px;color:var(--text);">≡</button>
+          <button onclick="insertCheckbox()" title="待辦清單" style="width:30px;height:30px;border:none;background:none;cursor:pointer;border-radius:6px;font-size:14px;color:var(--text);">☑</button>
+          <div style="width:1px;height:20px;background:var(--glass-border-mid);margin:0 4px;"></div>
+          <button onclick="document.getElementById('note-img-input').click()" title="插入照片" style="width:30px;height:30px;border:none;background:none;cursor:pointer;border-radius:6px;font-size:16px;color:var(--primary);">🖼</button>
+          <input type="file" id="note-img-input" accept="image/*" multiple style="display:none" onchange="insertImages(this)">
+        </div>
+        <!-- Editor -->
+        <div id="note-editor" contenteditable="true" spellcheck="false"
+          data-placeholder="開始記錄…"
+          style="min-height:260px; padding:16px; font-family:'Montserrat','PingFang TC','Noto Sans TC',sans-serif; font-size:13px; color:var(--text); line-height:1.9; letter-spacing:0.04em; outline:none; word-break:break-word;"></div>
+      </div>
+      <div style="font-size:11px; color:var(--text-3); letter-spacing:0.06em; font-weight:700; text-align:right;">自動儲存於本機</div>
+    </div>
 
     <style>
-      #note-editor:empty:before {
-        content: attr(data-placeholder);
-        color: var(--text-3);
-        pointer-events: none;
-        white-space: pre-line;
-      }
-      #note-editor img {
-        max-width: 100%;
-        border-radius: var(--r-sm);
-        margin: 6px 0;
-        display: block;
-      }
-      #note-editor ul { padding-left: 1.4em; }
-      #note-editor li { margin: 2px 0; }
-      .note-checkbox { accent-color: var(--primary); width:14px; height:14px; margin-right:6px; vertical-align:middle; cursor:pointer; }
+      #note-editor:empty:before { content:attr(data-placeholder); color:var(--text-3); pointer-events:none; }
+      #note-editor img { max-width:100%; border-radius:var(--r-sm); margin:6px 0; display:block; }
+      #note-editor ul { padding-left:1.4em; }
+      #note-editor li { margin:2px 0; }
+      .note-checkbox { accent-color:var(--primary); width:14px; height:14px; margin-right:6px; vertical-align:middle; cursor:pointer; }
     </style>
   </div>
 
@@ -1022,26 +1088,92 @@
 function showDay(i) {
   document.querySelectorAll('.tab').forEach((t,j) => t.classList.toggle('active', i===j));
   document.querySelectorAll('.day').forEach((d,j) => d.classList.toggle('active', i===j));
-  if (i === 7) loadNote();
+  if (i === 7) renderNoteList();
 }
 
-// ── Note editor ──
-function loadNote() {
-  const editor = document.getElementById('note-editor');
-  if (!editor) return;
-  const saved = localStorage.getItem('kr_note_html');
-  if (saved) editor.innerHTML = saved;
+// ── Multi-note system ──
+let currentNoteId = null;
+
+function getNotes() {
+  return JSON.parse(localStorage.getItem('kr_notes_v2') || '[]');
+}
+function saveNotes(notes) {
+  localStorage.setItem('kr_notes_v2', JSON.stringify(notes));
 }
 
-function saveNote() {
-  const editor = document.getElementById('note-editor');
-  if (editor) localStorage.setItem('kr_note_html', editor.innerHTML);
+function renderNoteList() {
+  const notes = getNotes();
+  const container = document.getElementById('note-cards');
+  if (!container) return;
+  if (notes.length === 0) {
+    container.innerHTML = '<div style="font-size:13px;color:var(--text-3);padding:12px 0;text-align:center;letter-spacing:0.06em;">還沒有筆記，點下方新增！</div>';
+    return;
+  }
+  container.innerHTML = notes.map((n, i) => `
+    <div style="background:#fff; border:1px solid var(--glass-border-mid); border-radius:var(--r); padding:13px 14px; display:flex; align-items:center; gap:10px; box-shadow:0 1px 3px rgba(60,47,47,0.04); cursor:pointer;" onclick="openNote(${i})">
+      <div style="font-size:20px; flex-shrink:0;">📄</div>
+      <div style="flex:1; min-width:0;">
+        <div style="font-size:13px; font-weight:700; color:var(--text); letter-spacing:0.04em; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${n.title || '未命名筆記'}</div>
+        <div style="font-size:11px; color:var(--text-3); margin-top:2px; letter-spacing:0.04em;">${n.updated || ''}</div>
+      </div>
+      <button onclick="event.stopPropagation(); deleteNote(${i})" style="flex-shrink:0; width:28px; height:28px; border-radius:999px; background:none; border:1px solid var(--glass-border-mid); color:var(--text-3); font-size:13px; cursor:pointer; display:flex; align-items:center; justify-content:center;">✕</button>
+    </div>
+  `).join('');
 }
 
+function addNote() {
+  const notes = getNotes();
+  notes.push({ title: '', content: '', updated: now() });
+  saveNotes(notes);
+  openNote(notes.length - 1);
+}
+
+function openNote(i) {
+  currentNoteId = i;
+  const notes = getNotes();
+  const n = notes[i];
+  document.getElementById('note-list-view').style.display = 'none';
+  document.getElementById('note-edit-view').style.display = 'block';
+  document.getElementById('note-title-input').value = n.title || '';
+  document.getElementById('note-editor').innerHTML = n.content || '';
+}
+
+function closeNoteEditor() {
+  currentNoteId = null;
+  document.getElementById('note-edit-view').style.display = 'none';
+  document.getElementById('note-list-view').style.display = 'block';
+  renderNoteList();
+}
+
+function saveCurrentNote() {
+  if (currentNoteId === null) return;
+  const notes = getNotes();
+  notes[currentNoteId] = {
+    title: document.getElementById('note-title-input').value,
+    content: document.getElementById('note-editor').innerHTML,
+    updated: now()
+  };
+  saveNotes(notes);
+}
+
+function deleteNote(i) {
+  if (!confirm('確定刪除這則筆記？')) return;
+  const notes = getNotes();
+  notes.splice(i, 1);
+  saveNotes(notes);
+  renderNoteList();
+}
+
+function now() {
+  const d = new Date();
+  return `${d.getMonth()+1}/${d.getDate()} ${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`;
+}
+
+// ── Editor tools ──
 function noteCmd(cmd) {
   document.getElementById('note-editor').focus();
   document.execCommand(cmd, false, null);
-  saveNote();
+  saveCurrentNote();
 }
 
 function insertCheckbox() {
@@ -1049,27 +1181,21 @@ function insertCheckbox() {
   const cb = document.createElement('input');
   cb.type = 'checkbox';
   cb.className = 'note-checkbox';
-  cb.onchange = saveNote;
+  cb.onchange = saveCurrentNote;
   const space = document.createTextNode(' ');
   const br = document.createElement('br');
   const sel = window.getSelection();
   if (sel.rangeCount) {
     const range = sel.getRangeAt(0);
     range.collapse(false);
-    range.insertNode(br);
-    range.insertNode(space);
-    range.insertNode(cb);
-    range.setStartAfter(space);
-    range.collapse(true);
-    sel.removeAllRanges();
-    sel.addRange(range);
+    range.insertNode(br); range.insertNode(space); range.insertNode(cb);
+    range.setStartAfter(space); range.collapse(true);
+    sel.removeAllRanges(); sel.addRange(range);
   } else {
-    const editor = document.getElementById('note-editor');
-    editor.appendChild(cb);
-    editor.appendChild(space);
-    editor.appendChild(br);
+    const ed = document.getElementById('note-editor');
+    ed.appendChild(cb); ed.appendChild(space); ed.appendChild(br);
   }
-  saveNote();
+  saveCurrentNote();
 }
 
 function insertImages(input) {
@@ -1081,41 +1207,25 @@ function insertImages(input) {
     reader.onload = e => {
       const img = document.createElement('img');
       img.src = e.target.result;
-      img.style.maxWidth = '100%';
-      img.style.borderRadius = 'var(--r-sm)';
-      img.style.margin = '6px 0';
-      img.style.display = 'block';
+      img.style.cssText = 'max-width:100%;border-radius:var(--r-sm);margin:6px 0;display:block;';
       const br = document.createElement('br');
       const sel = window.getSelection();
       if (sel.rangeCount) {
         const range = sel.getRangeAt(0);
         range.collapse(false);
-        range.insertNode(br);
-        range.insertNode(img);
-        range.setStartAfter(br);
-        range.collapse(true);
-        sel.removeAllRanges();
-        sel.addRange(range);
-      } else {
-        editor.appendChild(img);
-        editor.appendChild(br);
-      }
-      saveNote();
+        range.insertNode(br); range.insertNode(img);
+        range.setStartAfter(br); range.collapse(true);
+        sel.removeAllRanges(); sel.addRange(range);
+      } else { editor.appendChild(img); editor.appendChild(br); }
+      saveCurrentNote();
     };
     reader.readAsDataURL(file);
   });
   input.value = '';
 }
 
-function clearNote() {
-  if (!confirm('確定要清除所有筆記內容嗎？')) return;
-  const editor = document.getElementById('note-editor');
-  editor.innerHTML = '';
-  localStorage.removeItem('kr_note_html');
-}
-
 document.addEventListener('input', e => {
-  if (e.target.id === 'note-editor') saveNote();
+  if (e.target.id === 'note-editor' || e.target.id === 'note-title-input') saveCurrentNote();
 });
 
 function openExpense() {
