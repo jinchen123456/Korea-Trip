@@ -973,42 +973,44 @@
     <!-- Note list view -->
     <div id="note-list-view">
       <div id="note-cards" style="display:flex; flex-direction:column; gap:8px;"></div>
-      <button onclick="addNote()" style="width:100%; margin-top:8px; padding:13px; background:none; border:1.5px dashed var(--glass-border-mid); border-radius:var(--r); font-family:'Montserrat','PingFang TC','Noto Sans TC',sans-serif; font-size:13px; font-weight:700; color:var(--text-3); cursor:pointer; letter-spacing:0.06em;">＋ 新增筆記</button>
+      <button onclick="addNote()" style="width:100%; margin-top:8px; padding:13px; background:none; border:1.5px dashed var(--glass-border-mid); border-radius:var(--r); font-family:'Montserrat','PingFang TC','Noto Sans TC',sans-serif; font-size:13px; font-weight:700; color:var(--text-3); cursor:pointer; letter-spacing:0.06em; box-sizing:border-box;">＋ 新增筆記</button>
     </div>
 
     <!-- Single note edit view -->
-    <div id="note-edit-view" style="display:none;">
+    <div id="note-edit-view" style="display:none; max-width:100%; overflow:hidden;">
       <div style="display:flex; align-items:center; gap:8px; margin-bottom:10px;">
-        <button onclick="closeNoteEditor()" style="padding:6px 12px; background:none; border:1px solid var(--glass-border-mid); border-radius:999px; font-size:12px; font-weight:700; color:var(--text-2); cursor:pointer; font-family:inherit; letter-spacing:0.04em;">← 返回</button>
-        <input id="note-title-input" type="text" placeholder="筆記標題…" style="flex:1; min-width:0; padding:7px 12px; border:1px solid var(--glass-border-mid); border-radius:999px; font-size:13px; font-weight:700; color:var(--text); background:#fff; font-family:inherit; letter-spacing:0.04em; outline:none;">
+        <button onclick="closeNoteEditor()" style="flex-shrink:0; padding:6px 12px; background:none; border:1px solid var(--glass-border-mid); border-radius:999px; font-size:12px; font-weight:700; color:var(--text-2); cursor:pointer; font-family:inherit; letter-spacing:0.04em;">← 返回</button>
+        <input id="note-title-input" type="text" placeholder="筆記標題…" style="flex:1; min-width:0; padding:7px 12px; border:1px solid var(--glass-border-mid); border-radius:999px; font-size:13px; font-weight:700; color:var(--text); background:#fff; font-family:inherit; letter-spacing:0.04em; outline:none; box-sizing:border-box;">
       </div>
 
-      <div style="background:#FFFFFF; border:1px solid var(--glass-border-mid); border-radius:var(--r); overflow:hidden; margin-bottom:8px; box-shadow:0 1px 3px rgba(60,47,47,0.04);">
+      <div style="background:#FFFFFF; border:1px solid var(--glass-border-mid); border-radius:var(--r); overflow:hidden; margin-bottom:8px; box-shadow:0 1px 3px rgba(60,47,47,0.04); max-width:100%;">
         <!-- Toolbar -->
-        <div style="display:flex; align-items:center; gap:4px; padding:8px 12px; border-bottom:1px solid var(--glass-border-mid); background:var(--block); flex-wrap:wrap;">
-          <button onclick="noteCmd('bold')" title="粗體" style="width:30px;height:30px;border:none;background:none;cursor:pointer;border-radius:6px;font-size:14px;font-weight:700;color:var(--text);">B</button>
-          <button onclick="noteCmd('italic')" title="斜體" style="width:30px;height:30px;border:none;background:none;cursor:pointer;border-radius:6px;font-size:14px;font-style:italic;color:var(--text);">I</button>
-          <button onclick="noteCmd('underline')" title="底線" style="width:30px;height:30px;border:none;background:none;cursor:pointer;border-radius:6px;font-size:14px;text-decoration:underline;color:var(--text);">U</button>
-          <div style="width:1px;height:20px;background:var(--glass-border-mid);margin:0 4px;"></div>
-          <button onclick="noteCmd('insertUnorderedList')" title="項目清單" style="width:30px;height:30px;border:none;background:none;cursor:pointer;border-radius:6px;font-size:16px;color:var(--text);">≡</button>
-          <button onclick="insertCheckbox()" title="待辦清單" style="width:30px;height:30px;border:none;background:none;cursor:pointer;border-radius:6px;font-size:14px;color:var(--text);">☑</button>
-          <div style="width:1px;height:20px;background:var(--glass-border-mid);margin:0 4px;"></div>
-          <button onclick="document.getElementById('note-img-input').click()" title="插入照片" style="width:30px;height:30px;border:none;background:none;cursor:pointer;border-radius:6px;font-size:16px;color:var(--primary);">🖼</button>
+        <div style="display:flex; align-items:center; gap:2px; padding:6px 10px; border-bottom:1px solid var(--glass-border-mid); background:var(--block); flex-wrap:wrap; box-sizing:border-box;">
+          <button onclick="noteCmd('bold')" title="粗體" style="width:30px;height:30px;border:none;background:none;cursor:pointer;border-radius:6px;font-size:14px;font-weight:700;color:var(--text);flex-shrink:0;">B</button>
+          <button onclick="noteCmd('italic')" title="斜體" style="width:30px;height:30px;border:none;background:none;cursor:pointer;border-radius:6px;font-size:14px;font-style:italic;color:var(--text);flex-shrink:0;">I</button>
+          <button onclick="noteCmd('underline')" title="底線" style="width:30px;height:30px;border:none;background:none;cursor:pointer;border-radius:6px;font-size:14px;text-decoration:underline;color:var(--text);flex-shrink:0;">U</button>
+          <div style="width:1px;height:20px;background:var(--glass-border-mid);margin:0 2px;flex-shrink:0;"></div>
+          <button onclick="noteCmd('insertUnorderedList')" title="項目清單" style="width:30px;height:30px;border:none;background:none;cursor:pointer;border-radius:6px;font-size:16px;color:var(--text);flex-shrink:0;">≡</button>
+          <button onclick="insertCheckbox()" title="待辦清單" style="width:30px;height:30px;border:none;background:none;cursor:pointer;border-radius:6px;font-size:14px;color:var(--text);flex-shrink:0;">☑</button>
+          <div style="width:1px;height:20px;background:var(--glass-border-mid);margin:0 2px;flex-shrink:0;"></div>
+          <button onclick="document.getElementById('note-img-input').click()" title="插入照片" style="width:30px;height:30px;border:none;background:none;cursor:pointer;border-radius:6px;font-size:16px;color:var(--primary);flex-shrink:0;">🖼</button>
           <input type="file" id="note-img-input" accept="image/*" multiple style="display:none" onchange="insertImages(this)">
         </div>
         <!-- Editor -->
         <div id="note-editor" contenteditable="true" spellcheck="false"
           data-placeholder="開始記錄…"
-          style="min-height:260px; padding:16px; font-family:'Montserrat','PingFang TC','Noto Sans TC',sans-serif; font-size:13px; color:var(--text); line-height:1.9; letter-spacing:0.04em; outline:none; word-break:break-word;"></div>
+          style="min-height:260px; padding:14px; font-family:'Montserrat','PingFang TC','Noto Sans TC',sans-serif; font-size:13px; color:var(--text); line-height:1.9; letter-spacing:0.04em; outline:none; word-break:break-word; overflow-wrap:break-word; max-width:100%; box-sizing:border-box;"></div>
       </div>
       <div style="font-size:11px; color:var(--text-3); letter-spacing:0.06em; font-weight:700; text-align:right;">自動儲存於本機</div>
     </div>
 
     <style>
+      #note-list-view, #note-edit-view { max-width:100%; overflow:hidden; }
       #note-editor:empty:before { content:attr(data-placeholder); color:var(--text-3); pointer-events:none; }
-      #note-editor img { max-width:100%; border-radius:var(--r-sm); margin:6px 0; display:block; }
+      #note-editor img { max-width:100%; width:100%; height:auto; border-radius:var(--r-sm); margin:6px 0; display:block; }
       #note-editor ul { padding-left:1.4em; }
       #note-editor li { margin:2px 0; }
+      #note-editor * { max-width:100%; box-sizing:border-box; }
       .note-checkbox { accent-color:var(--primary); width:14px; height:14px; margin-right:6px; vertical-align:middle; cursor:pointer; }
     </style>
   </div>
