@@ -15,8 +15,8 @@
     --glass-border: rgba(60,47,47,0.08);
     --glass-border-mid: rgba(60,47,47,0.14);
     --text: #3C2F2F;
-    --text-2: #7A6060;
-    --text-3: #B8A8A8;
+    --text-2: #4A3535;
+    --text-3: #7A6A6A;
     --primary: #6A5A7A;
     --primary-dim: rgba(106,90,122,0.10);
     --primary-border: rgba(106,90,122,0.22);
@@ -322,71 +322,75 @@
 
     <div class="spot">
       <div class="spot-name">輕軌 + 地鐵前往東橫Inn <a class="map-btn" href="https://map.naver.com/v5/search/토요코인 부산 서면" target="_blank">📍 地圖</a></div>
-      <div class="tags"><span class="tag tag-green">最省錢</span><span class="tag tag-green">約 40 分鐘</span></div>
+      <div class="tags"><span class="tag tag-green">最省錢</span><span class="tag tag-green">約 43 分鐘</span><span class="tag tag-green">₩2,100</span></div>
+      <div style="font-size:11px; color:var(--text-3); margin-bottom:8px;">參考資料：<a href="https://nicklee.tw/2460/pus-airport-transportation/" target="_blank" style="color:var(--gold); text-decoration:none; font-weight:700;">【釜山金海機場交通】金海機場到西面 →</a></div>
 
       <!-- Visual route -->
       <div style="margin-top:12px; padding:14px; background:var(--block); border-radius:var(--r-sm);">
 
-        <!-- Step 1 -->
+        <!-- Step 1: Airport -->
         <div style="display:flex; align-items:flex-start; gap:10px;">
           <div style="display:flex; flex-direction:column; align-items:center; flex-shrink:0;">
             <div style="width:32px; height:32px; border-radius:50%; background:#7B4FBE; color:#fff; display:flex; align-items:center; justify-content:center; font-size:14px;">✈️</div>
-            <div style="width:2px; flex:1; min-height:28px; background:linear-gradient(180deg,#7B4FBE,#7B4FBE); margin:4px 0;"></div>
+            <div style="width:2px; flex:1; min-height:32px; background:#7B4FBE; margin:4px 0;"></div>
           </div>
           <div style="padding-top:4px;">
-            <div style="font-size:13px; font-weight:700; color:var(--text);">金海國際機場</div>
-            <div style="font-size:11px; color:var(--text-3); margin-top:1px;">出境大廳直走，跟著輕軌指標走</div>
+            <div style="font-size:13px; font-weight:700; color:var(--text);">金海國際機場 출발</div>
+            <div style="font-size:11px; color:var(--text-3); margin-top:2px;">出海關後右轉，跟著「Light Rail 輕軌」指標過馬路後右轉，走約 5 分鐘到輕軌入口（紫色招牌）</div>
+            <div style="font-size:11px; color:var(--text-3); margin-top:2px;">💡 機場 CU 便利商店可購買 T-money 卡並儲值（輕軌站旁換錢所匯率較好）</div>
           </div>
         </div>
 
-        <!-- Transfer badge 1 -->
-        <div style="display:flex; align-items:center; gap:10px; margin:0;">
+        <!-- Badge 1 -->
+        <div style="display:flex; align-items:center; gap:10px; margin:2px 0;">
           <div style="width:32px; display:flex; justify-content:center; flex-shrink:0;">
-            <div style="background:#7B4FBE; color:#fff; border-radius:999px; font-size:10px; font-weight:700; padding:2px 8px; letter-spacing:0.04em;">輕軌 紫線</div>
+            <div style="background:#7B4FBE; color:#fff; border-radius:999px; font-size:10px; font-weight:700; padding:2px 6px; white-space:nowrap;">輕軌 504</div>
           </div>
-          <div style="font-size:11px; color:#7B4FBE; font-weight:600;">往「西釜山流通地區」方向</div>
+          <div style="font-size:11px; color:#7B4FBE; font-weight:600;">往「西釜山流通地區<span style="font-size:10px;color:var(--text-3);font-weight:400;"> 서부산유통지구역 · BGL10</span>」方向 · 約 7 分鐘</div>
         </div>
 
-        <!-- Step 2 -->
+        <!-- Step 2: Sasang -->
         <div style="display:flex; align-items:flex-start; gap:10px;">
           <div style="display:flex; flex-direction:column; align-items:center; flex-shrink:0;">
             <div style="width:2px; min-height:8px; background:#7B4FBE; margin-bottom:4px;"></div>
             <div style="width:32px; height:32px; border-radius:50%; background:#7B4FBE; color:#fff; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:700;">🔄</div>
-            <div style="width:2px; flex:1; min-height:28px; background:linear-gradient(180deg,#7B4FBE,#2A9D4E); margin:4px 0;"></div>
+            <div style="width:2px; flex:1; min-height:32px; background:linear-gradient(180deg,#7B4FBE,#2A9D4E); margin:4px 0;"></div>
           </div>
-          <div style="padding-top:12px;">
-            <div style="font-size:13px; font-weight:700; color:var(--text);">沙上站 <span style="font-size:11px;color:var(--text-3);font-weight:400;">(Sasang Stn.)</span> 환승</div>
-            <div style="font-size:11px; color:var(--text-3); margin-top:1px;">跟著綠色 ② 號地鐵指標換乘</div>
+          <div style="padding-top:10px;">
+            <div style="font-size:13px; font-weight:700; color:var(--text);">沙上站<span style="font-size:10px;color:var(--text-3);font-weight:400;"> 사상역 · Sasang · 輕軌 501 / 地鐵 227</span> 환승</div>
+            <div style="font-size:11px; color:var(--text-3); margin-top:2px;">① 輕軌刷卡出站 → ② 跟著綠色「2號線換乘」指標往下走（有電扶梯）→ ③ 地鐵刷卡入站</div>
+            <div style="font-size:11px; color:var(--text-3); margin-top:2px;">換乘通道步行約 5 分鐘｜⚠️ 閘口是旋轉棒式，有行李箱請<strong>先推行李過去再刷卡</strong></div>
           </div>
         </div>
 
-        <!-- Transfer badge 2 -->
-        <div style="display:flex; align-items:center; gap:10px; margin:0;">
+        <!-- Badge 2 -->
+        <div style="display:flex; align-items:center; gap:10px; margin:2px 0;">
           <div style="width:32px; display:flex; justify-content:center; flex-shrink:0;">
-            <div style="background:#2A9D4E; color:#fff; border-radius:999px; font-size:10px; font-weight:700; padding:2px 8px; letter-spacing:0.04em;">地鐵 2號線</div>
+            <div style="background:#2A9D4E; color:#fff; border-radius:999px; font-size:10px; font-weight:700; padding:2px 6px; white-space:nowrap;">地鐵 2號</div>
           </div>
-          <div style="font-size:11px; color:#2A9D4E; font-weight:600;">往「萇山 <span style="font-size:11px;color:var(--text-3);font-weight:400;">(Jangsan)</span>（장산）」方向</div>
+          <div style="font-size:11px; color:#2A9D4E; font-weight:600;">往「萇山<span style="font-size:10px;color:var(--text-3);font-weight:400;"> 장산역 · Jangsan · 240</span>」方向 · 約 14 分鐘 · 西面站代號 219</div>
         </div>
 
-        <!-- Step 3 -->
+        <!-- Step 3: Seomyeon -->
         <div style="display:flex; align-items:flex-start; gap:10px;">
           <div style="display:flex; flex-direction:column; align-items:center; flex-shrink:0;">
             <div style="width:2px; min-height:8px; background:#2A9D4E; margin-bottom:4px;"></div>
             <div style="width:32px; height:32px; border-radius:50%; background:#2A9D4E; color:#fff; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:700;">🚶</div>
-            <div style="width:2px; flex:1; min-height:28px; background:linear-gradient(180deg,#2A9D4E,var(--primary)); margin:4px 0;"></div>
+            <div style="width:2px; flex:1; min-height:32px; background:linear-gradient(180deg,#2A9D4E,var(--primary)); margin:4px 0;"></div>
           </div>
           <div style="padding-top:4px;">
-            <div style="font-size:13px; font-weight:700; color:var(--text);">西面站 <span style="font-size:11px;color:var(--text-3);font-weight:400;">(Seomyeon Stn.)</span> 하차</div>
-            <div style="font-size:11px; color:var(--text-3); margin-top:1px;">輕裝 → 8 號出口｜行李多 → 10 號出口（電梯）</div>
+            <div style="font-size:13px; font-weight:700; color:var(--text);">西面站<span style="font-size:10px;color:var(--text-3);font-weight:400;"> 서면역 · Seomyeon · 1號線 119 / 2號線 219</span> 하차</div>
+            <div style="font-size:11px; color:var(--text-3); margin-top:2px;">下車後找電梯至 B1 → 往 <strong>5 號出口</strong>方向找電梯到 1F 地面</div>
+            <div style="font-size:11px; color:var(--text-3); margin-top:2px;">輕裝 → <strong>8 號出口</strong>（正前方是星巴克）｜行李多 → <strong>10 號出口</strong>（有電梯）</div>
           </div>
         </div>
 
-        <!-- Transfer badge 3 -->
-        <div style="display:flex; align-items:center; gap:10px; margin:0;">
+        <!-- Badge 3 -->
+        <div style="display:flex; align-items:center; gap:10px; margin:2px 0;">
           <div style="width:32px; display:flex; justify-content:center; flex-shrink:0;">
-            <div style="background:var(--primary); color:#fff; border-radius:999px; font-size:10px; font-weight:700; padding:2px 8px; letter-spacing:0.04em;">步行 7 分</div>
+            <div style="background:var(--primary); color:#fff; border-radius:999px; font-size:10px; font-weight:700; padding:2px 6px; white-space:nowrap;">步行 7 分</div>
           </div>
-          <div style="font-size:11px; color:var(--primary); font-weight:600;">星巴克為路標，往東橫Inn 方向直走</div>
+          <div style="font-size:11px; color:var(--primary); font-weight:600;">出站直走，以星巴克為路標，往東橫Inn 方向</div>
         </div>
 
         <!-- Final -->
@@ -396,13 +400,13 @@
             <div style="width:32px; height:32px; border-radius:50%; background:var(--primary); color:#fff; display:flex; align-items:center; justify-content:center; font-size:16px;">🏨</div>
           </div>
           <div style="padding-top:4px;">
-            <div style="font-size:13px; font-weight:700; color:var(--text);">東橫Inn 西面店 到達！</div>
+            <div style="font-size:13px; font-weight:700; color:var(--text);">東橫Inn 西面店 도착！</div>
           </div>
         </div>
 
       </div>
 
-      <div class="tip" style="margin-top:10px;">💡 T-money 卡在機場入境後左側 CU 便利商店購買，輕軌和地鐵都可以刷</div>
+      <div class="tip" style="margin-top:10px;">💰 T-money 費用：輕軌 ₩1,600 + 地鐵轉乘優惠 ₩500 = 合計 <strong>₩2,100</strong>（約台幣 50 元）｜全程約 <strong>43 分鐘</strong><br>⚠️ 現金購票無轉乘優惠，需分開買；T-money 建議機場 CU 或輕軌站旁換錢所儲值</div>
     </div>
 
     <div class="section-label">SRT 高鐵</div>
@@ -410,8 +414,8 @@
     <div class="transport-item">
       <span class="t-icon">🚶</span>
       <div class="t-body">
-        <strong>東橫Inn → KTX / SRT 釜山站 <span style="font-size:11px;color:var(--text-3);font-weight:400;">(Busan Stn.)</span></strong>
-        步行 7 分鐘至西面站 <span style="font-size:11px;color:var(--text-3);font-weight:400;">(Seomyeon Stn.)</span> → 地鐵 1 號線往釜山站 <span style="font-size:11px;color:var(--text-3);font-weight:400;">(Busan Stn.)</span>方向 → 釜山站 <span style="font-size:11px;color:var(--text-3);font-weight:400;">(Busan Stn.)</span>下車 → <strong>6 號出口</strong> 步行約 2 分鐘抵達<br>
+        <strong>東橫Inn → KTX / SRT 釜山站<span style="font-size:10px;color:var(--text-3);font-weight:400;"> 부산역 · Busan · 113</span></strong>
+        步行 7 分鐘至西面站<span style="font-size:10px;color:var(--text-3);font-weight:400;"> 서면역 · Seomyeon · 1號線 119 / 2號線 219</span> → 地鐵 1 號線往釜山站<span style="font-size:10px;color:var(--text-3);font-weight:400;"> 부산역 · Busan · 113</span>方向 → 釜山站<span style="font-size:10px;color:var(--text-3);font-weight:400;"> 부산역 · Busan · 113</span>下車 → <strong>6 號出口</strong> 步行約 2 分鐘抵達<br>
         KTX 與 SRT 在同一棟建築，進站後跟指標走即可
       </div>
     </div>
@@ -428,7 +432,7 @@
     <div class="spot">
       <div class="spot-name">🎫 SRT 現場購票</div>
       <div class="detail-label">地點</div>
-      <div class="detail-text">釜山站 <span style="font-size:11px;color:var(--text-3);font-weight:400;">(Busan Stn.)</span>內 SRT 售票窗口，持護照購票</div>
+      <div class="detail-text">釜山站<span style="font-size:10px;color:var(--text-3);font-weight:400;"> 부산역 · Busan · 113</span>內 SRT 售票窗口，持護照購票</div>
       <div class="detail-label">付款方式</div>
       <div class="detail-text">信用卡（含台灣發行的國際卡）或現金，<strong>不能用 T-money 付款</strong></div>
       <div class="tip">⚠️ 熱門班次建議提早到車站排隊購票，假日人多容易售完</div>
@@ -437,8 +441,8 @@
     <div class="transport-item">
       <span class="t-icon">🚇</span>
       <div class="t-body">
-        <strong>釜山地鐵前往釜山站 <span style="font-size:11px;color:var(--text-3);font-weight:400;">(Busan Stn.)</span></strong>
-        西面站 <span style="font-size:11px;color:var(--text-3);font-weight:400;">(Seomyeon Stn.)</span>（219）→ 1號線往多大浦海水浴場方向 → 釜山站 <span style="font-size:11px;color:var(--text-3);font-weight:400;">(Busan Stn.)</span>（113）
+        <strong>釜山地鐵前往釜山站<span style="font-size:10px;color:var(--text-3);font-weight:400;"> 부산역 · Busan · 113</span></strong>
+        西面站<span style="font-size:10px;color:var(--text-3);font-weight:400;"> 서면역 · Seomyeon · 1號線 119 / 2號線 219</span>→ 1號線往多大浦海水浴場方向<span style="font-size:10px;color:var(--text-3);font-weight:400;"> 다대포해수욕장역 · Dadaepo Beach · 101 · 1號線終點</span> → 釜山站<span style="font-size:10px;color:var(--text-3);font-weight:400;"> 부산역 · Busan · 113</span>
       </div>
     </div>
 
@@ -448,7 +452,7 @@
       <div class="spot-name">近代文化胡同 <span style="font-size:11px;color:var(--text-3);font-weight:400;">Geundae Culture Alley</span> <a class="map-btn" href="https://map.naver.com/v5/search/근대문화골목" target="_blank">📍 地圖</a></div>
       <div class="tags"><span class="tag tag-green">步行路線</span><span class="tag tag-green">1.64 km</span></div>
       <div class="detail-label">建議遊覽時間</div>
-      <div class="detail-text">2 小時｜從中央路地鐵站 <span style="font-size:11px;color:var(--text-3);font-weight:400;">(Jungangno Stn.)</span> 1 號出口出發，可至旅遊資訊中心索取地圖</div>
+      <div class="detail-text">2 小時｜從中央路地鐵站<span style="font-size:10px;color:var(--text-3);font-weight:400;"> 중앙로역 · Jungangno · 131 · 大邱1號線</span> 1 號出口出發，可至旅遊資訊中心索取地圖</div>
     </div>
 
     <div class="spot">
@@ -459,13 +463,13 @@
     <div class="spot">
       <div class="spot-name">峨洋鐵橋 <span style="font-size:11px;color:var(--text-3);font-weight:400;">Ayang Railroad Bridge</span> <a class="map-btn" href="https://map.naver.com/v5/search/아양철교" target="_blank">📍 地圖</a></div>
       <div class="detail-label">交通</div>
-      <div class="detail-text">搭大邱地鐵至峨洋橋站 <span style="font-size:11px;color:var(--text-3);font-weight:400;">(Ayangyo Stn.)</span> 1 號出口，步行約 5 分鐘</div>
+      <div class="detail-text">搭大邱地鐵至峨洋橋站<span style="font-size:10px;color:var(--text-3);font-weight:400;"> 아양교역 · Ayangyo · K211 · 大邱東海線</span> 1 號出口，步行約 5 分鐘</div>
     </div>
 
     <div class="spot">
       <div class="spot-name">壽城池 <span style="font-size:11px;color:var(--text-3);font-weight:400;">Suseong Lake</span> <a class="map-btn" href="https://map.naver.com/v5/search/수성못" target="_blank">📍 地圖</a></div>
       <div class="detail-label">交通</div>
-      <div class="detail-text">搭大邱地鐵至壽城池站 <span style="font-size:11px;color:var(--text-3);font-weight:400;">(Suseongmot Stn.)</span> 1 號出口</div>
+      <div class="detail-text">搭大邱地鐵至壽城池站<span style="font-size:10px;color:var(--text-3);font-weight:400;"> 수성못역 · Suseongmot · 229 · 大邱2號線</span> 1 號出口</div>
       <div class="detail-label">水舞秀時間（5/8/9/10 月）</div>
       <div class="detail-text">13:00 / 16:00 / 20:00 / 21:00</div>
       <div class="tip">全韓國最大的音樂水舞秀</div>
@@ -474,7 +478,7 @@
     <div class="spot">
       <div class="spot-name">桂山天主教教堂 <span style="font-size:11px;color:var(--text-3);font-weight:400;">Gyesan Catholic Cathedral</span> <a class="map-btn" href="https://map.naver.com/v5/search/계산성당" target="_blank">📍 地圖</a></div>
       <div class="detail-label">交通</div>
-      <div class="detail-text">半月堂站 <span style="font-size:11px;color:var(--text-3);font-weight:400;">(Banwoldang Stn.)</span> 18 號出口，步行約 15 分鐘</div>
+      <div class="detail-text">半月堂站<span style="font-size:10px;color:var(--text-3);font-weight:400;"> 반월당역 · Banwoldang · 130 / 228 · 大邱換乘站</span> 18 號出口，步行約 15 分鐘</div>
       <div class="detail-label">開放時間</div>
       <div class="detail-text">06:30 – 21:00（週一公休）</div>
       <div class="tip">⚠️ 彌撒期間請勿拍照</div>
@@ -483,14 +487,14 @@
     <div class="spot">
       <div class="spot-name">啟明大學城西校區 <span style="font-size:11px;color:var(--text-3);font-weight:400;">Keimyung Univ. Seongseo Campus</span> <a class="map-btn" href="https://map.naver.com/v5/search/계명대학교 성서캠퍼스" target="_blank">📍 地圖</a></div>
       <div class="detail-label">交通</div>
-      <div class="detail-text">啟明大學站 <span style="font-size:11px;color:var(--text-3);font-weight:400;">(Keimyung Univ. Stn.)</span> 1 號出口，步行約 5 分鐘至大學正門</div>
+      <div class="detail-text">啟明大學站<span style="font-size:10px;color:var(--text-3);font-weight:400;"> 계명대역 · Keimyung Univ. · 231 · 大邱2號線</span> 1 號出口，步行約 5 分鐘至大學正門</div>
     </div>
 
     <div class="spot">
       <div class="spot-name">安吉郎烤腸一條街 <span style="font-size:11px;color:var(--text-3);font-weight:400;">Anjirang Gopchang Street</span> <a class="map-btn" href="https://map.naver.com/v5/search/안지랑 곱창골목" target="_blank">📍 地圖</a></div>
       <div class="tags"><span class="tag tag-warm">必吃</span></div>
       <div class="detail-label">交通</div>
-      <div class="detail-text">安吉郎站 <span style="font-size:11px;color:var(--text-3);font-weight:400;">(Anjirang Stn.)</span> 3 號出口，步行約 8 分鐘</div>
+      <div class="detail-text">安吉郎站<span style="font-size:10px;color:var(--text-3);font-weight:400;"> 안지랑역 · Anjirang · 126 · 大邱1號線</span> 3 號出口，步行約 8 分鐘</div>
       <div class="detail-label">營業時間</div>
       <div class="detail-text">11:00 – 22:00（每月第 1、3 個週日公休）</div>
     </div>
@@ -539,8 +543,8 @@
     <div class="transport-item">
       <span class="t-icon">🚇</span>
       <div class="t-body">
-        <strong>前往松亭站 <span style="font-size:11px;color:var(--text-3);font-weight:400;">(Songjeong Stn.)</span></strong>
-        地鐵 2 號線至 BEXCO 站 或 1 號線至教大站 <span style="font-size:11px;color:var(--text-3);font-weight:400;">(Gyodae Stn.)</span>，轉乘東海線往太和江方向，至「松亭站 <span style="font-size:11px;color:var(--text-3);font-weight:400;">(Songjeong Stn.)</span>（K121）」下車
+        <strong>前往松亭站<span style="font-size:10px;color:var(--text-3);font-weight:400;"> 송정역 · Songjeong · K121</span></strong>
+        地鐵 2 號線至 BEXCO 站<span style="font-size:10px;color:var(--text-3);font-weight:400;"> 벡스코역 · Bexco · 210</span> 或 1 號線至教大站<span style="font-size:10px;color:var(--text-3);font-weight:400;"> 교대역 · Gyodae · 124</span>，轉乘東海線往太和江方向<span style="font-size:10px;color:var(--text-3);font-weight:400;"> 태화강역 · Taehwagang · 東海線終點</span>，至「松亭站<span style="font-size:10px;color:var(--text-3);font-weight:400;"> 송정역 · Songjeong · K121</span>」下車
       </div>
     </div>
 
@@ -549,10 +553,10 @@
     <div class="spot">
       <div class="spot-name">海岸列車（藍線公園）<span style="font-size:11px;color:var(--text-3);font-weight:400;">Busan Blue Line Park</span></div>
       <div class="tags"><span class="tag tag-green">Visit Busan Pass 免費</span></div>
-      <div class="detail-label">松亭站 <span style="font-size:11px;color:var(--text-3);font-weight:400;">(Songjeong Stn.)</span>到售票處</div>
+      <div class="detail-label">松亭站<span style="font-size:10px;color:var(--text-3);font-weight:400;"> 송정역 · Songjeong · K121</span>到售票處</div>
       <div class="detail-text">出站後步行 10–15 分鐘至松亭海水浴場方向</div>
       <div class="detail-label">注意事項</div>
-      <div class="detail-text">持 Visit Busan Pass 須先至尾浦站 <span style="font-size:11px;color:var(--text-3);font-weight:400;">(Mipo Stn.)</span>、青沙浦站 <span style="font-size:11px;color:var(--text-3);font-weight:400;">(Cheongsapo Stn.)</span>或松亭站 <span style="font-size:11px;color:var(--text-3);font-weight:400;">(Songjeong Stn.)</span>換乘車券，當日可沿線自由上下車一次</div>
+      <div class="detail-text">持 Visit Busan Pass 須先至尾浦站<span style="font-size:10px;color:var(--text-3);font-weight:400;"> 미포역 · Mipo · K119</span>、青沙浦站<span style="font-size:10px;color:var(--text-3);font-weight:400;"> 청사포역 · Cheongsapo · K120</span>或松亭站<span style="font-size:10px;color:var(--text-3);font-weight:400;"> 송정역 · Songjeong · K121</span>換乘車券，當日可沿線自由上下車一次</div>
     </div>
 
     <div class="spot">
@@ -575,7 +579,7 @@
       <div class="spot-name">膠囊列車 <span style="font-size:11px;color:var(--text-3);font-weight:400;">Blueline Capsule Train</span></div>
       <div class="tags"><span class="tag tag-blue">需提前購票</span></div>
       <div class="detail-label">時段</div>
-      <div class="detail-text">14:30 – 15:00，青沙浦站 <span style="font-size:11px;color:var(--text-3);font-weight:400;">(Cheongsapo Stn.)</span> → 尾浦站 <span style="font-size:11px;color:var(--text-3);font-weight:400;">(Mipo Stn.)</span></div>
+      <div class="detail-text">14:30 – 15:00，青沙浦站<span style="font-size:10px;color:var(--text-3);font-weight:400;"> 청사포역 · Cheongsapo · K120</span> → 尾浦站<span style="font-size:10px;color:var(--text-3);font-weight:400;"> 미포역 · Mipo · K119</span></div>
       <div class="detail-label">購票說明</div>
       <div class="detail-text">Kkday / Klook / 官網購票不需換票，月台出示 QR Code 即可；購票時間為入場排隊時間</div>
       <div class="detail-label">月台位置</div>
@@ -583,9 +587,9 @@
     </div>
 
     <div class="spot">
-      <div class="spot-name">尾浦站 <span style="font-size:11px;color:var(--text-3);font-weight:400;">(Mipo Stn.)</span>交通 <span style="font-size:11px;color:var(--text-3);font-weight:400;">Mipo Station</span></div>
+      <div class="spot-name">尾浦站<span style="font-size:10px;color:var(--text-3);font-weight:400;"> 미포역 · Mipo · K119</span>交通 <span style="font-size:11px;color:var(--text-3);font-weight:400;">Mipo Station</span></div>
       <div class="detail-label">方式一</div>
-      <div class="detail-text">海雲台站 <span style="font-size:11px;color:var(--text-3);font-weight:400;">(Haeundae Stn.)</span>搭 39、141、100、200 號公車，至「미포.문탠로드입구」下車，步行 8 分鐘</div>
+      <div class="detail-text">海雲台站<span style="font-size:10px;color:var(--text-3);font-weight:400;"> 해운대역 · Haeundae · 203</span>搭 39、141、100、200 號公車，至「미포.문탠로드입구」下車，步行 8 分鐘</div>
       <div class="detail-label">方式二</div>
       <div class="detail-text">從海水浴場步行約 17 分鐘</div>
       <div class="detail-label">方式三（多人推薦）</div>
@@ -618,7 +622,7 @@
 
     <div class="cafe-spot">
       <div class="spot-name">H.US Coffee <span style="font-size:11px;color:var(--text-3);font-weight:400;">에이치어스</span> <a class="map-btn" href="https://map.naver.com/v5/search/에이치어스 카페 청사포" target="_blank">📍 地圖</a></div>
-      <div class="food-desc">青沙浦站 <span style="font-size:11px;color:var(--text-3);font-weight:400;">(Cheongsapo Stn.)</span>旁，大片落地窗直擊湛藍大海，景觀絕佳</div>
+      <div class="food-desc">青沙浦站<span style="font-size:10px;color:var(--text-3);font-weight:400;"> 청사포역 · Cheongsapo · K120</span>旁，大片落地窗直擊湛藍大海，景觀絕佳</div>
     </div>
 
     <div class="cafe-spot">
@@ -644,16 +648,16 @@
     <div class="transport-item">
       <span class="t-icon">🚌</span>
       <div class="t-body">
-        <strong>從札嘎其站 <span style="font-size:11px;color:var(--text-3);font-weight:400;">(Jagalchi Stn.)</span>（推薦）</strong>
-        2 號出口外「忠武洞交叉路站 <span style="font-size:11px;color:var(--text-3);font-weight:400;">(Chungmudong Intersection)</span>」轉乘 6、26、30、71、96、96-1 公車，至「岩南洞居民中心站 <span style="font-size:11px;color:var(--text-3);font-weight:400;">(Amnandong Community Ctr.)</span>」下車，步行約 10 分鐘
+        <strong>從札嘎其站<span style="font-size:10px;color:var(--text-3);font-weight:400;"> 자갈치역 · Jagalchi · 110</span>（推薦）</strong>
+        2 號出口外「忠武洞交叉路站<span style="font-size:10px;color:var(--text-3);font-weight:400;"> 충무동교차로 · Chungmudong Intersection · 巴士站</span>」轉乘 6、26、30、71、96、96-1 公車，至「岩南洞居民中心站<span style="font-size:10px;color:var(--text-3);font-weight:400;"> 암남동주민센터 · Amnandong Community Ctr. · 巴士站</span>」下車，步行約 10 分鐘
       </div>
     </div>
 
     <div class="transport-item">
       <span class="t-icon">🚌</span>
       <div class="t-body">
-        <strong>從南浦站 <span style="font-size:11px;color:var(--text-3);font-weight:400;">(Nampo Stn.)</span></strong>
-        8 號出口外「影島大橋．南浦站 <span style="font-size:11px;color:var(--text-3);font-weight:400;">(Nampo Stn.)</span>」轉乘 6、30、71 公車，至「岩南洞居民中心站 <span style="font-size:11px;color:var(--text-3);font-weight:400;">(Amnandong Community Ctr.)</span>」下車，步行約 10 分鐘
+        <strong>從南浦站<span style="font-size:10px;color:var(--text-3);font-weight:400;"> 남포역 · Nampo · 111</span></strong>
+        8 號出口外「影島大橋．南浦站<span style="font-size:10px;color:var(--text-3);font-weight:400;"> 남포역 · Nampo · 111</span>」轉乘 6、30、71 公車，至「岩南洞居民中心站<span style="font-size:10px;color:var(--text-3);font-weight:400;"> 암남동주민센터 · Amnandong Community Ctr. · 巴士站</span>」下車，步行約 10 分鐘
       </div>
     </div>
 
@@ -674,7 +678,7 @@
 
     <div class="spot">
       <div class="spot-name">松島天空步道 <span style="font-size:11px;color:var(--text-3);font-weight:400;">Songdo Skywalk</span> <a class="map-btn" href="https://map.naver.com/v5/search/송도스카이워크" target="_blank">📍 地圖</a></div>
-      <div class="detail-text">位於纜車起點松島灣站 <span style="font-size:11px;color:var(--text-3);font-weight:400;">(Songdo Bay Stn.)</span>旁，全長 365 公尺</div>
+      <div class="detail-text">位於纜車起點松島灣站<span style="font-size:10px;color:var(--text-3);font-weight:400;"> 송도해수욕장역 · Songdo Beach · –</span>旁，全長 365 公尺</div>
       <div class="tip">韓國最長海上步道！與青沙浦天空步道、五六島天空步道合稱「釜山三大天空步道」</div>
     </div>
 
@@ -716,8 +720,8 @@
       <span class="t-icon">📍</span>
       <div class="t-body">
         <strong>集合 / 回程</strong>
-        集合 10:10　西面站 <span style="font-size:11px;color:var(--text-3);font-weight:400;">(Seomyeon Stn.)</span> 12 號出口（地鐵站出口，非購物中心出口）<br>
-        回程 21:40　西面站 <span style="font-size:11px;color:var(--text-3);font-weight:400;">(Seomyeon Stn.)</span>
+        集合 10:10　西面站<span style="font-size:10px;color:var(--text-3);font-weight:400;"> 서면역 · Seomyeon · 1號線 119 / 2號線 219</span> 12 號出口（地鐵站出口，非購物中心出口）<br>
+        回程 21:40　西面站<span style="font-size:10px;color:var(--text-3);font-weight:400;"> 서면역 · Seomyeon · 1號線 119 / 2號線 219</span>
       </div>
     </div>
 
@@ -769,7 +773,7 @@
       </div>
     </div>
 
-    <div class="tip" style="margin-bottom:12px;">💡 建議路線：龍宮寺在山坡上，參觀完走下坡就能直達斜坡滑車，玩完再步行到樂天 Outlet，回程從 Outlet 走到東釜山旅遊區站 <span style="font-size:11px;color:var(--text-3);font-weight:400;">(Osiria Stn.)</span>搭車</div>
+    <div class="tip" style="margin-bottom:12px;">💡 建議路線：龍宮寺在山坡上，參觀完走下坡就能直達斜坡滑車，玩完再步行到樂天 Outlet，回程從 Outlet 走到東釜山旅遊區站<span style="font-size:10px;color:var(--text-3);font-weight:400;"> 오시리아역 · Osiria · K122</span>搭車</div>
 
     <div class="section-label">景點</div>
 
@@ -778,11 +782,11 @@
       <button class="intro-toggle" onclick="toggleIntro(this)"><i class="arrow">▶</i> 簡介</button>
       <div class="intro-body">建於懸崖上、面海而立的佛教寺廟，是韓國少數臨海的寺廟之一。廟內有十二生肖石像，據說摸到自己生肖會帶來好運。每逢初一、十五香客眾多，浪花拍打岩石，景色壯觀。</div>
       <div class="detail-label">交通方式一（推薦）</div>
-      <div class="detail-text">Uber / 計程車直達主要入口，步行約 5 分鐘抵達主寺區。從海雲台站 <span style="font-size:11px;color:var(--text-3);font-weight:400;">(Haeundae Stn.)</span>出發約 25 分鐘，₩10,000 左右（僅供參考）。記得秀韓文 <strong>해동용궁사</strong> 給司機看</div>
+      <div class="detail-text">Uber / 計程車直達主要入口，步行約 5 分鐘抵達主寺區。從海雲台站<span style="font-size:10px;color:var(--text-3);font-weight:400;"> 해운대역 · Haeundae · 203</span>出發約 25 分鐘，₩10,000 左右（僅供參考）。記得秀韓文 <strong>해동용궁사</strong> 給司機看</div>
       <div class="detail-label">交通方式二（公車）</div>
-      <div class="detail-text">地鐵 2 號線至海雲台站 <span style="font-size:11px;color:var(--text-3);font-weight:400;">(Haeundae Stn.)</span> 7 號出口，搭 100、181、1001、海雲台 9 號公車，至「용궁사 국립수산과학원」站下車，步行 9 分鐘</div>
+      <div class="detail-text">地鐵 2 號線至海雲台站<span style="font-size:10px;color:var(--text-3);font-weight:400;"> 해운대역 · Haeundae · 203</span> 7 號出口，搭 100、181、1001、海雲台 9 號公車，至「용궁사 국립수산과학원」站下車，步行 9 分鐘</div>
       <div class="detail-label">交通方式三（東海線電鐵）</div>
-      <div class="detail-text">東海線至東釜山旅遊區站 <span style="font-size:11px;color:var(--text-3);font-weight:400;">(Osiria Stn.)</span>（오시리아역）1 號出口，搭 1001 或 139 公車（約 4–5 分鐘）；或搭計程車約 7 分鐘、₩7,000</div>
+      <div class="detail-text">東海線至東釜山旅遊區站<span style="font-size:10px;color:var(--text-3);font-weight:400;"> 오시리아역 · Osiria · K122</span>（오시리아역）1 號出口，搭 1001 或 139 公車（約 4–5 分鐘）；或搭計程車約 7 分鐘、₩7,000</div>
     </div>
 
     <div class="spot">
@@ -808,7 +812,7 @@
       <button class="intro-toggle" onclick="toggleIntro(this)"><i class="arrow">▶</i> 簡介</button>
       <div class="intro-body">位於機張海邊的大型露天 Outlet，面向大海設計感十足，匯集眾多國際品牌折扣大，樓頂可眺望海景。</div>
       <div class="detail-label">回程交通</div>
-      <div class="detail-text">從 Outlet 步行至東釜山旅遊區站 <span style="font-size:11px;color:var(--text-3);font-weight:400;">(Osiria Stn.)</span>（오시리아역）搭東海線電鐵</div>
+      <div class="detail-text">從 Outlet 步行至東釜山旅遊區站<span style="font-size:10px;color:var(--text-3);font-weight:400;"> 오시리아역 · Osiria · K122</span>（오시리아역）搭東海線電鐵</div>
     </div>
 
     <div class="food-section-label">☕ 附近建議喝喝・機張區</div>
@@ -839,7 +843,7 @@
       <div class="detail-label">交通方式一（推薦 2–3 人）</div>
       <div class="detail-text">搭計程車直達門口，人多分攤和搭公車差不多，省力又吹冷氣，體力留給爬坡比較實在</div>
       <div class="detail-label">交通方式二（公車）</div>
-      <div class="detail-text">地鐵 1 號線至土城站 <span style="font-size:11px;color:var(--text-3);font-weight:400;">(Toseong Stn.)</span> 6 號出口，右轉走約 3 分鐘到「釜山大學醫院」站牌，搭沙下 1-1、西區 2 或西區 2-2 公車，看到寫著「甘川」中文的車跳上去，在「甘亭小學」站下車，車程約 10 分鐘</div>
+      <div class="detail-text">地鐵 1 號線至土城站<span style="font-size:10px;color:var(--text-3);font-weight:400;"> 토성역 · Toseong · 109</span> 6 號出口，右轉走約 3 分鐘到「釜山大學醫院」站牌，搭沙下 1-1、西區 2 或西區 2-2 公車，看到寫著「甘川」中文的車跳上去，在「甘亭小學」站下車，車程約 10 分鐘</div>
       <div class="detail-label">回程</div>
       <div class="detail-text">累了直接攔計程車下山，前往南浦洞吃烤肉犒賞自己</div>
     </div>
@@ -868,7 +872,7 @@
   <div class="day" id="day6">
     <div class="day-header">
       <div class="day-header-inner">
-        <div class="day-date-badge" style="background:var(--stamp-red);"><div class="dnum">5/2</div><div class="ddow">週六</div></div>
+        <div class="day-date-badge" style="background:linear-gradient(135deg,#6A5A7A 0%,#4E3D5E 100%);"><div class="dnum">5/2</div><div class="ddow">週六</div></div>
         <div><h2>海雲台 → 回台北</h2><p>海雲台海灘 <span style="font-size:11px;color:var(--text-3);font-weight:400;">Haeundae Beach</span> · 金海機場 → 桃園機場</p></div>
       </div>
     </div>
@@ -880,7 +884,7 @@
       <button class="intro-toggle" onclick="toggleIntro(this)"><i class="arrow">▶</i> 簡介</button>
       <div class="intro-body">韓國最著名的海水浴場，細白沙灘綿延 1.8 公里，背後是現代化的高樓與飯店群。即使非夏季，海邊散步、吃海鮮也別有風味。附近的海雲台市場有各式韓國小吃，週邊咖啡廳景觀絕佳。</div>
       <div class="detail-label">交通</div>
-      <div class="detail-text">地鐵 2 號線至海雲台站 <span style="font-size:11px;color:var(--text-3);font-weight:400;">(Haeundae Stn.)</span> 3、5 號出口，步行約 5 分鐘</div>
+      <div class="detail-text">地鐵 2 號線至海雲台站<span style="font-size:10px;color:var(--text-3);font-weight:400;"> 해운대역 · Haeundae · 203</span> 3、5 號出口，步行約 5 分鐘</div>
     </div>
 
     <div class="food-section-label">🍽 附近建議吃吃・海雲台區</div>
@@ -922,7 +926,7 @@
       <span class="t-icon">🚇</span>
       <div class="t-body">
         <strong>前往金海機場</strong>
-        地鐵 2 號線至沙上站 <span style="font-size:11px;color:var(--text-3);font-weight:400;">(Sasang Stn.)</span>，轉乘釜山金海輕軌（紫線）至機場站 <span style="font-size:11px;color:var(--text-3);font-weight:400;">(Airport Stn.)</span>下車<br>
+        地鐵 2 號線至沙上站<span style="font-size:10px;color:var(--text-3);font-weight:400;"> 사상역 · Sasang · 輕軌 BGL501 / 地鐵2號線 227</span>，轉乘釜山金海輕軌（紫線）至機場站<span style="font-size:10px;color:var(--text-3);font-weight:400;"> 공항역 · Airport · BGL504</span>下車<br>
         建議航班前 2.5 小時出發，預留充裕時間
       </div>
     </div>
@@ -937,7 +941,7 @@
       </div>
     </div>
 
-    <div class="section-label">🏨 西面站 <span style="font-size:11px;color:var(--text-3);font-weight:400;">(Seomyeon Stn.)</span> → 東橫Inn 步行路線</div>
+    <div class="section-label">🏨 西面站<span style="font-size:10px;color:var(--text-3);font-weight:400;"> 서면역 · Seomyeon · 1號線 119 / 2號線 219</span> → 東橫Inn 步行路線</div>
 
     <div class="spot">
       <div class="spot-name">步行約 7 分鐘 <a class="map-btn" href="https://map.naver.com/v5/search/토요코인 부산 서면" target="_blank">📍 地圖</a></div>
