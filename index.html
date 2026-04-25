@@ -296,6 +296,7 @@
     <button class="tab" onclick="showDay(4)"><span class="tab-date">4/30</span><span class="tab-dow">四</span></button>
     <button class="tab" onclick="showDay(5)"><span class="tab-date">5/1</span><span class="tab-dow">五</span></button>
     <button class="tab" onclick="showDay(6)"><span class="tab-date">5/2</span><span class="tab-dow">六</span></button>
+    <button class="tab" onclick="showDay(7)"><span class="tab-date">📝</span><span class="tab-dow">筆記</span></button>
   </div>
 
   <!-- Day 1 -->
@@ -326,7 +327,7 @@
         金海機場站 → 搭<strong>釜山金海輕軌（紫線）</strong>→ 沙上站（Sasang）→ 轉乘<strong>地鐵 2 號線</strong>往萇山方向 → 西面站下車
       </div>
       <div class="detail-label">出站方式</div>
-      <div class="detail-text">西面站 10 號出口步行 8–10 分鐘（行李多可走 12 號出口有電梯）</div>
+      <div class="detail-text">輕裝 → <strong>8 號出口</strong>出站，正前方星巴克，直走約 7 分鐘<br>行李多 → <strong>10 號出口</strong>（有電梯）出站，看到星巴克右轉，直走約 7 分鐘</div>
       <div class="detail-label">注意事項</div>
       <div class="detail-text">建議提前準備 T-money 卡（韓國悠遊卡），機場入境後左側 CU 便利商店可購買與加值；輕軌站在出境大廳直走方向，跟著指標走</div>
       <div class="tip">⚠️ 輕軌搭往「西釜山流通地區」方向，到沙上站後跟著綠色②號地鐵指標換乘</div>
@@ -335,12 +336,30 @@
     <div class="section-label">SRT 高鐵</div>
 
     <div class="transport-item">
+      <span class="t-icon">🚶</span>
+      <div class="t-body">
+        <strong>東橫Inn → KTX / SRT 釜山站</strong>
+        步行 7 分鐘至西面站 → 地鐵 1 號線往釜山站方向 → 釜山站下車 → <strong>6 號出口</strong> 步行約 2 分鐘抵達<br>
+        KTX 與 SRT 在同一棟建築，進站後跟指標走即可
+      </div>
+    </div>
+
+    <div class="transport-item">
       <span class="t-icon">🚄</span>
       <div class="t-body">
         <strong>SRT 高鐵 — 前往大邱</strong>
         去程 SRT 322：釜山 → 東大邱　09:32 – 10:11<br>
         回程 SRT 351：東大邱 → 釜山　18:23 – 19:09
       </div>
+    </div>
+
+    <div class="spot">
+      <div class="spot-name">🎫 SRT 現場購票</div>
+      <div class="detail-label">地點</div>
+      <div class="detail-text">釜山站內 SRT 售票窗口，持護照購票</div>
+      <div class="detail-label">付款方式</div>
+      <div class="detail-text">信用卡（含台灣發行的國際卡）或現金，<strong>不能用 T-money 付款</strong></div>
+      <div class="tip">⚠️ 熱門班次建議提早到車站排隊購票，假日人多容易售完</div>
     </div>
 
     <div class="transport-item">
@@ -837,6 +856,97 @@
     </div>
   </div>
 
+  <!-- Notes page -->
+  <div class="day" id="day7">
+    <div class="day-header">
+      <div class="day-header-inner">
+        <div class="day-date-badge"><div class="dnum">📝</div><div class="ddow">筆記</div></div>
+        <div><h2>備忘筆記</h2><p>出發前確認 · 隨手記事</p></div>
+      </div>
+    </div>
+
+    <div class="section-label">🏨 西面站 → 東橫Inn 步行路線</div>
+
+    <div class="spot">
+      <div class="spot-name">步行約 7 分鐘 <a class="map-btn" href="https://map.naver.com/v5/search/토요코인 부산 서면" target="_blank">📍 地圖</a></div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:8px;">
+        <div style="background:var(--block); border-radius:var(--r-sm); padding:10px 12px;">
+          <div style="font-size:10px; font-weight:900; letter-spacing:0.08em; color:var(--gold); margin-bottom:6px;">輕裝 · 8 號出口</div>
+          <div style="font-size:12px; color:var(--text); line-height:1.8;">出口前方是星巴克<br>直走約 7 分鐘</div>
+        </div>
+        <div style="background:var(--block); border-radius:var(--r-sm); padding:10px 12px;">
+          <div style="font-size:10px; font-weight:900; letter-spacing:0.08em; color:var(--gold); margin-bottom:6px;">行李多 · 10 號出口（電梯）</div>
+          <div style="font-size:12px; color:var(--text); line-height:1.8;">出站看到星巴克右轉<br>直走約 7 分鐘</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-label">🚇 去機場交通</div>
+
+    <div class="spot">
+      <div class="spot-name">景安 → 新北產業園區 → 第一航廈</div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:8px;">
+        <div style="background:var(--block); border-radius:var(--r-sm); padding:10px 12px;">
+          <div style="font-size:10px; font-weight:900; letter-spacing:0.08em; color:var(--gold); margin-bottom:6px;">方案一（早）</div>
+          <div style="font-size:13px; color:var(--text); line-height:2;">景安 22:22<br>新北產業 22:55<br>第一航廈 23:21</div>
+        </div>
+        <div style="background:var(--block); border-radius:var(--r-sm); padding:10px 12px;">
+          <div style="font-size:10px; font-weight:900; letter-spacing:0.08em; color:var(--gold); margin-bottom:6px;">方案二（晚）</div>
+          <div style="font-size:13px; color:var(--text); line-height:2;">景安 22:42<br>新北產業 23:10<br>第一航廈 23:36</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-label">✏️ 自由記事</div>
+
+    <div style="background:#FFFFFF; border:1px solid var(--glass-border-mid); border-radius:var(--r); overflow:hidden; margin-bottom:8px; box-shadow:0 1px 3px rgba(60,47,47,0.04);">
+
+      <!-- Toolbar -->
+      <div style="display:flex; align-items:center; gap:4px; padding:8px 12px; border-bottom:1px solid var(--glass-border-mid); background:var(--block); flex-wrap:wrap;">
+        <button onclick="noteCmd('bold')" title="粗體" style="width:30px;height:30px;border:none;background:none;cursor:pointer;border-radius:6px;font-size:14px;font-weight:700;color:var(--text);">B</button>
+        <button onclick="noteCmd('italic')" title="斜體" style="width:30px;height:30px;border:none;background:none;cursor:pointer;border-radius:6px;font-size:14px;font-style:italic;color:var(--text);">I</button>
+        <button onclick="noteCmd('underline')" title="底線" style="width:30px;height:30px;border:none;background:none;cursor:pointer;border-radius:6px;font-size:14px;text-decoration:underline;color:var(--text);">U</button>
+        <div style="width:1px;height:20px;background:var(--glass-border-mid);margin:0 4px;"></div>
+        <button onclick="noteCmd('insertUnorderedList')" title="項目清單" style="width:30px;height:30px;border:none;background:none;cursor:pointer;border-radius:6px;font-size:16px;color:var(--text);">≡</button>
+        <button onclick="insertCheckbox()" title="待辦清單" style="width:30px;height:30px;border:none;background:none;cursor:pointer;border-radius:6px;font-size:14px;color:var(--text);">☑</button>
+        <div style="width:1px;height:20px;background:var(--glass-border-mid);margin:0 4px;"></div>
+        <button onclick="document.getElementById('note-img-input').click()" title="插入照片" style="width:30px;height:30px;border:none;background:none;cursor:pointer;border-radius:6px;font-size:16px;color:var(--primary);">🖼</button>
+        <input type="file" id="note-img-input" accept="image/*" multiple style="display:none" onchange="insertImages(this)">
+        <div style="flex:1;"></div>
+        <button onclick="clearNote()" title="清除全部" style="font-size:11px;padding:4px 8px;border:1px solid var(--glass-border-mid);background:none;border-radius:6px;color:var(--text-3);cursor:pointer;font-family:inherit;">清除</button>
+      </div>
+
+      <!-- Editor -->
+      <div
+        id="note-editor"
+        contenteditable="true"
+        spellcheck="false"
+        data-placeholder="隨手記下任何事情…&#10;&#10;可以打字、加粗、列清單，也可以插入照片 📷"
+        style="min-height:240px; padding:16px; font-family:'Montserrat','PingFang TC','Noto Sans TC',sans-serif; font-size:13px; color:var(--text); line-height:1.9; letter-spacing:0.04em; outline:none; word-break:break-word;"
+      ></div>
+    </div>
+
+    <div style="font-size:11px; color:var(--text-3); letter-spacing:0.06em; font-weight:700; text-align:right; margin-bottom:4px;">筆記自動儲存於本機</div>
+
+    <style>
+      #note-editor:empty:before {
+        content: attr(data-placeholder);
+        color: var(--text-3);
+        pointer-events: none;
+        white-space: pre-line;
+      }
+      #note-editor img {
+        max-width: 100%;
+        border-radius: var(--r-sm);
+        margin: 6px 0;
+        display: block;
+      }
+      #note-editor ul { padding-left: 1.4em; }
+      #note-editor li { margin: 2px 0; }
+      .note-checkbox { accent-color: var(--primary); width:14px; height:14px; margin-right:6px; vertical-align:middle; cursor:pointer; }
+    </style>
+  </div>
+
   <!-- Floating expense button -->
   <div class="fab-wrap">
     <button class="fab" onclick="openExpense()">
@@ -912,7 +1022,101 @@
 function showDay(i) {
   document.querySelectorAll('.tab').forEach((t,j) => t.classList.toggle('active', i===j));
   document.querySelectorAll('.day').forEach((d,j) => d.classList.toggle('active', i===j));
+  if (i === 7) loadNote();
 }
+
+// ── Note editor ──
+function loadNote() {
+  const editor = document.getElementById('note-editor');
+  if (!editor) return;
+  const saved = localStorage.getItem('kr_note_html');
+  if (saved) editor.innerHTML = saved;
+}
+
+function saveNote() {
+  const editor = document.getElementById('note-editor');
+  if (editor) localStorage.setItem('kr_note_html', editor.innerHTML);
+}
+
+function noteCmd(cmd) {
+  document.getElementById('note-editor').focus();
+  document.execCommand(cmd, false, null);
+  saveNote();
+}
+
+function insertCheckbox() {
+  document.getElementById('note-editor').focus();
+  const cb = document.createElement('input');
+  cb.type = 'checkbox';
+  cb.className = 'note-checkbox';
+  cb.onchange = saveNote;
+  const space = document.createTextNode(' ');
+  const br = document.createElement('br');
+  const sel = window.getSelection();
+  if (sel.rangeCount) {
+    const range = sel.getRangeAt(0);
+    range.collapse(false);
+    range.insertNode(br);
+    range.insertNode(space);
+    range.insertNode(cb);
+    range.setStartAfter(space);
+    range.collapse(true);
+    sel.removeAllRanges();
+    sel.addRange(range);
+  } else {
+    const editor = document.getElementById('note-editor');
+    editor.appendChild(cb);
+    editor.appendChild(space);
+    editor.appendChild(br);
+  }
+  saveNote();
+}
+
+function insertImages(input) {
+  const files = Array.from(input.files);
+  const editor = document.getElementById('note-editor');
+  editor.focus();
+  files.forEach(file => {
+    const reader = new FileReader();
+    reader.onload = e => {
+      const img = document.createElement('img');
+      img.src = e.target.result;
+      img.style.maxWidth = '100%';
+      img.style.borderRadius = 'var(--r-sm)';
+      img.style.margin = '6px 0';
+      img.style.display = 'block';
+      const br = document.createElement('br');
+      const sel = window.getSelection();
+      if (sel.rangeCount) {
+        const range = sel.getRangeAt(0);
+        range.collapse(false);
+        range.insertNode(br);
+        range.insertNode(img);
+        range.setStartAfter(br);
+        range.collapse(true);
+        sel.removeAllRanges();
+        sel.addRange(range);
+      } else {
+        editor.appendChild(img);
+        editor.appendChild(br);
+      }
+      saveNote();
+    };
+    reader.readAsDataURL(file);
+  });
+  input.value = '';
+}
+
+function clearNote() {
+  if (!confirm('確定要清除所有筆記內容嗎？')) return;
+  const editor = document.getElementById('note-editor');
+  editor.innerHTML = '';
+  localStorage.removeItem('kr_note_html');
+}
+
+document.addEventListener('input', e => {
+  if (e.target.id === 'note-editor') saveNote();
+});
 
 function openExpense() {
   document.getElementById('expense-overlay').classList.add('open');
