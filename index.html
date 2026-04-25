@@ -48,6 +48,7 @@
     font-size: 14px; letter-spacing: 0.05em;
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
   }
 
   .app { max-width: 600px; margin: 0 auto; padding-bottom: 7rem; }
@@ -980,12 +981,14 @@
     <div id="note-edit-view" style="display:none; max-width:100%; overflow:hidden;">
       <div style="display:flex; align-items:center; gap:8px; margin-bottom:10px;">
         <button onclick="closeNoteEditor()" style="flex-shrink:0; padding:6px 12px; background:none; border:1px solid var(--glass-border-mid); border-radius:999px; font-size:12px; font-weight:700; color:var(--text-2); cursor:pointer; font-family:inherit; letter-spacing:0.04em;">← 返回</button>
-        <input id="note-title-input" type="text" placeholder="筆記標題…" style="flex:1; min-width:0; padding:7px 12px; border:1px solid var(--glass-border-mid); border-radius:999px; font-size:13px; font-weight:700; color:var(--text); background:#fff; font-family:inherit; letter-spacing:0.04em; outline:none; box-sizing:border-box;">
+        <div id="note-title-display" style="flex:1; min-width:0; font-size:15px; font-weight:700; color:var(--text); letter-spacing:0.04em; padding:7px 0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;"></div>
+        <input id="note-title-input" type="text" placeholder="筆記標題…" style="display:none; flex:1; min-width:0; padding:7px 12px; border:1px solid var(--glass-border-mid); border-radius:999px; font-size:13px; font-weight:700; color:var(--text); background:#fff; font-family:inherit; letter-spacing:0.04em; outline:none; box-sizing:border-box;">
+        <button id="note-mode-btn" onclick="toggleNoteMode()" style="flex-shrink:0; padding:6px 14px; background:var(--primary); color:#fff; border:none; border-radius:999px; font-size:12px; font-weight:700; cursor:pointer; font-family:inherit; letter-spacing:0.04em;">編輯</button>
       </div>
 
       <div style="background:#FFFFFF; border:1px solid var(--glass-border-mid); border-radius:var(--r); overflow:hidden; margin-bottom:8px; box-shadow:0 1px 3px rgba(60,47,47,0.04); max-width:100%;">
-        <!-- Toolbar -->
-        <div style="display:flex; align-items:center; gap:2px; padding:6px 10px; border-bottom:1px solid var(--glass-border-mid); background:var(--block); flex-wrap:wrap; box-sizing:border-box;">
+        <!-- Toolbar (hidden in view mode) -->
+        <div id="note-toolbar" style="display:none; align-items:center; gap:2px; padding:6px 10px; border-bottom:1px solid var(--glass-border-mid); background:var(--block); flex-wrap:wrap; box-sizing:border-box;">
           <button onclick="noteCmd('bold')" title="粗體" style="width:30px;height:30px;border:none;background:none;cursor:pointer;border-radius:6px;font-size:14px;font-weight:700;color:var(--text);flex-shrink:0;">B</button>
           <button onclick="noteCmd('italic')" title="斜體" style="width:30px;height:30px;border:none;background:none;cursor:pointer;border-radius:6px;font-size:14px;font-style:italic;color:var(--text);flex-shrink:0;">I</button>
           <button onclick="noteCmd('underline')" title="底線" style="width:30px;height:30px;border:none;background:none;cursor:pointer;border-radius:6px;font-size:14px;text-decoration:underline;color:var(--text);flex-shrink:0;">U</button>
@@ -996,8 +999,8 @@
           <button onclick="document.getElementById('note-img-input').click()" title="插入照片" style="width:30px;height:30px;border:none;background:none;cursor:pointer;border-radius:6px;font-size:16px;color:var(--primary);flex-shrink:0;">🖼</button>
           <input type="file" id="note-img-input" accept="image/*" multiple style="display:none" onchange="insertImages(this)">
         </div>
-        <!-- Editor -->
-        <div id="note-editor" contenteditable="true" spellcheck="false"
+        <!-- Editor / Viewer -->
+        <div id="note-editor" contenteditable="false" spellcheck="false"
           data-placeholder="開始記錄…"
           style="min-height:260px; padding:14px; font-family:'Montserrat','PingFang TC','Noto Sans TC',sans-serif; font-size:13px; color:var(--text); line-height:1.9; letter-spacing:0.04em; outline:none; word-break:break-word; overflow-wrap:break-word; max-width:100%; box-sizing:border-box;"></div>
       </div>
@@ -1136,8 +1139,47 @@ function openNote(i) {
   const n = notes[i];
   document.getElementById('note-list-view').style.display = 'none';
   document.getElementById('note-edit-view').style.display = 'block';
-  document.getElementById('note-title-input').value = n.title || '';
+  // Default: view mode
+  const titleDisplay = document.getElementById('note-title-display');
+  const titleInput = document.getElementById('note-title-input');
+  titleDisplay.textContent = n.title || '未命名筆記';
+  titleDisplay.style.display = 'block';
+  titleInput.style.display = 'none';
+  titleInput.value = n.title || '';
   document.getElementById('note-editor').innerHTML = n.content || '';
+  document.getElementById('note-editor').contentEditable = 'false';
+  document.getElementById('note-toolbar').style.display = 'none';
+  document.getElementById('note-mode-btn').textContent = '編輯';
+  document.getElementById('note-mode-btn').style.background = 'var(--primary)';
+}
+
+function toggleNoteMode() {
+  const editor = document.getElementById('note-editor');
+  const toolbar = document.getElementById('note-toolbar');
+  const btn = document.getElementById('note-mode-btn');
+  const titleDisplay = document.getElementById('note-title-display');
+  const titleInput = document.getElementById('note-title-input');
+  const isEditing = editor.contentEditable === 'true';
+  if (isEditing) {
+    // Switch to view mode
+    saveCurrentNote();
+    editor.contentEditable = 'false';
+    toolbar.style.display = 'none';
+    titleDisplay.textContent = titleInput.value || '未命名筆記';
+    titleDisplay.style.display = 'block';
+    titleInput.style.display = 'none';
+    btn.textContent = '編輯';
+    btn.style.background = 'var(--primary)';
+  } else {
+    // Switch to edit mode
+    editor.contentEditable = 'true';
+    toolbar.style.display = 'flex';
+    titleDisplay.style.display = 'none';
+    titleInput.style.display = 'block';
+    btn.textContent = '完成';
+    btn.style.background = 'var(--gold)';
+    editor.focus();
+  }
 }
 
 function closeNoteEditor() {
